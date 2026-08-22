@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXORA DIGITAL | Explore. Learn. Create.</title>
+
+    <meta name="description" content="NEXORA DIGITAL is a digital platform for discovering useful tools, resources, guides and knowledge.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #081525;
+            border-bottom: 1px solid #1b3048;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #4ddcff;
+        }
+
+        nav a {
+            color: #dce8f5;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #4ddcff;
+        }
+
+        .hero {
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            background:
+                radial-gradient(circle at top right, #123d5d, transparent 35%),
+                radial-gradient(circle at bottom left, #102b49, transparent 35%),
+                #07111f;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 82px);
+            line-height: 1;
+            margin-bottom: 25px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: #4ddcff;
+        }
+
+        .hero p {
+            color: #b7c8d9;
+            font-size: 19px;
+            max-width: 680px;
+            margin: 0 auto 35px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #4ddcff;
+            color: #06101c;
+        }
+
+        .secondary {
+            border: 1px solid #35536d;
+            color: white;
+        }
+
+        section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #94aabd;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #0d1c2d;
+            border: 1px solid #1c344d;
+            border-radius: 14px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #4ddcff;
+        }
+
+        .icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #9fb2c5;
+            font-size: 15px;
+        }
+
+        .about {
+            background: #091827;
+            max-width: none;
+        }
+
+        .about-inner {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-inner p {
+            color: #aebfd0;
+            margin-bottom: 15px;
+        }
+
+        .cta {
+            text-align: center;
+            background: #0d1c2d;
+            border-top: 1px solid #1c344d;
+            border-bottom: 1px solid #1c344d;
+        }
+
+        footer {
+            background: #050d17;
+            padding: 35px 20px;
+            text-align: center;
+            color: #7f94a8;
+        }
+
+        footer strong {
+            color: #4ddcff;
+        }
+
+        @media (max-width: 700px) {
+            .nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 13px;
+            }
+
+            .hero {
+                min-height: 560px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">NEXORA DIGITAL</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#resources">Resources</a>
+            <a href="#learn">Learn</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+
+        <h1>
+            Explore.<br>
+            <span>Learn. Create.</span>
+        </h1>
+
+        <p>
+            NEXORA DIGITAL is a digital platform for discovering
+            useful tools, resources, guides and knowledge.
+        </p>
+
+        <div class="buttons">
+            <a href="#resources" class="btn primary">Explore Resources</a>
+            <a href="#about" class="btn secondary">Discover NEXORA</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="resources">
+
+    <div class="section-title">
+        <h2>Explore Digital Resources</h2>
+        <p>Discover resources designed to help you learn, work and create.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🛠️</div>
+            <h3>Digital Tools</h3>
+            <p>
+                Discover useful digital tools that can make everyday
+                tasks easier and more productive.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Web Resources</h3>
+            <p>
+                Explore resources for learning web technologies,
+                development and the modern internet.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>Design Resources</h3>
+            <p>
+                Find resources and inspiration for digital design,
+                creativity and visual projects.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📚</div>
+            <h3>Learning Resources</h3>
+            <p>
+                Access useful educational materials and guides for
+                developing digital skills.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="learn">
+
+    <div class="section-title">
+        <h2>Learn Something New</h2>
+        <p>
+            Practical knowledge for the digital world.
+        </p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Technology Guides</h3>
+            <p>
+                Simple guides explaining useful technologies,
+                concepts and digital practices.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Digital Skills</h3>
+            <p>
+                Explore practical skills that can help you become
+                more confident with modern technology.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Productivity</h3>
+            <p>
+                Discover ideas and resources for improving the way
+                you organize and complete digital work.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+
+    <div class="about-inner">
+
+        <div class="section-title">
+            <h2>About NEXORA DIGITAL</h2>
+        </div>
+
+        <p>
+            NEXORA DIGITAL is an independent digital platform created
+            to bring useful digital resources, knowledge and tools
+            together in one accessible place.
+        </p>
+
+        <p>
+            Our goal is simple: make useful digital information easier
+            to discover, understand and use.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="cta" id="contact">
+
+    <div class="section-title">
+
+        <h2>Stay Connected</h2>
+
+        <p>
+            Have a question, suggestion or resource to share?
+            Get in touch with NEXORA DIGITAL.
+        </p>
+
+        <br>
+
+        <a href="mailto:fidelsteven2@gmail.com" class="btn primary">
+            Contact NEXORA DIGITAL
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <p>
+        © 2026 <strong>NEXORA DIGITAL</strong>. All Rights Reserved.
+    </p>
+
+    <p>
+        Developed by Steven Fidel.
+    </p>
+
+</footer>
+
+</body>
+  </html>

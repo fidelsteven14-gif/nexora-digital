@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Tools | NEXORA DIGITAL</title>
+
+    <meta name="description" content="Discover useful digital tools for productivity, creativity, learning, business and technology with NEXORA DIGITAL.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #06111f;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+
+        header {
+            background: rgba(6, 17, 31, 0.97);
+            border-bottom: 1px solid #17314a;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+        }
+
+        .logo span {
+            color: #4ddcff;
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #dce8f5;
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #4ddcff;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 110px 25px 90px;
+            text-align: center;
+            background:
+                radial-gradient(circle at top right, rgba(30, 112, 157, 0.28), transparent 35%),
+                radial-gradient(circle at bottom left, rgba(18, 61, 93, 0.3), transparent 35%),
+                #06111f;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero-label {
+            color: #4ddcff;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(44px, 8vw, 78px);
+            line-height: 1.05;
+            margin-bottom: 22px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: #4ddcff;
+        }
+
+        .hero p {
+            color: #a9bfd1;
+            font-size: 19px;
+            max-width: 720px;
+            margin: auto;
+        }
+
+        /* RESOURCE SECTION */
+
+        .resources {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 50px;
+        }
+
+        .section-heading h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: #91a9bd;
+            font-size: 17px;
+        }
+
+        /* CARDS */
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .tool-card {
+            background: linear-gradient(145deg, #0d2134, #091827);
+            border: 1px solid #1b3b56;
+            border-radius: 18px;
+            padding: 32px;
+            transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            min-height: 300px;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-7px);
+            border-color: #4ddcff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .tool-number {
+            color: #4ddcff;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+
+        .tool-card h3 {
+            font-size: 24px;
+            margin-bottom: 14px;
+        }
+
+        .tool-card p {
+            color: #9fb4c7;
+            font-size: 15px;
+            margin-bottom: 28px;
+        }
+
+        .tool-button {
+            display: inline-block;
+            margin-top: auto;
+            width: fit-content;
+            padding: 11px 20px;
+            border: 1px solid #31516b;
+            border-radius: 8px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .tool-button:hover {
+            background: #4ddcff;
+            color: #06111f;
+            border-color: #4ddcff;
+        }
+
+        /* FEATURE SECTION */
+
+        .feature {
+            background: #091827;
+            border-top: 1px solid #17314a;
+            border-bottom: 1px solid #17314a;
+        }
+
+        .feature-inner {
+            max-width: 900px;
+            margin: auto;
+            padding: 80px 25px;
+            text-align: center;
+        }
+
+        .feature-inner h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .feature-inner p {
+            color: #9fb4c7;
+            font-size: 17px;
+        }
+
+        /* CTA */
+
+        .cta {
+            max-width: 850px;
+            margin: auto;
+            padding: 90px 25px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #9fb4c7;
+            margin-bottom: 28px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #4ddcff;
+            color: #06111f;
+            padding: 14px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(77, 220, 255, 0.2);
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #040b14;
+            border-top: 1px solid #17314a;
+            text-align: center;
+            padding: 40px 20px;
+            color: #71899d;
+        }
+
+        footer strong {
+            color: #4ddcff;
+        }
+
+        footer a {
+            color: #9fb4c7;
+            text-decoration: none;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav {
+                flex-direction: column;
+                padding: 20px 15px;
+            }
+
+            .logo span {
+                font-size: 27px;
+            }
+
+            nav a {
+                margin: 6px 9px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 80px 20px 70px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .resources {
+                padding: 65px 20px;
+            }
+
+            .section-heading h2 {
+                font-size: 32px;
+            }
+
+            .tool-card {
+                min-height: 270px;
+                padding: 27px;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            .logo img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .logo span {
+                font-size: 23px;
+            }
+
+            nav a {
+                margin: 5px 7px;
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero-label {
+                font-size: 12px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="nav">
+
+        <a href="index.html" class="logo">
+
+            <img
+                src="nexora-digital-logo.png"
+                alt="NEXORA DIGITAL"
+            >
+
+            <span>NEXORA DIGITAL</span>
+
+        </a>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="tools.html">Resources</a>
+            <a href="index.html#learn">Learn</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-label">
+                NEXORA DIGITAL
+            </div>
+
+            <h1>
+                Digital <span>Tools</span>
+            </h1>
+
+            <p>
+                Discover useful digital tools designed to help you
+                work smarter, create better and accomplish more.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="resources">
+
+        <div class="section-heading">
+
+            <h2>
+                Explore Our Tools
+            </h2>
+
+            <p>
+                Explore different categories of digital tools
+                selected to support modern digital work and learning.
+            </p>
+
+        </div>
+
+
+        <div class="tools-grid">
+
+
+            <article class="tool-card">
+
+                <div class="tool-number">
+                    01 / AI
+                </div>
+
+                <h3>
+                    AI Tools
+                </h3>
+
+                <p>
+                    Discover artificial intelligence tools that can
+                    help with writing, research, creativity,
+                    productivity and everyday digital tasks.
+                </p>
+
+                <a href="#" class="tool-button">
+                    Explore Tools
+                </a>
+
+            </article>
+
+
+            <article class="tool-card">
+
+                <div class="tool-number">
+                    02 / WORK
+                </div>
+
+                <h3>
+                    Productivity Tools
+                </h3>
+
+                <p>
+                    Find useful tools for organizing tasks,
+                    managing information, planning projects and
+                    improving your workflow.
+                </p>
+
+                <a href="#" class="tool-button">
+                    Explore Tools
+                </a>
+
+            </article>
+
+
+            <article class="tool-card">
+
+                <div class="tool-number">
+                    03 / CREATE
+                </div>
+
+                <h3>
+                    Creative Tools
+                </h3>
+
+                <p>
+                    Explore digital tools for graphic design,
+                    image creation, video editing, content creation
+                    and other creative projects.
+                </p>
+
+                <a href="#" class="tool-button">
+                    Explore Tools
+                </a>
+
+            </article>
+
+
+            <article class="tool-card">
+
+                <div class="tool-number">
+                    04 / WEB
+                </div>
+
+                <h3>
+                    Web Tools
+                </h3>
+
+                <p>
+                    Discover useful tools for websites, web
+                    development, testing, optimization and
+                    understanding the modern web.
+                </p>
+
+                <a href="#" class="tool-button">
+                    Explore Tools
+                </a>
+
+            </article>
+
+
+            <article class="tool-card">
+
+                <div class="tool-number">
+                    05 / LEARN
+                </div>
+
+                <h3>
+                    Education Tools
+                </h3>
+
+                <p>
+                    Find digital resources that can support
+                    studying, learning, research and the development
+                    of new skills.
+                </p>
+
+                <a href="#" class="tool-button">
+                    Explore Tools
+                </a>
+
+            </article>
+
+
+            <article class="tool-card">
+
+                <div class="tool-number">
+                    06 / BUSINESS
+                </div>
+
+                <h3>
+                    Business Tools
+                </h3>
+
+                <p>
+                    Explore digital tools that can help businesses
+                    with communication, organization, marketing
+                    and everyday operations.
+                </p>
+
+                <a href="#" class="tool-button">
+                    Explore Tools
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <section class="feature">
+
+        <div class="feature-inner">
+
+            <h2>
+                Built for the Digital World
+            </h2>
+
+            <p>
+                NEXORA DIGITAL brings useful digital knowledge,
+                resources and tools together in one accessible
+                platform. Our goal is to make discovering useful
+                technology simple and practical.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="cta">
+
+        <h2>
+            Continue Exploring NEXORA
+        </h2>
+
+        <p>
+            Return to the main platform and discover more
+            digital resources and learning materials.
+        </p>
+
+        <a href="index.html" class="cta-button">
+            Back to Home
+        </a>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 <strong>NEXORA DIGITAL</strong>.
+        All Rights Reserved.
+    </p>
+
+    <p>
+        Developed by Steven Fidel.
+    </p>
+
+</footer>
+
+</body>
+  </html>

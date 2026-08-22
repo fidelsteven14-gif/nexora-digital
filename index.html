@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="NEXORA DIGITAL — A modern digital platform for discovering useful tools, resources, guides and knowledge."
+    >
 
     <title>NEXORA DIGITAL | Explore. Learn. Create.</title>
 
-    <meta name="description"
-        content="NEXORA DIGITAL is a digital platform for discovering useful tools, resources, guides and knowledge.">
-
     <style>
 
-        /* =========================
-           GLOBAL STYLES
-        ========================== */
+        /* =====================================================
+           BASIC RESET
+        ===================================================== */
 
         * {
             margin: 0;
@@ -27,14 +32,16 @@
         }
 
         body {
+            margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             background: #06111f;
             color: #ffffff;
-            line-height: 1.6;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         img {
+            display: block;
             max-width: 100%;
         }
 
@@ -43,683 +50,746 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            HEADER
-        ========================== */
+        ===================================================== */
 
         header {
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 9999;
 
-            background: rgba(5, 15, 28, 0.96);
+            background: rgba(5, 16, 29, 0.97);
 
-            border-bottom: 1px solid rgba(77, 220, 255, 0.15);
+            border-bottom: 1px solid #17304a;
 
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
-        .nav {
-            max-width: 1250px;
-            margin: auto;
+        .navbar {
+            width: 100%;
+            max-width: 1200px;
 
-            padding: 20px 30px;
+            margin: 0 auto;
+
+            padding: 22px 30px;
 
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
 
             gap: 30px;
         }
 
 
-        /* =========================
-           LARGE WEBSITE NAME
-        ========================== */
+        /* =====================================================
+           LOGO + WEBSITE NAME
 
-        .logo {
+           THIS IS THE ONLY PLACE WHERE THE WEBSITE NAME
+           FONT SIZE HAS BEEN INCREASED.
+        ===================================================== */
+
+        .brand {
             display: flex;
             align-items: center;
 
             gap: 14px;
 
-            color: #4ddcff;
-
-            font-size: 32px;
-            font-weight: 900;
-
-            letter-spacing: 1.5px;
-
             white-space: nowrap;
         }
 
-        .logo img {
+        .brand img {
             width: 58px;
             height: 58px;
 
             object-fit: contain;
 
-            border-radius: 10px;
+            border-radius: 8px;
         }
 
-
-        /* =========================
-           NAVIGATION
-        ========================== */
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-        }
-
-        nav a {
-            color: #d8e7f5;
-
-            font-size: 15px;
-            font-weight: 600;
-
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #4ddcff;
-        }
-
-
-        /* =========================
-           HERO SECTION
-        ========================== */
-
-        .hero {
-            max-width: 1250px;
-
-            min-height: 650px;
-
-            margin: auto;
-
-            padding: 80px 30px;
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            align-items: center;
-
-            gap: 60px;
-        }
-
-
-        /* HERO TEXT */
-
-        .hero-content {
-            max-width: 650px;
-        }
-
-        .hero-small {
-            display: inline-block;
-
-            margin-bottom: 18px;
-
-            padding: 8px 15px;
-
-            border: 1px solid rgba(77, 220, 255, 0.3);
-
-            border-radius: 30px;
-
+        .brand-name {
             color: #4ddcff;
 
-            background: rgba(77, 220, 255, 0.06);
+            font-size: 36px;
 
-            font-size: 13px;
-
-            font-weight: bold;
+            font-weight: 900;
 
             letter-spacing: 1px;
 
-            text-transform: uppercase;
+            line-height: 1;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .navigation {
+            display: flex;
+            align-items: center;
+
+            gap: 28px;
+        }
+
+        .navigation a {
+            color: #dce8f3;
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+            transition: color 0.25s ease;
+        }
+
+        .navigation a:hover {
+            color: #4ddcff;
+        }
+
+
+        /* =====================================================
+           HERO SECTION
+        ===================================================== */
+
+        .hero {
+            min-height: 720px;
+
+            padding: 110px 25px 100px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(25, 102, 145, 0.25),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(0, 205, 255, 0.12),
+                    transparent 35%
+                ),
+                #06111f;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 900px;
+
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            display: inline-block;
+
+            margin-bottom: 34px;
+
+            padding: 10px 25px;
+
+            border: 1px solid #245773;
+
+            border-radius: 50px;
+
+            color: #4ddcff;
+
+            font-size: 15px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
         }
 
         .hero h1 {
-            font-size: clamp(52px, 7vw, 88px);
+            margin: 0 0 30px;
+
+            font-size: clamp(52px, 9vw, 92px);
 
             line-height: 0.98;
 
             letter-spacing: -3px;
 
-            margin-bottom: 28px;
+            font-weight: 900;
         }
 
         .hero h1 span {
             color: #4ddcff;
         }
 
-        .hero p {
-            color: #aebfd1;
+        .hero-description {
+            max-width: 780px;
 
-            font-size: 19px;
+            margin: 0 auto 40px;
 
-            max-width: 620px;
+            color: #a9bdcf;
 
-            margin-bottom: 35px;
+            font-size: 20px;
+
+            line-height: 1.8;
         }
 
 
-        /* HERO BUTTONS */
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
 
-        .buttons {
+        .hero-buttons {
             display: flex;
 
-            gap: 15px;
+            justify-content: center;
+            align-items: center;
+
+            gap: 16px;
 
             flex-wrap: wrap;
         }
 
-        .btn {
-            display: inline-block;
+        .button {
+            display: inline-flex;
 
-            padding: 15px 25px;
+            align-items: center;
+            justify-content: center;
 
-            border-radius: 8px;
+            min-width: 190px;
 
-            font-weight: bold;
+            padding: 16px 25px;
 
-            transition: 0.3s;
+            border-radius: 10px;
+
+            font-size: 16px;
+
+            font-weight: 800;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease;
         }
 
-        .primary {
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        .button-primary {
             background: #4ddcff;
 
-            color: #04101c;
+            color: #06111f;
 
-            box-shadow: 0 8px 30px rgba(77, 220, 255, 0.18);
+            box-shadow:
+                0 10px 30px rgba(77, 220, 255, 0.18);
         }
 
-        .primary:hover {
-            transform: translateY(-3px);
-
-            background: #70e5ff;
-
-            box-shadow: 0 12px 35px rgba(77, 220, 255, 0.3);
+        .button-primary:hover {
+            background: #71e5ff;
         }
 
-        .secondary {
-            border: 1px solid #35536d;
+        .button-secondary {
+            background: transparent;
 
             color: #ffffff;
 
-            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid #31516b;
         }
 
-        .secondary:hover {
-            transform: translateY(-3px);
+        .button-secondary:hover {
+            color: #4ddcff;
 
             border-color: #4ddcff;
-
-            color: #4ddcff;
         }
 
 
-        /* =========================
-           HERO IMAGE
-        ========================== */
+        /* =====================================================
+           GENERAL SECTION
+        ===================================================== */
 
-        .hero-image {
-            position: relative;
-
-            display: flex;
-
-            justify-content: center;
-        }
-
-        .hero-image img {
+        .section {
             width: 100%;
+            max-width: 1200px;
 
-            max-width: 600px;
-
-            height: 430px;
-
-            object-fit: cover;
-
-            border-radius: 20px;
-
-            border: 1px solid rgba(77, 220, 255, 0.2);
-
-            box-shadow:
-                0 25px 70px rgba(0, 0, 0, 0.45),
-                0 0 50px rgba(77, 220, 255, 0.08);
-        }
-
-
-        /* =========================
-           GENERAL SECTIONS
-        ========================== */
-
-        section {
-            max-width: 1250px;
-
-            margin: auto;
+            margin: 0 auto;
 
             padding: 100px 30px;
         }
 
-        .section-title {
+        .section-heading {
+            max-width: 800px;
+
+            margin: 0 auto 60px;
+
             text-align: center;
-
-            max-width: 750px;
-
-            margin: 0 auto 55px;
         }
 
-        .section-title h2 {
-            font-size: 42px;
+        .section-heading h2 {
+            margin-bottom: 16px;
 
-            line-height: 1.2;
+            font-size: 44px;
 
-            margin-bottom: 15px;
+            line-height: 1.15;
+
+            font-weight: 800;
         }
 
-        .section-title p {
-            color: #91a6ba;
+        .section-heading p {
+            color: #9db2c6;
 
-            font-size: 17px;
+            font-size: 18px;
+
+            line-height: 1.7;
         }
 
 
-        /* =========================
+        /* =====================================================
            RESOURCE CARDS
-        ========================== */
+        ===================================================== */
 
-        .cards {
+        .resource-grid {
             display: grid;
 
             grid-template-columns:
-                repeat(auto-fit, minmax(240px, 1fr));
+                repeat(2, minmax(0, 1fr));
 
-            gap: 25px;
+            gap: 28px;
         }
 
-        .card {
-            background: #0b1c2d;
-
-            border: 1px solid #1b354d;
-
-            border-radius: 16px;
-
+        .resource-card {
             overflow: hidden;
 
-            transition: 0.35s;
+            background: #0b1d2e;
 
-            box-shadow:
-                0 12px 35px rgba(0, 0, 0, 0.18);
+            border: 1px solid #1b3851;
+
+            border-radius: 22px;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-8px);
-
-            border-color: rgba(77, 220, 255, 0.7);
-
-            box-shadow:
-                0 20px 45px rgba(0, 0, 0, 0.3),
-                0 0 25px rgba(77, 220, 255, 0.08);
-        }
-
-
-        /* CARD IMAGE */
-
-        .card-image {
-            width: 100%;
-
-            height: 210px;
-
-            object-fit: cover;
-
-            display: block;
-        }
-
-
-        /* CARD CONTENT */
-
-        .card-content {
-            padding: 28px;
-        }
-
-        .card h3 {
-            font-size: 23px;
-
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            color: #9fb3c6;
-
-            font-size: 15px;
-        }
-
-
-        /* =========================
-           LEARNING SECTION
-        ========================== */
-
-        #learn {
-            background:
-                linear-gradient(
-                    180deg,
-                    #06111f 0%,
-                    #091a2a 100%
-                );
-        }
-
-        .learning-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
-
-            gap: 25px;
-        }
-
-        .learning-card {
-            padding: 32px;
-
-            background: rgba(12, 30, 47, 0.9);
-
-            border: 1px solid #1b354d;
-
-            border-radius: 16px;
-
-            transition: 0.3s;
-        }
-
-        .learning-card:hover {
+        .resource-card:hover {
             transform: translateY(-6px);
 
-            border-color: #4ddcff;
-        }
-
-        .learning-number {
-            color: #4ddcff;
-
-            font-size: 15px;
-
-            font-weight: bold;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 20px;
-        }
-
-        .learning-card h3 {
-            font-size: 23px;
-
-            margin-bottom: 12px;
-        }
-
-        .learning-card p {
-            color: #9fb3c6;
-
-            font-size: 15px;
-        }
-
-
-        /* =========================
-           ABOUT SECTION
-        ========================== */
-
-        .about {
-            max-width: none;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #081827,
-                    #0b2033
-                );
-
-            border-top: 1px solid #17354c;
-
-            border-bottom: 1px solid #17354c;
-        }
-
-        .about-inner {
-            max-width: 850px;
-
-            margin: auto;
-
-            text-align: center;
-        }
-
-        .about-inner p {
-            color: #aebfd0;
-
-            font-size: 17px;
-
-            margin-bottom: 18px;
-        }
-
-
-        /* =========================
-           CONTACT / CTA
-        ========================== */
-
-        .cta {
-            text-align: center;
-
-            background: #06111f;
-        }
-
-        .contact-box {
-            max-width: 850px;
-
-            margin: auto;
-
-            padding: 55px 35px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #0c2135,
-                    #0b1727
-                );
-
-            border: 1px solid #1b3b55;
-
-            border-radius: 20px;
+            border-color: #35cce9;
 
             box-shadow:
                 0 20px 50px rgba(0, 0, 0, 0.25);
         }
 
-        .contact-box h2 {
-            font-size: 38px;
+        .resource-card-image {
+            width: 100%;
+
+            height: 250px;
+
+            object-fit: cover;
+        }
+
+        .resource-card-content {
+            padding: 32px;
+        }
+
+        .resource-number {
+            display: block;
 
             margin-bottom: 15px;
+
+            color: #4ddcff;
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+        .resource-card h3 {
+            margin-bottom: 13px;
+
+            font-size: 29px;
+
+            line-height: 1.2;
+        }
+
+        .resource-card p {
+            margin-bottom: 24px;
+
+            color: #9fb4c8;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+        .card-link {
+            display: inline-block;
+
+            color: #4ddcff;
+
+            font-size: 16px;
+
+            font-weight: 800;
+
+            border-bottom: 1px solid transparent;
+
+            transition: border-color 0.25s ease;
+        }
+
+        .card-link:hover {
+            border-color: #4ddcff;
+        }
+
+
+        /* =====================================================
+           LEARN SECTION
+        ===================================================== */
+
+        .learn-section {
+            width: 100%;
+
+            background: #071525;
+
+            border-top: 1px solid #142d44;
+
+            border-bottom: 1px solid #142d44;
+        }
+
+        .learn-container {
+            width: 100%;
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 100px 30px;
+        }
+
+        .learn-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 24px;
+        }
+
+        .learn-card {
+            padding: 35px;
+
+            background: #0b1d2e;
+
+            border: 1px solid #1b3851;
+
+            border-radius: 20px;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .learn-card:hover {
+            transform: translateY(-6px);
+
+            border-color: #4ddcff;
+        }
+
+        .learn-number {
+            margin-bottom: 28px;
+
+            color: #4ddcff;
+
+            font-size: 15px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+        .learn-card h3 {
+            margin-bottom: 15px;
+
+            font-size: 28px;
+        }
+
+        .learn-card p {
+            color: #9fb4c8;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           ABOUT SECTION
+        ===================================================== */
+
+        .about-section {
+            width: 100%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #081827,
+                    #06111f
+                );
+
+            border-bottom: 1px solid #142d44;
+        }
+
+        .about-container {
+            max-width: 850px;
+
+            margin: 0 auto;
+
+            padding: 100px 30px;
+
+            text-align: center;
+        }
+
+        .about-container p {
+            margin-bottom: 20px;
+
+            color: #a9bdcf;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           CONTACT SECTION
+        ===================================================== */
+
+        .contact-section {
+            width: 100%;
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 100px 30px;
+
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 850px;
+
+            margin: 0 auto;
+
+            padding: 55px 35px;
+
+            background: #0b1d2e;
+
+            border: 1px solid #1b3851;
+
+            border-radius: 22px;
+        }
+
+        .contact-box h2 {
+            margin-bottom: 15px;
+
+            font-size: 40px;
         }
 
         .contact-box p {
-            color: #9fb3c6;
+            margin-bottom: 30px;
 
-            max-width: 650px;
+            color: #9fb4c8;
 
-            margin: 0 auto 28px;
+            font-size: 18px;
+
+            line-height: 1.7;
         }
 
-        .contact-link {
-            display: inline-block;
+        .email-link {
+            color: #4ddcff;
 
-            color: #04101c;
+            font-size: 17px;
 
-            background: #4ddcff;
+            font-weight: 800;
 
-            padding: 14px 25px;
-
-            border-radius: 8px;
-
-            font-weight: bold;
-
-            transition: 0.3s;
+            border-bottom: 1px solid transparent;
         }
 
-        .contact-link:hover {
-            background: #70e5ff;
-
-            transform: translateY(-3px);
+        .email-link:hover {
+            border-color: #4ddcff;
         }
 
 
-        /* =========================
+        /* =====================================================
            FOOTER
-        ========================== */
+        ===================================================== */
 
         footer {
-            background: #030b14;
+            padding: 35px 20px;
 
-            padding: 40px 20px;
+            background: #040b14;
+
+            border-top: 1px solid #13283c;
 
             text-align: center;
 
-            color: #71869a;
+            color: #71879b;
+        }
 
-            border-top: 1px solid #142a3e;
+        footer p {
+            margin: 5px 0;
         }
 
         footer strong {
             color: #4ddcff;
         }
 
-        footer p {
-            margin-bottom: 8px;
-        }
 
+        /* =====================================================
+           TABLET
+        ===================================================== */
 
-        /* =========================
-           MOBILE DESIGN
-        ========================== */
+        @media (max-width: 850px) {
 
-        @media (max-width: 900px) {
-
-            .nav {
+            .navbar {
                 flex-direction: column;
 
-                padding: 18px 20px;
+                padding: 20px;
 
-                gap: 18px;
+                gap: 22px;
             }
 
-            .logo {
-                font-size: 30px;
+            .brand-name {
+                font-size: 32px;
             }
 
-            nav {
-                gap: 18px;
+            .navigation {
+                justify-content: center;
 
                 flex-wrap: wrap;
 
-                justify-content: center;
+                gap: 20px;
             }
 
-            nav a {
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .learn-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 650px;
+
+                padding: 80px 20px;
+            }
+
+            .hero h1 {
+                font-size: clamp(48px, 12vw, 72px);
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 520px) {
+
+            .navbar {
+                padding: 18px 15px;
+            }
+
+            .brand {
+                gap: 10px;
+            }
+
+            .brand img {
+                width: 50px;
+                height: 50px;
+            }
+
+            /*
+             * Still intentionally large and bold.
+             * This is the website name only.
+             */
+            .brand-name {
+                font-size: 28px;
+
+                letter-spacing: 0.5px;
+            }
+
+            .navigation {
+                gap: 16px;
+            }
+
+            .navigation a {
                 font-size: 14px;
             }
 
             .hero {
-                grid-template-columns: 1fr;
-
-                text-align: center;
-
-                padding-top: 65px;
-
-                gap: 45px;
+                padding: 75px 18px;
             }
 
-            .hero-content {
-                margin: auto;
-            }
+            .hero-label {
+                padding: 9px 16px;
 
-            .hero p {
-                margin-left: auto;
-
-                margin-right: auto;
-            }
-
-            .buttons {
-                justify-content: center;
-            }
-
-            .hero-image img {
-                height: 350px;
-            }
-        }
-
-
-        @media (max-width: 600px) {
-
-            .logo {
-                font-size: 24px;
-
-                letter-spacing: 1px;
-            }
-
-            .logo img {
-                width: 48px;
-
-                height: 48px;
-            }
-
-            nav {
-                gap: 10px;
-            }
-
-            nav a {
-                font-size: 13px;
-
-                padding: 5px;
-            }
-
-            .hero {
-                min-height: auto;
-
-                padding: 65px 20px 80px;
+                font-size: 12px;
             }
 
             .hero h1 {
-                font-size: 54px;
+                font-size: 48px;
 
                 letter-spacing: -2px;
             }
 
-            .hero p {
+            .hero-description {
                 font-size: 17px;
             }
 
-            .hero-image img {
-                height: 260px;
-
-                border-radius: 14px;
+            .section,
+            .learn-container,
+            .contact-section {
+                padding: 75px 18px;
             }
 
-            section {
-                padding: 75px 20px;
+            .section-heading {
+                margin-bottom: 45px;
             }
 
-            .section-title h2 {
-                font-size: 32px;
+            .section-heading h2 {
+                font-size: 34px;
             }
 
-            .section-title p {
-                font-size: 15px;
+            .resource-card-image {
+                height: 210px;
             }
 
-            .card-image {
-                height: 190px;
+            .resource-card-content {
+                padding: 27px;
+            }
+
+            .resource-card h3 {
+                font-size: 25px;
+            }
+
+            .resource-card p {
+                font-size: 16px;
+            }
+
+            .learn-card {
+                padding: 28px;
             }
 
             .contact-box {
-                padding: 40px 22px;
+                padding: 40px 25px;
             }
 
             .contact-box h2 {
-                font-size: 31px;
+                font-size: 32px;
             }
         }
 
@@ -730,458 +800,542 @@
 <body>
 
 
-<!-- =========================
-     HEADER
-========================== -->
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-<header>
+    <header>
 
-    <div class="nav">
-
-        <div class="logo">
-
-            <img
-                src="nexora-digital-logo.png"
-                alt="NEXORA DIGITAL Logo"
-            >
-
-            <span>NEXORA DIGITAL</span>
-
-        </div>
+        <div class="navbar">
 
 
-        <nav>
-
-            <a href="#home">Home</a>
-
-            <a href="#resources">Resources</a>
-
-            <a href="#learn">Learn</a>
-
-            <a href="#about">About</a>
-
-            <a href="#contact">Contact</a>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-
-<!-- =========================
-     MAIN CONTENT
-========================== -->
-
-<main>
-
-
-<!-- =========================
-     HERO
-========================== -->
-
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <span class="hero-small">
-            Digital Knowledge & Resources
-        </span>
-
-
-        <h1>
-
-            Explore.<br>
-
-            <span>Learn. Create.</span>
-
-        </h1>
-
-
-        <p>
-
-            NEXORA DIGITAL is a modern digital platform
-            for discovering useful tools, resources,
-            guides and knowledge to help you learn,
-            work and create.
-
-        </p>
-
-
-        <div class="buttons">
+            <!-- WEBSITE BRAND -->
 
             <a
-                href="#resources"
-                class="btn primary"
+                href="index.html"
+                class="brand"
+                aria-label="NEXORA DIGITAL Home"
             >
-                Explore Resources
+
+                <img
+                    src="nexora-digital-logo.png"
+                    alt="NEXORA DIGITAL Logo"
+                >
+
+                <span class="brand-name">
+                    NEXORA DIGITAL
+                </span>
+
             </a>
 
 
-            <a
-                href="#about"
-                class="btn secondary"
+            <!-- NAVIGATION -->
+
+            <nav
+                class="navigation"
+                aria-label="Main navigation"
             >
-                Discover NEXORA
-            </a>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <!-- DIRECT LINK TO YOUR EXISTING tools.html -->
+
+                <a href="tools.html">
+                    Resources
+                </a>
+
+                <a href="#learn">
+                    Learn
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </nav>
 
         </div>
 
-    </div>
+    </header>
 
 
-    <div class="hero-image">
 
-        <img
-            src="design-solutions.png"
-            alt="Digital design and technology workspace"
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section
+            class="hero"
+            id="home"
         >
 
-    </div>
-
-</section>
+            <div class="hero-content">
 
 
-
-<!-- =========================
-     RESOURCES
-========================== -->
-
-<section id="resources">
-
-    <div class="section-title">
-
-        <h2>
-            Explore Digital Resources
-        </h2>
-
-        <p>
-            Discover resources designed to help you
-            learn, work and create in the digital world.
-        </p>
-
-    </div>
+                <div class="hero-label">
+                    DIGITAL KNOWLEDGE &amp; RESOURCES
+                </div>
 
 
-    <div class="cards">
+                <h1>
+                    Explore.
+                    <br>
+                    <span>Learn. Create.</span>
+                </h1>
 
 
-        <!-- CARD 1 -->
-
-        <div class="card">
-
-            <img
-                src="design-solutions.png"
-                alt="Digital Tools and Design Solutions"
-                class="card-image"
-            >
-
-            <div class="card-content">
-
-                <h3>
-                    Digital Tools
-                </h3>
-
-                <p>
-                    Discover useful digital tools that can
-                    make everyday tasks easier, faster and
-                    more productive.
+                <p class="hero-description">
+                    NEXORA DIGITAL is a modern digital platform
+                    for discovering useful tools, resources,
+                    guides and knowledge to help you learn,
+                    work and create.
                 </p>
 
-            </div>
 
-        </div>
-
+                <div class="hero-buttons">
 
 
-        <!-- CARD 2 -->
+                    <!-- THIS NOW OPENS tools.html -->
 
-        <div class="card">
+                    <a
+                        href="tools.html"
+                        class="button button-primary"
+                    >
+                        Explore Resources
+                    </a>
 
-            <img
-                src="web-development.png"
-                alt="Web Development Resources"
-                class="card-image"
-            >
 
-            <div class="card-content">
+                    <a
+                        href="#about"
+                        class="button button-secondary"
+                    >
+                        Discover NEXORA
+                    </a>
 
-                <h3>
-                    Web Resources
-                </h3>
-
-                <p>
-                    Find useful resources and inspiration
-                    for web design, creativity and digital
-                    projects.
-                </p>
+                </div>
 
             </div>
 
-        </div>
+        </section>
 
 
 
-        <!-- CARD 3 -->
+        <!-- =================================================
+             RESOURCES
 
-        <div class="card">
+             IMPORTANT:
+             THIS SECTION EXISTS ONLY ONCE.
+        ================================================== -->
 
-            <img
-                src="software-development.png"
-                alt="Software Development Resources"
-                class="card-image"
-            >
-
-            <div class="card-content">
-
-                <h3>
-                    Software Development
-                </h3>
-
-                <p>
-                    Explore resources for learning software
-                    development, programming and modern
-                    technology.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- CARD 4 -->
-
-        <div class="card">
-
-            <img
-                src="learning-resources.png"
-                alt="Learning Resources"
-                class="card-image"
-            >
-
-            <div class="card-content">
-
-                <h3>
-                    Learning Resources
-                </h3>
-
-                <p>
-                    Access educational materials, guides
-                    and useful information for developing
-                    digital skills.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     LEARN
-========================== -->
-
-<section id="learn">
-
-    <div class="section-title">
-
-        <h2>
-            Learn Something New
-        </h2>
-
-        <p>
-            Practical knowledge and ideas for the
-            modern digital world.
-        </p>
-
-    </div>
-
-
-    <div class="learning-grid">
-
-
-        <div class="learning-card">
-
-            <div class="learning-number">
-                01 — KNOWLEDGE
-            </div>
-
-            <h3>
-                Technology Guides
-            </h3>
-
-            <p>
-                Simple guides explaining useful
-                technologies, concepts and digital
-                practices in an easy-to-understand way.
-            </p>
-
-        </div>
-
-
-
-        <div class="learning-card">
-
-            <div class="learning-number">
-                02 — SKILLS
-            </div>
-
-            <h3>
-                Digital Skills
-            </h3>
-
-            <p>
-                Explore practical skills that can help
-                you become more confident when using
-                modern technology.
-            </p>
-
-        </div>
-
-
-
-        <div class="learning-card">
-
-            <div class="learning-number">
-                03 — PRODUCTIVITY
-            </div>
-
-            <h3>
-                Productivity
-            </h3>
-
-            <p>
-                Discover useful ideas and resources for
-                organizing your work and completing
-                digital tasks more effectively.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     ABOUT
-========================== -->
-
-<section
-    class="about"
-    id="about"
->
-
-    <div class="about-inner">
-
-        <div class="section-title">
-
-            <h2>
-                About NEXORA DIGITAL
-            </h2>
-
-            <p>
-                A place to explore, learn and create.
-            </p>
-
-        </div>
-
-
-        <p>
-
-            NEXORA DIGITAL is an independent digital
-            platform created to bring useful digital
-            resources, knowledge and tools together
-            in one accessible place.
-
-        </p>
-
-
-        <p>
-
-            Our goal is simple: make useful digital
-            information easier to discover, understand
-            and use.
-
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     CONTACT
-========================== -->
-
-<section
-    class="cta"
-    id="contact"
->
-
-    <div class="contact-box">
-
-        <h2>
-            Stay Connected
-        </h2>
-
-
-        <p>
-
-            Have a question, suggestion or resource
-            to share? Get in touch with NEXORA DIGITAL.
-
-        </p>
-
-
-        <a
-            href="mailto:nexoradigital749@gmail.com"
-            class="contact-link"
+        <section
+            class="section"
+            id="resources"
         >
-            Contact NEXORA DIGITAL
-        </a>
 
-    </div>
+            <div class="section-heading">
 
-</section>
+                <h2>
+                    Explore Digital Resources
+                </h2>
 
+                <p>
+                    Discover resources designed to help you
+                    learn, work and create in the digital world.
+                </p>
 
-</main>
-
-
-
-<!-- =========================
-     FOOTER
-========================== -->
-
-<footer>
-
-    <p>
-
-        © 2026
-        <strong>NEXORA DIGITAL</strong>.
-        All Rights Reserved.
-
-    </p>
+            </div>
 
 
-    <p>
+            <div class="resource-grid">
 
-        Developed by Steven Fidel.
 
-    </p>
+                <!-- =========================================
+                     CARD 01 — DIGITAL TOOLS
+                ========================================== -->
 
-</footer>
+                <article class="resource-card">
+
+                    <img
+                        src="design-solutions.png"
+                        alt="Digital tools and design solutions"
+                        class="resource-card-image"
+                    >
+
+                    <div class="resource-card-content">
+
+                        <span class="resource-number">
+                            01 — DIGITAL TOOLS
+                        </span>
+
+                        <h3>
+                            Digital Tools
+                        </h3>
+
+                        <p>
+                            Discover useful digital tools that
+                            can make everyday tasks easier,
+                            faster and more productive.
+                        </p>
+
+
+                        <!-- DIRECT LINK TO tools.html -->
+
+                        <a
+                            href="tools.html"
+                            class="card-link"
+                        >
+                            Explore Digital Tools →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     CARD 02 — WEB RESOURCES
+                ========================================== -->
+
+                <article class="resource-card">
+
+                    <img
+                        src="web-development.png"
+                        alt="Web development resources"
+                        class="resource-card-image"
+                    >
+
+                    <div class="resource-card-content">
+
+                        <span class="resource-number">
+                            02 — WEB RESOURCES
+                        </span>
+
+                        <h3>
+                            Web Resources
+                        </h3>
+
+                        <p>
+                            Find useful resources and inspiration
+                            for web design, creativity and digital
+                            projects.
+                        </p>
+
+
+                        <a
+                            href="tools.html"
+                            class="card-link"
+                        >
+                            Explore Web Resources →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     CARD 03 — SOFTWARE DEVELOPMENT
+                ========================================== -->
+
+                <article class="resource-card">
+
+                    <img
+                        src="software-development.png"
+                        alt="Software development resources"
+                        class="resource-card-image"
+                    >
+
+                    <div class="resource-card-content">
+
+                        <span class="resource-number">
+                            03 — SOFTWARE
+                        </span>
+
+                        <h3>
+                            Software Development
+                        </h3>
+
+                        <p>
+                            Explore resources for learning
+                            software development, programming
+                            and modern technology.
+                        </p>
+
+
+                        <a
+                            href="tools.html"
+                            class="card-link"
+                        >
+                            Explore Software Resources →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     CARD 04 — LEARNING RESOURCES
+                ========================================== -->
+
+                <article class="resource-card">
+
+                    <img
+                        src="learning-resources.png"
+                        alt="Learning resources"
+                        class="resource-card-image"
+                    >
+
+                    <div class="resource-card-content">
+
+                        <span class="resource-number">
+                            04 — LEARNING
+                        </span>
+
+                        <h3>
+                            Learning Resources
+                        </h3>
+
+                        <p>
+                            Access useful educational materials,
+                            guides and resources for developing
+                            digital skills.
+                        </p>
+
+
+                        <a
+                            href="tools.html"
+                            class="card-link"
+                        >
+                            Explore Learning Resources →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LEARN SECTION
+
+             THIS IS SEPARATE FROM THE RESOURCE SECTION.
+        ================================================== -->
+
+        <section
+            class="learn-section"
+            id="learn"
+        >
+
+            <div class="learn-container">
+
+
+                <div class="section-heading">
+
+                    <h2>
+                        Learn Something New
+                    </h2>
+
+                    <p>
+                        Practical knowledge and ideas for
+                        the modern digital world.
+                    </p>
+
+                </div>
+
+
+                <div class="learn-grid">
+
+
+                    <!-- LEARN CARD 01 -->
+
+                    <article class="learn-card">
+
+                        <div class="learn-number">
+                            01 — KNOWLEDGE
+                        </div>
+
+                        <h3>
+                            Technology Guides
+                        </h3>
+
+                        <p>
+                            Simple guides explaining useful
+                            technologies, concepts and digital
+                            practices in an easy-to-understand way.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- LEARN CARD 02 -->
+
+                    <article class="learn-card">
+
+                        <div class="learn-number">
+                            02 — SKILLS
+                        </div>
+
+                        <h3>
+                            Digital Skills
+                        </h3>
+
+                        <p>
+                            Explore practical skills that can
+                            help you become more confident when
+                            using modern technology.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- LEARN CARD 03 -->
+
+                    <article class="learn-card">
+
+                        <div class="learn-number">
+                            03 — PRODUCTIVITY
+                        </div>
+
+                        <h3>
+                            Productivity
+                        </h3>
+
+                        <p>
+                            Discover useful ideas and resources
+                            for organizing your work and getting
+                            more done with digital tools.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ABOUT
+        ================================================== -->
+
+        <section
+            class="about-section"
+            id="about"
+        >
+
+            <div class="about-container">
+
+
+                <div class="section-heading">
+
+                    <h2>
+                        About NEXORA DIGITAL
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    NEXORA DIGITAL is an independent digital
+                    platform created to bring useful digital
+                    resources, knowledge and tools together
+                    in one accessible place.
+                </p>
+
+
+                <p>
+                    Our goal is simple: make useful digital
+                    information easier to discover, understand
+                    and use.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTACT
+        ================================================== -->
+
+        <section
+            class="contact-section"
+            id="contact"
+        >
+
+            <div class="contact-box">
+
+                <h2>
+                    Stay Connected
+                </h2>
+
+                <p>
+                    Have a question, suggestion or resource
+                    to share? Get in touch with NEXORA DIGITAL.
+                </p>
+
+
+                <a
+                    href="mailto:nexoradigital749@gmail.com"
+                    class="email-link"
+                >
+                    nexoradigital749@gmail.com
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            © 2026
+            <strong>NEXORA DIGITAL</strong>.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Developed by Steven Fidel.
+        </p>
+
+    </footer>
 
 
 </body>
-
     </html>

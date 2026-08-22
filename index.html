@@ -44,10 +44,20 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 24px;
             font-weight: 800;
             letter-spacing: 1px;
             color: #4ddcff;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 8px;
         }
 
         nav a {
@@ -68,6 +78,11 @@
             text-align: center;
             padding: 80px 20px;
             background:
+                linear-gradient(
+                    rgba(7, 17, 31, 0.72),
+                    rgba(7, 17, 31, 0.82)
+                ),
+                url("nexora-digital-logo.png") center/cover no-repeat,
                 radial-gradient(circle at top right, #123d5d, transparent 35%),
                 radial-gradient(circle at bottom left, #102b49, transparent 35%),
                 #07111f;
@@ -153,6 +168,7 @@
             border-radius: 14px;
             padding: 28px;
             transition: 0.3s;
+            overflow: hidden;
         }
 
         .card:hover {
@@ -160,19 +176,27 @@
             border-color: #4ddcff;
         }
 
-        .icon {
-    margin-bottom: 15px;
-}
+        .card-image {
+            width: calc(100% + 56px);
+            height: 180px;
+            margin: -28px -28px 25px -28px;
+            object-fit: cover;
+            display: block;
+        }
 
-.icon svg {
-    width: 46px;
-    height: 46px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
+        .icon {
+            margin-bottom: 15px;
+        }
+
+        .icon svg {
+            width: 46px;
+            height: 46px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
 
         .card h3 {
             margin-bottom: 10px;
@@ -218,9 +242,19 @@
         }
 
         @media (max-width: 700px) {
+
             .nav {
                 flex-direction: column;
                 gap: 15px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .logo img {
+                width: 42px;
+                height: 42px;
             }
 
             nav a {
@@ -235,6 +269,10 @@
             .hero p {
                 font-size: 17px;
             }
+
+            .card-image {
+                height: 160px;
+            }
         }
     </style>
 </head>
@@ -243,7 +281,11 @@
 
 <header>
     <div class="nav">
-        <div class="logo">NEXORA DIGITAL</div>
+
+        <div class="logo">
+            <img src="nexora-digital-logo.png" alt="NEXORA DIGITAL Logo">
+            <span>NEXORA DIGITAL</span>
+        </div>
 
         <nav>
             <a href="#home">Home</a>
@@ -252,12 +294,14 @@
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </nav>
+
     </div>
 </header>
 
 <main>
 
 <section class="hero" id="home">
+
     <div class="hero-content">
 
         <h1>
@@ -276,126 +320,195 @@
         </div>
 
     </div>
+
 </section>
 
 <section id="resources">
 
     <div class="section-title">
+
         <h2>Explore Digital Resources</h2>
-        <p>Discover resources designed to help you learn, work and create.</p>
+
+        <p>
+            Discover resources designed to help you learn, work and create.
+        </p>
+
     </div>
 
     <div class="cards">
 
         <div class="card">
+
+            <img
+                src="design-solutions.png"
+                alt="Digital Tools and Design Solutions"
+                class="card-image"
+            >
+
             <div class="icon">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-2.6 2.4-2.4z"/>
-        <path d="M15 3l6 6"/>
-    </svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-2.6 2.4-2.4z"/>
+                    <path d="M15 3l6 6"/>
+                </svg>
             </div>
+
             <h3>Digital Tools</h3>
+
             <p>
                 Discover useful digital tools that can make everyday
                 tasks easier and more productive.
             </p>
+
         </div>
 
+
         <div class="card">
+
+            <img
+                src="web-development.png"
+                alt="Web Development Resources"
+                class="card-image"
+            >
+
             <div class="icon">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 3a9 9 0 0 0 0 18h1.5a2 2 0 0 0 0-4H12a2 2 0 0 1 0-4h3a6 6 0 0 0 0-10z"/>
-        <circle cx="7.5" cy="10" r="1"/>
-        <circle cx="10" cy="7" r="1"/>
-        <circle cx="14" cy="7" r="1"/>
-    </svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3a9 9 0 0 0 0 18h1.5a2 2 0 0 0 0-4H12a2 2 0 0 1 0-4h3a6 6 0 0 0 0-10z"/>
+                    <circle cx="7.5" cy="10" r="1"/>
+                    <circle cx="10" cy="7" r="1"/>
+                    <circle cx="14" cy="7" r="1"/>
+                </svg>
             </div>
+
             <h3>Web Resources</h3>
-            <p>
-                Find resources and inspiration for digital design,
-                creativity and visual projects.
-            </p>
-        </div>
 
-        <div class="card">
-            <div class="icon">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="3" y="4" width="18" height="13" rx="2"/>
-        <path d="M8 21h8"/>
-        <path d="M12 17v4"/>
-        <path d="M3 14h18"/>
-    </svg>
-            </div>
-            <h3>Design Resources</h3>
             <p>
                 Explore resources for learning web technologies,
                 development and the modern internet.
             </p>
+
         </div>
 
+
         <div class="card">
+
+            <img
+                src="software-development.png"
+                alt="Software Development Resources"
+                class="card-image"
+            >
+
             <div class="icon">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 3a9 9 0 0 0 0 18h1.5a2 2 0 0 0 0-4H12a2 2 0 0 1 0-4h3a6 6 0 0 0 0-10z"/>
-        <circle cx="7.5" cy="10" r="1"/>
-        <circle cx="10" cy="7" r="1"/>
-        <circle cx="14" cy="7" r="1"/>
-    </svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="13" rx="2"/>
+                    <path d="M8 21h8"/>
+                    <path d="M12 17v4"/>
+                    <path d="M3 14h18"/>
+                </svg>
             </div>
+
+            <h3>Design Resources</h3>
+
+            <p>
+                Find resources and inspiration for digital design,
+                creativity and visual projects.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <img
+                src="learning-resources.png"
+                alt="Learning Resources"
+                class="card-image"
+            >
+
+            <div class="icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3a9 9 0 0 0 0 18h1.5a2 2 0 0 0 0-4H12a2 2 0 0 1 0-4h3a6 6 0 0 0 0-10z"/>
+                    <circle cx="7.5" cy="10" r="1"/>
+                    <circle cx="10" cy="7" r="1"/>
+                    <circle cx="14" cy="7" r="1"/>
+                </svg>
+            </div>
+
             <h3>Learning Resources</h3>
+
             <p>
                 Access useful educational materials and guides for
                 developing digital skills.
             </p>
+
         </div>
 
     </div>
+
 </section>
+
 
 <section id="learn">
 
     <div class="section-title">
+
         <h2>Learn Something New</h2>
+
         <p>
             Practical knowledge for the digital world.
         </p>
+
     </div>
 
     <div class="cards">
 
         <div class="card">
+
             <h3>Technology Guides</h3>
+
             <p>
                 Simple guides explaining useful technologies,
                 concepts and digital practices.
             </p>
+
         </div>
 
+
         <div class="card">
+
             <h3>Digital Skills</h3>
+
             <p>
                 Explore practical skills that can help you become
                 more confident with modern technology.
             </p>
+
         </div>
 
+
         <div class="card">
+
             <h3>Productivity</h3>
+
             <p>
                 Discover ideas and resources for improving the way
                 you organize and complete digital work.
             </p>
+
         </div>
 
     </div>
+
 </section>
+
 
 <section class="about" id="about">
 
     <div class="about-inner">
 
         <div class="section-title">
+
             <h2>About NEXORA DIGITAL</h2>
+
         </div>
 
         <p>
@@ -413,6 +526,7 @@
 
 </section>
 
+
 <section class="cta" id="contact">
 
     <div class="section-title">
@@ -427,7 +541,7 @@
         <br>
 
         <a href="mailto:nexoradigital749@gmail.com">
-    Contact NEXORA DIGITAL
+            Contact NEXORA DIGITAL
         </a>
 
     </div>
@@ -435,6 +549,7 @@
 </section>
 
 </main>
+
 
 <footer>
 
@@ -449,4 +564,4 @@
 </footer>
 
 </body>
-  </html>
+    </html>

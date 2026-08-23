@@ -12,25 +12,13 @@
 
     <meta
         name="description"
-        content="NEXORA DIGITAL Technology Guides — Learn modern technology through structured digital courses."
+        content="NEXORA DIGITAL Technology Guides — Learn modern technology through structured courses."
     >
 
-    <meta
-        name="theme-color"
-        content="#06111f"
-    >
-
-    <title>
-        NEXORA DIGITAL | Technology Guides
-    </title>
+    <title>NEXORA DIGITAL | Technology Guides</title>
 
 
     <style>
-
-        /* =====================================================
-           NEXORA DIGITAL
-           TECHNOLOGY GUIDES
-        ===================================================== */
 
         * {
             margin: 0;
@@ -57,14 +45,6 @@
             line-height: 1.7;
 
             overflow-x: hidden;
-
-            -webkit-font-smoothing: antialiased;
-        }
-
-
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
         }
 
 
@@ -90,8 +70,6 @@
 
             z-index: 9999;
 
-            width: 100%;
-
             background:
                 rgba(5, 16, 29, 0.97);
 
@@ -110,7 +88,7 @@
 
             margin: auto;
 
-            padding: 20px 25px;
+            padding: 22px 30px;
 
             display: flex;
 
@@ -127,27 +105,25 @@
 
             align-items: center;
 
-            gap: 12px;
+            gap: 14px;
 
             white-space: nowrap;
         }
 
 
         .brand img {
-            width: 55px;
+            width: 58px;
 
-            height: 55px;
+            height: 58px;
 
             object-fit: contain;
-
-            border-radius: 8px;
         }
 
 
         .brand-name {
             color: #4ddcff;
 
-            font-size: 32px;
+            font-size: 34px;
 
             font-weight: 900;
 
@@ -163,6 +139,8 @@
             gap: 25px;
 
             flex-wrap: wrap;
+
+            justify-content: center;
         }
 
 
@@ -187,7 +165,7 @@
            HERO
         ===================================================== */
 
-        .guide-hero {
+        .technology-hero {
             width: 100%;
 
             padding:
@@ -213,8 +191,8 @@
         }
 
 
-        .guide-hero-inner {
-            max-width: 900px;
+        .technology-hero-inner {
+            max-width: 950px;
 
             margin: auto;
         }
@@ -239,15 +217,15 @@
 
             font-weight: 900;
 
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
         }
 
 
-        .guide-hero h1 {
+        .technology-hero h1 {
             margin-bottom: 25px;
 
             font-size:
-                clamp(42px, 8vw, 76px);
+                clamp(45px, 8vw, 76px);
 
             line-height: 1;
 
@@ -255,13 +233,13 @@
         }
 
 
-        .guide-hero h1 span {
+        .technology-hero h1 span {
             color: #4ddcff;
         }
 
 
-        .guide-hero p {
-            max-width: 760px;
+        .technology-hero p {
+            max-width: 800px;
 
             margin: auto;
 
@@ -274,23 +252,18 @@
 
 
         /* =====================================================
-           MAIN
+           COURSES SECTION
         ===================================================== */
 
-        main {
-            width: 100%;
-        }
-
-
-        .course-section {
+        .courses-section {
             width: 100%;
 
-            max-width: 1200px;
+            max-width: 1250px;
 
             margin: auto;
 
             padding:
-                90px 25px;
+                80px 30px 110px;
         }
 
 
@@ -316,36 +289,42 @@
         .section-heading p {
             color: #9db2c6;
 
-            font-size: 18px;
+            font-size: 17px;
         }
 
 
         /* =====================================================
-           COURSE CATALOGUE
+           COURSE GRID
         ===================================================== */
 
         .course-grid {
             display: grid;
 
             grid-template-columns:
-                repeat(2, minmax(0, 1fr));
+                repeat(3, minmax(0, 1fr));
 
-            gap: 25px;
+            gap: 24px;
         }
 
+
+        /* =====================================================
+           COURSE CARD
+        ===================================================== */
 
         .course-card {
             width: 100%;
 
-            padding: 32px;
+            min-height: 300px;
+
+            padding: 30px;
 
             text-align: left;
 
             background:
                 linear-gradient(
                     145deg,
-                    #0c2134,
-                    #091a2a
+                    #0b1d2e,
+                    #081827
                 );
 
             border:
@@ -353,21 +332,20 @@
 
             border-radius: 22px;
 
-            color: #ffffff;
-
             cursor: pointer;
+
+            color: #ffffff;
 
             transition:
                 transform 0.3s ease,
                 border-color 0.3s ease,
-                box-shadow 0.3s ease,
-                background 0.3s ease;
+                box-shadow 0.3s ease;
         }
 
 
         .course-card:hover {
             transform:
-                translateY(-6px);
+                translateY(-7px);
 
             border-color:
                 #4ddcff;
@@ -375,9 +353,6 @@
             box-shadow:
                 0 20px 50px
                 rgba(0, 0, 0, 0.25);
-
-            background:
-                #0d2438;
         }
 
 
@@ -391,7 +366,7 @@
 
 
         .course-number {
-            margin-bottom: 18px;
+            margin-bottom: 20px;
 
             color: #4ddcff;
 
@@ -404,9 +379,9 @@
 
 
         .course-card h3 {
-            margin-bottom: 13px;
+            margin-bottom: 15px;
 
-            font-size: 25px;
+            font-size: 24px;
 
             line-height: 1.3;
         }
@@ -417,7 +392,7 @@
 
             color: #9fb4c8;
 
-            font-size: 16px;
+            font-size: 15px;
 
             line-height: 1.7;
         }
@@ -426,7 +401,7 @@
         .course-open {
             color: #4ddcff;
 
-            font-size: 15px;
+            font-size: 14px;
 
             font-weight: 900;
         }
@@ -443,11 +418,9 @@
 
             max-width: 1000px;
 
-            margin:
-                0 auto;
+            margin: 0 auto 100px;
 
-            padding:
-                0 25px 100px;
+            padding: 0 25px;
         }
 
 
@@ -456,13 +429,10 @@
         }
 
 
-        .course-view-header {
+        .course-view-inner {
             position: relative;
 
-            padding:
-                55px;
-
-            margin-bottom: 30px;
+            padding: 50px;
 
             background:
                 linear-gradient(
@@ -475,6 +445,48 @@
                 1px solid #4ddcff;
 
             border-radius: 25px;
+
+            box-shadow:
+                0 25px 70px
+                rgba(0, 0, 0, 0.35);
+        }
+
+
+        .back-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin-bottom: 35px;
+
+            padding:
+                12px 20px;
+
+            border:
+                1px solid #31516b;
+
+            border-radius: 9px;
+
+            background: transparent;
+
+            color: #ffffff;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            font-weight: 800;
+        }
+
+
+        .back-button:hover {
+            border-color:
+                #4ddcff;
+
+            color:
+                #4ddcff;
         }
 
 
@@ -491,162 +503,83 @@
         }
 
 
-        .course-view-header h2 {
-            margin-bottom: 15px;
+        .course-view h2 {
+            margin-bottom: 20px;
 
-            font-size: 42px;
+            font-size:
+                clamp(34px, 6vw, 55px);
 
-            line-height: 1.2;
+            line-height: 1.15;
         }
 
 
-        .course-view-header p {
+        .course-description {
+            margin-bottom: 45px;
+
             color: #a9bdcf;
 
-            font-size: 17px;
-        }
-
-
-        .back-button {
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            margin-bottom: 25px;
-
-            padding:
-                12px 20px;
-
-            border:
-                1px solid #31516b;
-
-            border-radius: 10px;
-
-            background: transparent;
-
-            color: #ffffff;
-
-            font-size: 15px;
-
-            font-weight: 800;
-
-            cursor: pointer;
-
-            transition:
-                border-color 0.25s ease,
-                color 0.25s ease,
-                background 0.25s ease;
-        }
-
-
-        .back-button:hover {
-            border-color: #4ddcff;
-
-            color: #4ddcff;
-
-            background:
-                rgba(77, 220, 255, 0.05);
-        }
-
-
-        /* =====================================================
-           MODULES
-        ===================================================== */
-
-        .module-list {
-            display: grid;
-
-            gap: 18px;
-        }
-
-
-        .module-card {
-            padding: 28px;
-
-            background: #0b1d2e;
-
-            border:
-                1px solid #1b3851;
-
-            border-radius: 18px;
-        }
-
-
-        .module-card-number {
-            margin-bottom: 8px;
-
-            color: #4ddcff;
-
-            font-size: 13px;
-
-            font-weight: 900;
-
-            letter-spacing: 1.5px;
-        }
-
-
-        .module-card h3 {
-            margin-bottom: 10px;
-
-            font-size: 23px;
-        }
-
-
-        .module-card p {
-            color: #9fb4c8;
-
-            font-size: 16px;
-        }
-
-
-        .module-status {
-            display: inline-block;
-
-            margin-top: 17px;
-
-            padding:
-                7px 12px;
-
-            border:
-                1px solid #31516b;
-
-            border-radius: 30px;
-
-            color: #9fb4c8;
-
-            font-size: 12px;
-
-            font-weight: 800;
-        }
-
-
-        /* =====================================================
-           NOTICE
-        ===================================================== */
-
-        .development-notice {
-            margin-top: 35px;
-
-            padding: 25px;
-
-            background:
-                rgba(77, 220, 255, 0.05);
-
-            border:
-                1px solid #245773;
-
-            border-radius: 16px;
-
-            color: #a9bdcf;
+            font-size: 18px;
 
             line-height: 1.8;
         }
 
 
-        .development-notice strong {
-            color: #4ddcff;
+        /* =====================================================
+           LESSONS
+        ===================================================== */
+
+        .lesson {
+            margin-bottom: 45px;
+
+            padding-bottom: 35px;
+
+            border-bottom:
+                1px solid #234158;
+        }
+
+
+        .lesson:last-child {
+            border-bottom: none;
+
+            margin-bottom: 0;
+        }
+
+
+        .lesson h3 {
+            margin-bottom: 15px;
+
+            color: #ffffff;
+
+            font-size: 28px;
+        }
+
+
+        .lesson p {
+            margin-bottom: 16px;
+
+            color: #b0c1d0;
+
+            font-size: 16px;
+
+            line-height: 1.85;
+        }
+
+
+        .lesson ul {
+            margin:
+                0 0 20px 25px;
+
+            color: #b0c1d0;
+        }
+
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+
+        .lesson strong {
+            color: #ffffff;
         }
 
 
@@ -675,56 +608,46 @@
 
 
         /* =====================================================
-           MOBILE
+           RESPONSIVE
         ===================================================== */
 
-        @media (max-width: 800px) {
+        @media (max-width: 950px) {
 
             .navbar {
                 flex-direction: column;
-
-                justify-content: center;
-            }
-
-
-            .navigation {
-                justify-content: center;
             }
 
 
             .course-grid {
-                grid-template-columns: 1fr;
-            }
-
-
-            .course-view-header {
-                padding: 38px 25px;
-            }
-
-
-            .course-view-header h2 {
-                font-size: 34px;
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
             }
 
         }
 
 
-        @media (max-width: 520px) {
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding:
+                    18px 15px;
+            }
+
 
             .brand-name {
-                font-size: 25px;
+                font-size: 27px;
             }
 
 
             .brand img {
-                width: 45px;
+                width: 48px;
 
-                height: 45px;
+                height: 48px;
             }
 
 
             .navigation {
-                gap: 14px;
+                gap: 15px;
             }
 
 
@@ -733,31 +656,39 @@
             }
 
 
-            .guide-hero {
+            .technology-hero {
                 padding:
                     75px 18px 60px;
             }
 
 
-            .course-section {
+            .courses-section {
                 padding:
-                    70px 18px;
+                    65px 18px 80px;
             }
 
 
-            .section-heading h2 {
-                font-size: 34px;
+            .course-grid {
+                grid-template-columns: 1fr;
             }
 
 
             .course-card {
+                min-height: auto;
+
                 padding: 27px;
             }
 
 
             .course-view {
                 padding:
-                    0 18px 75px;
+                    0 15px;
+            }
+
+
+            .course-view-inner {
+                padding:
+                    35px 25px;
             }
 
         }
@@ -772,24 +703,21 @@
 
     <!-- =====================================================
          HEADER
-    ====================================================== -->
+    ===================================================== -->
 
     <header>
 
         <div class="navbar">
 
-
             <a
                 href="index.html"
                 class="brand"
-                aria-label="NEXORA DIGITAL Home"
             >
 
                 <img
                     src="nexora-digital-logo.png"
                     alt="NEXORA DIGITAL Logo"
                 >
-
 
                 <span class="brand-name">
                     NEXORA DIGITAL
@@ -798,10 +726,7 @@
             </a>
 
 
-            <nav
-                class="navigation"
-                aria-label="Main navigation"
-            >
+            <nav class="navigation">
 
                 <a href="index.html">
                     Home
@@ -825,14 +750,14 @@
 
     <!-- =====================================================
          HERO
-    ====================================================== -->
+    ===================================================== -->
 
-    <section class="guide-hero">
+    <section class="technology-hero">
 
-        <div class="guide-hero-inner">
+        <div class="technology-hero-inner">
 
             <div class="hero-label">
-                NEXORA DIGITAL LEARNING CENTRE
+                NEXORA DIGITAL ACADEMY
             </div>
 
 
@@ -844,8 +769,9 @@
 
             <p>
                 Explore structured technology courses designed
-                to help you understand modern digital
-                technologies and develop practical skills.
+                to help you develop practical knowledge and
+                digital skills from beginner level to advanced
+                concepts.
             </p>
 
         </div>
@@ -855,139 +781,100 @@
 
 
     <!-- =====================================================
-         MAIN CONTENT
-    ====================================================== -->
+         COURSES
+    ===================================================== -->
 
-    <main>
+    <section class="courses-section">
+
+        <div class="section-heading">
+
+            <h2>
+                Technology Courses
+            </h2>
 
 
-        <!-- =================================================
-             COURSE CATALOGUE
-        ================================================== -->
+            <p>
+                Choose a course below to open its lessons.
+            </p>
 
-        <section
-            class="course-section"
-            id="courseCatalogue"
+        </div>
+
+
+        <div
+            class="course-grid"
+            id="courseGrid"
         >
 
-            <div class="section-heading">
+            <!-- JavaScript creates the 20 course cards here -->
 
-                <h2>
-                    Choose a Course
-                </h2>
+        </div>
 
-
-                <p>
-                    Select a course below to enter its
-                    dedicated learning environment.
-                </p>
-
-            </div>
-
-
-            <div
-                id="courseGrid"
-                class="course-grid"
-            >
-
-                <!-- JavaScript creates the courses here. -->
-
-            </div>
-
-        </section>
+    </section>
 
 
 
-        <!-- =================================================
-             COURSE VIEW
-        ================================================== -->
+    <!-- =====================================================
+         COURSE CONTENT
+    ===================================================== -->
 
-        <section
-            id="courseView"
-            class="course-view"
-            aria-hidden="true"
-        >
+    <section
+        class="course-view"
+        id="courseView"
+        aria-hidden="true"
+    >
+
+        <div class="course-view-inner">
 
             <button
                 type="button"
                 class="back-button"
-                onclick="showCourseCatalogue()"
+                onclick="closeCourse()"
             >
-                ← Back to Technology Courses
+                ← Back to Courses
             </button>
 
 
             <div
-                id="courseHeader"
-                class="course-view-header"
-            >
-
-                <div
-                    id="courseNumber"
-                    class="course-view-number"
-                ></div>
+                id="courseNumber"
+                class="course-view-number"
+            ></div>
 
 
-                <h2
-                    id="courseTitle"
-                ></h2>
-
-
-                <p
-                    id="courseDescription"
-                ></p>
-
-            </div>
+            <h2 id="courseTitle"></h2>
 
 
             <div
-                id="moduleList"
-                class="module-list"
-            >
-            </div>
+                id="courseDescription"
+                class="course-description"
+            ></div>
 
 
-            <div class="development-notice">
+            <div
+                id="lessonContainer"
+            ></div>
 
-                <strong>
-                    NEXORA DIGITAL COURSE SYSTEM
-                </strong>
+        </div>
 
-                <br><br>
-
-                This learning environment is designed so
-                that every course can contain complete
-                modules, lessons, detailed notes, practical
-                activities and course completion tracking.
-
-                <br><br>
-
-                The course catalogue is now connected to
-                JavaScript. We will populate each course
-                with its full teaching notes step by step.
-
-            </div>
-
-        </section>
-
-    </main>
+    </section>
 
 
 
     <!-- =====================================================
          FOOTER
-    ====================================================== -->
+    ===================================================== -->
 
     <footer>
 
         <p>
-            © 2026
-            <strong>NEXORA DIGITAL</strong>.
-            All Rights Reserved.
-        </p>
 
-        <p>
-            Developed by Steven Fidel.
+            © 2026
+
+            <strong>
+                NEXORA DIGITAL
+            </strong>.
+
+            All Rights Reserved.
+
         </p>
 
     </footer>
@@ -995,53 +882,99 @@
 
 
     <!-- =====================================================
-         JAVASCRIPT
-         
-         TECHNOLOGY COURSE SYSTEM
-    ====================================================== -->
+         JAVASCRIPT COURSE DATABASE
+    ===================================================== -->
 
     <script>
-
-        /* =====================================================
-           COURSE DATABASE
-
-           These are the 20 technology courses.
-        ===================================================== */
 
         const technologyCourses = [
 
             {
                 id: "ai-machine-learning",
 
-                number: "01 — AI / ML",
+                number: "01",
 
                 title:
                     "Artificial Intelligence & Machine Learning",
 
                 description:
-                    "Learn the foundations of artificial intelligence, machine learning, data, models, algorithms and practical AI applications.",
+                    "Learn the foundations of artificial intelligence, machine learning, data preparation, models and practical AI applications.",
 
-                modules: [
+                lessons: [
 
-                    "Introduction to Artificial Intelligence",
+                    {
+                        title:
+                            "Lesson 1 — Introduction to Artificial Intelligence",
 
-                    "Machine Learning Fundamentals",
+                        content: `
+                            <p>
+                                Artificial Intelligence, commonly called AI,
+                                is the field of computing concerned with
+                                creating systems that can perform tasks that
+                                normally require human intelligence.
+                            </p>
 
-                    "Data and Machine Learning",
+                            <p>
+                                AI systems can process information, recognize
+                                patterns, understand language, make
+                                predictions and support decision-making.
+                            </p>
 
-                    "Supervised and Unsupervised Learning",
+                            <ul>
+                                <li><strong>Machine learning</strong> allows computers to learn patterns from data.</li>
+                                <li><strong>Natural language processing</strong> deals with human language.</li>
+                                <li><strong>Computer vision</strong> allows computers to interpret images and video.</li>
+                                <li><strong>Robotics</strong> combines software, hardware and intelligent control.</li>
+                            </ul>
+                        `
+                    },
 
-                    "Neural Networks and Deep Learning",
+                    {
+                        title:
+                            "Lesson 2 — Machine Learning Fundamentals",
 
-                    "Natural Language Processing",
+                        content: `
+                            <p>
+                                Machine learning is a branch of AI in which
+                                computers learn patterns from examples rather
+                                than relying entirely on manually written
+                                instructions.
+                            </p>
 
-                    "Computer Vision",
+                            <p>
+                                The three common learning approaches are
+                                supervised learning, unsupervised learning
+                                and reinforcement learning.
+                            </p>
 
-                    "AI Tools and Applications",
+                            <ul>
+                                <li><strong>Supervised learning:</strong> the model learns from labelled examples.</li>
+                                <li><strong>Unsupervised learning:</strong> the system discovers patterns in data.</li>
+                                <li><strong>Reinforcement learning:</strong> an agent learns through actions and rewards.</li>
+                            </ul>
+                        `
+                    },
 
-                    "Responsible and Ethical AI",
+                    {
+                        title:
+                            "Lesson 3 — Data and AI Projects",
 
-                    "Practical AI Project"
+                        content: `
+                            <p>
+                                Data is central to most machine-learning
+                                systems. A typical project involves collecting
+                                data, cleaning it, exploring it, preparing
+                                features, training a model and evaluating the
+                                results.
+                            </p>
+
+                            <p>
+                                A successful AI project should also consider
+                                accuracy, privacy, security, fairness,
+                                explainability and responsible use.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1050,7 +983,7 @@
             {
                 id: "full-stack-web-development",
 
-                number: "02 — WEB DEVELOPMENT",
+                number: "02",
 
                 title:
                     "Full-Stack Web Development",
@@ -1058,31 +991,108 @@
                 description:
                     "Learn how modern websites and web applications are designed, developed, tested and deployed.",
 
-                modules: [
+                lessons: [
 
-                    "Web Development Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — HTML Foundations",
 
-                    "HTML",
+                        content: `
+                            <p>
+                                HTML, or HyperText Markup Language, provides
+                                the structure of a web page. HTML elements
+                                describe headings, paragraphs, links, images,
+                                forms, tables and other content.
+                            </p>
 
-                    "CSS",
+                            <p>
+                                A well-structured HTML document normally
+                                contains a document type declaration, an
+                                html element, a head section and a body
+                                section.
+                            </p>
+                        `
+                    },
 
-                    "JavaScript",
+                    {
+                        title:
+                            "Lesson 2 — CSS Foundations",
 
-                    "Git and Version Control",
+                        content: `
+                            <p>
+                                CSS, or Cascading Style Sheets, controls the
+                                appearance of HTML content. Developers use CSS
+                                for colors, spacing, typography, layouts,
+                                borders, animations and responsive design.
+                            </p>
 
-                    "Front-End Development",
+                            <p>
+                                Modern CSS layouts commonly use Flexbox and
+                                CSS Grid to arrange content across different
+                                screen sizes.
+                            </p>
+                        `
+                    },
 
-                    "Back-End Development",
+                    {
+                        title:
+                            "Lesson 3 — JavaScript",
 
-                    "Databases",
+                        content: `
+                            <p>
+                                JavaScript is a programming language commonly
+                                used to add behavior and interactivity to
+                                websites.
+                            </p>
 
-                    "APIs",
+                            <p>
+                                JavaScript can respond to user actions,
+                                manipulate HTML elements, validate forms,
+                                communicate with servers and dynamically
+                                update page content.
+                            </p>
+                        `
+                    },
 
-                    "Authentication and Security",
+                    {
+                        title:
+                            "Lesson 4 — Backend Development",
 
-                    "Deployment",
+                        content: `
+                            <p>
+                                Backend development handles server-side
+                                processing, databases, authentication and
+                                application logic.
+                            </p>
 
-                    "Full-Stack Project"
+                            <p>
+                                Common backend technologies include
+                                JavaScript with Node.js, Python, Java, PHP,
+                                C# and other programming environments.
+                            </p>
+                        `
+                    },
+
+                    {
+                        title:
+                            "Lesson 5 — Databases and Deployment",
+
+                        content: `
+                            <p>
+                                Web applications commonly store information
+                                in databases. Relational databases organize
+                                information into tables, while NoSQL systems
+                                provide alternative data models.
+                            </p>
+
+                            <p>
+                                Deployment involves making an application
+                                available on a server or cloud platform and
+                                configuring the required domain, security,
+                                environment and application services.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1091,35 +1101,74 @@
             {
                 id: "cybersecurity",
 
-                number: "03 — CYBERSECURITY",
+                number: "03",
 
                 title:
                     "Cybersecurity & Ethical Hacking",
 
                 description:
-                    "Learn cybersecurity foundations, security principles, threats, defensive practices and ethical security testing.",
+                    "Learn cybersecurity principles, security controls, risk management and responsible security testing.",
 
-                modules: [
+                lessons: [
 
-                    "Cybersecurity Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — Cybersecurity Fundamentals",
 
-                    "Computer and Network Security",
+                        content: `
+                            <p>
+                                Cybersecurity is the practice of protecting
+                                computers, networks, applications and
+                                information from unauthorized access,
+                                disruption, damage and misuse.
+                            </p>
 
-                    "Threats and Vulnerabilities",
+                            <p>
+                                The three core security objectives are
+                                confidentiality, integrity and availability.
+                            </p>
+                        `
+                    },
 
-                    "Identity and Access Management",
+                    {
+                        title:
+                            "Lesson 2 — Threats and Vulnerabilities",
 
-                    "Cryptography Fundamentals",
+                        content: `
+                            <p>
+                                A threat is something capable of causing harm,
+                                while a vulnerability is a weakness that may
+                                be exploited.
+                            </p>
 
-                    "Security Monitoring",
+                            <ul>
+                                <li>Phishing and social engineering</li>
+                                <li>Malware</li>
+                                <li>Password attacks</li>
+                                <li>Unpatched software</li>
+                                <li>Misconfigured systems</li>
+                            </ul>
+                        `
+                    },
 
-                    "Ethical Hacking Concepts",
+                    {
+                        title:
+                            "Lesson 3 — Ethical Security Testing",
 
-                    "Web Application Security",
+                        content: `
+                            <p>
+                                Ethical hacking is authorized security
+                                testing performed to identify and help fix
+                                weaknesses.
+                            </p>
 
-                    "Incident Response",
-
-                    "Security Project"
+                            <p>
+                                Security testing should always be performed
+                                only against systems for which the tester has
+                                explicit permission.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1128,35 +1177,72 @@
             {
                 id: "cloud-devops",
 
-                number: "04 — CLOUD & DEVOPS",
+                number: "04",
 
                 title:
                     "Cloud Computing & DevOps",
 
                 description:
-                    "Understand cloud computing, infrastructure, automation, continuous integration and modern deployment practices.",
+                    "Understand cloud infrastructure, virtualization, containers, automation and modern DevOps practices.",
 
-                modules: [
+                lessons: [
 
-                    "Cloud Computing Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — Cloud Computing",
 
-                    "Cloud Service Models",
+                        content: `
+                            <p>
+                                Cloud computing provides computing resources
+                                such as servers, storage, databases and
+                                networking through internet-based services.
+                            </p>
 
-                    "Virtualization",
+                            <p>
+                                Common cloud service models include
+                                Infrastructure as a Service, Platform as a
+                                Service and Software as a Service.
+                            </p>
+                        `
+                    },
 
-                    "Cloud Infrastructure",
+                    {
+                        title:
+                            "Lesson 2 — Virtualization and Containers",
 
-                    "Containers",
+                        content: `
+                            <p>
+                                Virtualization allows multiple virtual
+                                environments to operate on physical
+                                infrastructure.
+                            </p>
 
-                    "DevOps Fundamentals",
+                            <p>
+                                Containers package applications together with
+                                the components they need to run consistently
+                                across environments.
+                            </p>
+                        `
+                    },
 
-                    "Continuous Integration",
+                    {
+                        title:
+                            "Lesson 3 — DevOps",
 
-                    "Continuous Deployment",
+                        content: `
+                            <p>
+                                DevOps combines development and operations
+                                practices to improve software delivery,
+                                collaboration, automation and reliability.
+                            </p>
 
-                    "Infrastructure Automation",
-
-                    "Cloud Project"
+                            <p>
+                                Continuous integration and continuous delivery
+                                are important practices in modern DevOps
+                                workflows.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1165,35 +1251,60 @@
             {
                 id: "data-science",
 
-                number: "05 — DATA SCIENCE",
+                number: "05",
 
                 title:
                     "Data Science & Big Data Analytics",
 
                 description:
-                    "Learn how data is collected, prepared, analyzed and transformed into useful information and insights.",
+                    "Learn how data is collected, prepared, analyzed and transformed into useful information.",
 
-                modules: [
+                lessons: [
 
-                    "Introduction to Data Science",
+                    {
+                        title:
+                            "Lesson 1 — Introduction to Data Science",
 
-                    "Data Collection",
+                        content: `
+                            <p>
+                                Data science combines programming,
+                                statistics, mathematics and domain knowledge
+                                to extract useful information from data.
+                            </p>
+                        `
+                    },
 
-                    "Data Cleaning",
+                    {
+                        title:
+                            "Lesson 2 — Data Preparation",
 
-                    "Statistics Fundamentals",
+                        content: `
+                            <p>
+                                Data preparation includes collecting,
+                                cleaning, transforming and organizing data
+                                before analysis.
+                            </p>
 
-                    "Python for Data Science",
+                            <p>
+                                Missing values, duplicates, inconsistent
+                                formats and incorrect records should be
+                                identified and handled appropriately.
+                            </p>
+                        `
+                    },
 
-                    "Data Analysis",
+                    {
+                        title:
+                            "Lesson 3 — Big Data",
 
-                    "Data Visualization",
-
-                    "Big Data Fundamentals",
-
-                    "Machine Learning for Data",
-
-                    "Data Science Project"
+                        content: `
+                            <p>
+                                Big data refers to datasets whose size,
+                                speed or complexity creates challenges for
+                                traditional processing approaches.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1202,35 +1313,60 @@
             {
                 id: "mobile-development",
 
-                number: "06 — MOBILE DEVELOPMENT",
+                number: "06",
 
                 title:
                     "Mobile App Development",
 
                 description:
-                    "Learn the foundations of designing, developing, testing and publishing mobile applications.",
+                    "Learn the fundamentals of designing, developing and testing applications for mobile devices.",
 
-                modules: [
+                lessons: [
 
-                    "Mobile Development Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — Mobile Application Fundamentals",
 
-                    "Mobile User Interfaces",
+                        content: `
+                            <p>
+                                Mobile applications are software programs
+                                designed to operate on smartphones and tablets.
+                            </p>
 
-                    "Application Architecture",
+                            <p>
+                                Important considerations include screen size,
+                                touch interaction, performance, battery use,
+                                permissions and connectivity.
+                            </p>
+                        `
+                    },
 
-                    "Mobile Programming",
+                    {
+                        title:
+                            "Lesson 2 — Mobile User Interfaces",
 
-                    "Data Storage",
+                        content: `
+                            <p>
+                                Mobile interfaces should be simple,
+                                responsive and easy to navigate. Controls
+                                should be appropriately sized for touch
+                                interaction.
+                            </p>
+                        `
+                    },
 
-                    "APIs and Mobile Applications",
+                    {
+                        title:
+                            "Lesson 3 — Testing and Publishing",
 
-                    "Authentication",
-
-                    "Testing Mobile Applications",
-
-                    "Publishing Applications",
-
-                    "Mobile App Project"
+                        content: `
+                            <p>
+                                Mobile applications should be tested across
+                                different devices and screen sizes before
+                                release.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1239,35 +1375,55 @@
             {
                 id: "ui-ux",
 
-                number: "07 — UI / UX",
+                number: "07",
 
                 title:
                     "UI/UX Product Design",
 
                 description:
-                    "Learn how to research users, design interfaces, create prototypes and build better digital experiences.",
+                    "Learn user interface design, user experience principles, wireframes, prototypes and usability.",
 
-                modules: [
+                lessons: [
 
-                    "Introduction to UI/UX",
+                    {
+                        title:
+                            "Lesson 1 — UI and UX",
 
-                    "User Research",
+                        content: `
+                            <p>
+                                User Interface design focuses on the visual
+                                interface of a product, while User Experience
+                                focuses on how effectively and comfortably
+                                users interact with that product.
+                            </p>
+                        `
+                    },
 
-                    "Information Architecture",
+                    {
+                        title:
+                            "Lesson 2 — User Research",
 
-                    "Wireframing",
+                        content: `
+                            <p>
+                                User research helps designers understand
+                                users, their goals, difficulties and
+                                expectations.
+                            </p>
+                        `
+                    },
 
-                    "Visual Design",
+                    {
+                        title:
+                            "Lesson 3 — Wireframes and Prototypes",
 
-                    "Design Systems",
-
-                    "Prototyping",
-
-                    "Usability Testing",
-
-                    "Accessibility",
-
-                    "Product Design Project"
+                        content: `
+                            <p>
+                                Wireframes provide a basic representation of
+                                a product interface. Prototypes allow ideas
+                                to be tested before full development.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1276,35 +1432,56 @@
             {
                 id: "blockchain-web3",
 
-                number: "08 — BLOCKCHAIN",
+                number: "08",
 
                 title:
                     "Blockchain & Web3 Development",
 
                 description:
-                    "Explore blockchain fundamentals, decentralized applications, smart contracts and Web3 concepts.",
+                    "Understand blockchain concepts, decentralized applications, wallets, smart contracts and Web3 architecture.",
 
-                modules: [
+                lessons: [
 
-                    "Blockchain Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — Blockchain Fundamentals",
 
-                    "Distributed Ledgers",
+                        content: `
+                            <p>
+                                A blockchain is a distributed record system
+                                in which transactions are grouped into
+                                blocks and linked through cryptographic
+                                mechanisms.
+                            </p>
+                        `
+                    },
 
-                    "Cryptographic Foundations",
+                    {
+                        title:
+                            "Lesson 2 — Smart Contracts",
 
-                    "Consensus Concepts",
+                        content: `
+                            <p>
+                                Smart contracts are programs deployed on
+                                blockchain networks that can execute defined
+                                rules when their conditions are met.
+                            </p>
+                        `
+                    },
 
-                    "Smart Contracts",
+                    {
+                        title:
+                            "Lesson 3 — Web3 Applications",
 
-                    "Decentralized Applications",
-
-                    "Wallets and Digital Assets",
-
-                    "Web3 Development",
-
-                    "Blockchain Security",
-
-                    "Web3 Project"
+                        content: `
+                            <p>
+                                Web3 applications commonly interact with
+                                blockchain networks through wallets,
+                                decentralized protocols and blockchain
+                                interfaces.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1313,72 +1490,111 @@
             {
                 id: "business-intelligence",
 
-                number: "09 — BI & DATA",
+                number: "09",
 
                 title:
                     "Business Intelligence & Data Visualization",
 
                 description:
-                    "Learn how organizations transform data into reports, dashboards and useful business insights.",
+                    "Learn how organizations transform data into dashboards, reports and useful business insights.",
 
-                modules: [
+                lessons: [
 
-                    "Business Intelligence Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — Business Intelligence",
 
-                    "Data Sources",
+                        content: `
+                            <p>
+                                Business intelligence involves collecting,
+                                analyzing and presenting information to
+                                support organizational decision-making.
+                            </p>
+                        `
+                    },
 
-                    "Data Preparation",
+                    {
+                        title:
+                            "Lesson 2 — Data Visualization",
 
-                    "Business Metrics",
+                        content: `
+                            <p>
+                                Data visualization uses charts, graphs and
+                                dashboards to communicate patterns and
+                                relationships in data.
+                            </p>
+                        `
+                    },
 
-                    "Data Visualization",
+                    {
+                        title:
+                            "Lesson 3 — Dashboards",
 
-                    "Dashboard Design",
-
-                    "Reporting",
-
-                    "Business Analytics",
-
-                    "Decision Making with Data",
-
-                    "BI Project"
+                        content: `
+                            <p>
+                                A useful dashboard should present relevant
+                                information clearly and help users identify
+                                important trends and changes.
+                            </p>
+                        `
+                    }
 
                 ]
             },
 
 
             {
-                id: "game-development",
+                id: "game-vr-ar",
 
-                number: "10 — GAME DEVELOPMENT",
+                number: "10",
 
                 title:
                     "Game Development & VR/AR",
 
                 description:
-                    "Learn the foundations of game development and immersive technologies including virtual and augmented reality.",
+                    "Learn the foundations of game development, interactive environments, virtual reality and augmented reality.",
 
-                modules: [
+                lessons: [
 
-                    "Game Development Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — Game Development",
 
-                    "Game Design",
+                        content: `
+                            <p>
+                                Game development combines programming,
+                                graphics, sound, storytelling, design and
+                                interaction to create interactive experiences.
+                            </p>
+                        `
+                    },
 
-                    "Game Programming",
+                    {
+                        title:
+                            "Lesson 2 — Game Engines",
 
-                    "Game Physics",
+                        content: `
+                            <p>
+                                Game engines provide tools for creating
+                                scenes, controlling objects, handling input,
+                                rendering graphics and managing game logic.
+                            </p>
+                        `
+                    },
 
-                    "Characters and Environments",
+                    {
+                        title:
+                            "Lesson 3 — VR and AR",
 
-                    "Game Audio",
-
-                    "Virtual Reality",
-
-                    "Augmented Reality",
-
-                    "Testing and Optimization",
-
-                    "Game Project"
+                        content: `
+                            <p>
+                                Virtual reality creates immersive digital
+                                environments, while augmented reality places
+                                digital information or objects into the
+                                user's physical environment.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1387,35 +1603,55 @@
             {
                 id: "iot-embedded",
 
-                number: "11 — IoT",
+                number: "11",
 
                 title:
                     "Internet of Things & Embedded Systems",
 
                 description:
-                    "Learn how connected devices, sensors, embedded systems and networks work together.",
+                    "Learn how connected devices, sensors, microcontrollers and embedded software work together.",
 
-                modules: [
+                lessons: [
 
-                    "IoT Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — Internet of Things",
 
-                    "Embedded Systems",
+                        content: `
+                            <p>
+                                The Internet of Things describes networks of
+                                physical devices that collect, exchange or
+                                process data.
+                            </p>
+                        `
+                    },
 
-                    "Sensors and Actuators",
+                    {
+                        title:
+                            "Lesson 2 — Sensors and Microcontrollers",
 
-                    "Microcontrollers",
+                        content: `
+                            <p>
+                                Sensors collect information from the
+                                environment, while microcontrollers can
+                                process sensor readings and control connected
+                                hardware.
+                            </p>
+                        `
+                    },
 
-                    "Device Communication",
+                    {
+                        title:
+                            "Lesson 3 — Connected Systems",
 
-                    "IoT Networking",
-
-                    "Cloud-connected Devices",
-
-                    "IoT Security",
-
-                    "Automation",
-
-                    "IoT Project"
+                        content: `
+                            <p>
+                                IoT systems commonly combine devices,
+                                networks, software platforms and data
+                                services.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1424,35 +1660,53 @@
             {
                 id: "software-qa",
 
-                number: "12 — SOFTWARE QA",
+                number: "12",
 
                 title:
                     "Software Quality Assurance & Automated Testing",
 
                 description:
-                    "Learn software testing principles, quality assurance practices and automated testing concepts.",
+                    "Learn software testing principles, quality assurance processes and automated testing concepts.",
 
-                modules: [
+                lessons: [
 
-                    "Software Quality Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — Software Quality",
 
-                    "Testing Principles",
+                        content: `
+                            <p>
+                                Software quality involves meeting
+                                requirements, behaving reliably and providing
+                                a useful experience for users.
+                            </p>
+                        `
+                    },
 
-                    "Test Planning",
+                    {
+                        title:
+                            "Lesson 2 — Testing",
 
-                    "Manual Testing",
+                        content: `
+                            <p>
+                                Testing helps identify defects and verify
+                                that software behaves as expected.
+                            </p>
+                        `
+                    },
 
-                    "Functional Testing",
+                    {
+                        title:
+                            "Lesson 3 — Automated Testing",
 
-                    "Non-functional Testing",
-
-                    "Test Automation",
-
-                    "Continuous Testing",
-
-                    "Bug Tracking",
-
-                    "QA Project"
+                        content: `
+                            <p>
+                                Automated tests use software to execute
+                                repeatable checks. They can help teams
+                                detect regressions efficiently.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1461,35 +1715,54 @@
             {
                 id: "rpa",
 
-                number: "13 — RPA",
+                number: "13",
 
                 title:
                     "Robotic Process Automation",
 
                 description:
-                    "Learn how software robots can automate repetitive digital processes and business workflows.",
+                    "Learn how software robots can automate repetitive digital business processes.",
 
-                modules: [
+                lessons: [
 
-                    "RPA Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — RPA Fundamentals",
 
-                    "Business Process Analysis",
+                        content: `
+                            <p>
+                                Robotic Process Automation uses software
+                                automation to perform repetitive,
+                                rule-based digital tasks.
+                            </p>
+                        `
+                    },
 
-                    "Automation Opportunities",
+                    {
+                        title:
+                            "Lesson 2 — Identifying Automation Opportunities",
 
-                    "Workflow Automation",
+                        content: `
+                            <p>
+                                Good automation candidates are usually
+                                repetitive, predictable and based on
+                                clearly defined rules.
+                            </p>
+                        `
+                    },
 
-                    "Data Processing",
+                    {
+                        title:
+                            "Lesson 3 — RPA Workflow Design",
 
-                    "Web Automation",
-
-                    "Document Automation",
-
-                    "RPA Security",
-
-                    "Automation Testing",
-
-                    "RPA Project"
+                        content: `
+                            <p>
+                                An RPA workflow should define inputs,
+                                actions, decisions, error handling and
+                                expected outputs.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1498,35 +1771,54 @@
             {
                 id: "database-engineering",
 
-                number: "14 — DATABASES",
+                number: "14",
 
                 title:
                     "Database Administration & Engineering",
 
                 description:
-                    "Learn database concepts, data modeling, SQL, administration, performance and database security.",
+                    "Learn database structures, SQL, administration, security, backup and performance concepts.",
 
-                modules: [
+                lessons: [
 
-                    "Database Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — Database Fundamentals",
 
-                    "Relational Databases",
+                        content: `
+                            <p>
+                                A database is an organized collection of
+                                information that can be stored, retrieved,
+                                updated and managed by software.
+                            </p>
+                        `
+                    },
 
-                    "Data Modeling",
+                    {
+                        title:
+                            "Lesson 2 — SQL",
 
-                    "SQL",
+                        content: `
+                            <p>
+                                SQL is commonly used with relational
+                                databases to create, retrieve, update and
+                                delete information.
+                            </p>
+                        `
+                    },
 
-                    "Database Design",
+                    {
+                        title:
+                            "Lesson 3 — Database Administration",
 
-                    "Database Administration",
-
-                    "Backup and Recovery",
-
-                    "Database Security",
-
-                    "Performance Optimization",
-
-                    "Database Project"
+                        content: `
+                            <p>
+                                Database administration includes security,
+                                backups, monitoring, performance management
+                                and recovery planning.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1535,35 +1827,55 @@
             {
                 id: "api-microservices",
 
-                number: "15 — API & ARCHITECTURE",
+                number: "15",
 
                 title:
                     "API Design & Microservices Architecture",
 
                 description:
-                    "Learn how modern software systems communicate through APIs and how large applications can be organized as services.",
+                    "Learn APIs, service communication, REST principles and the foundations of microservices.",
 
-                modules: [
+                lessons: [
 
-                    "API Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — APIs",
 
-                    "HTTP and Web APIs",
+                        content: `
+                            <p>
+                                An API, or Application Programming Interface,
+                                defines how software components communicate
+                                with one another.
+                            </p>
+                        `
+                    },
 
-                    "REST API Design",
+                    {
+                        title:
+                            "Lesson 2 — REST APIs",
 
-                    "API Authentication",
+                        content: `
+                            <p>
+                                REST is a commonly used architectural style
+                                for web APIs. Resources are commonly
+                                represented through URLs and manipulated
+                                using HTTP methods.
+                            </p>
+                        `
+                    },
 
-                    "API Documentation",
+                    {
+                        title:
+                            "Lesson 3 — Microservices",
 
-                    "Microservices Fundamentals",
-
-                    "Service Communication",
-
-                    "Distributed Systems",
-
-                    "API Security",
-
-                    "Architecture Project"
+                        content: `
+                            <p>
+                                Microservices architecture divides an
+                                application into smaller services that can
+                                be developed and deployed independently.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1572,72 +1884,112 @@
             {
                 id: "linux-open-source",
 
-                number: "16 — LINUX",
+                number: "16",
 
                 title:
                     "Linux Systems Administration & Open Source Engineering",
 
                 description:
-                    "Learn Linux fundamentals, system administration, command-line tools and open-source development practices.",
+                    "Learn Linux fundamentals, command-line operations, system administration and open-source concepts.",
 
-                modules: [
+                lessons: [
 
-                    "Linux Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — Linux Fundamentals",
 
-                    "Linux Installation",
+                        content: `
+                            <p>
+                                Linux is an open-source operating system
+                                family widely used on servers, desktops,
+                                cloud systems and embedded devices.
+                            </p>
+                        `
+                    },
 
-                    "Command Line",
+                    {
+                        title:
+                            "Lesson 2 — Command Line",
 
-                    "Files and Permissions",
+                        content: `
+                            <p>
+                                The Linux command line allows administrators
+                                to manage files, processes, users, services
+                                and system resources efficiently.
+                            </p>
+                        `
+                    },
 
-                    "Users and Groups",
+                    {
+                        title:
+                            "Lesson 3 — System Administration",
 
-                    "Processes and Services",
-
-                    "Networking",
-
-                    "System Security",
-
-                    "Shell Scripting",
-
-                    "Linux Administration Project"
+                        content: `
+                            <p>
+                                System administration includes user
+                                management, software installation,
+                                permissions, networking, monitoring and
+                                system maintenance.
+                            </p>
+                        `
+                    }
 
                 ]
             },
 
 
             {
-                id: "digital-marketing",
+                id: "technical-digital-marketing",
 
-                number: "17 — DIGITAL MARKETING",
+                number: "17",
 
                 title:
                     "Technical Digital Marketing & Growth Engineering",
 
                 description:
-                    "Learn the technical side of digital marketing, analytics, search optimization, automation and growth.",
+                    "Learn the technical side of digital marketing, analytics, search visibility, conversion and growth systems.",
 
-                modules: [
+                lessons: [
 
-                    "Digital Marketing Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — Digital Marketing Technology",
 
-                    "Search Engine Optimization",
+                        content: `
+                            <p>
+                                Technical digital marketing combines
+                                marketing strategy with websites,
+                                analytics, automation, search technology and
+                                digital platforms.
+                            </p>
+                        `
+                    },
 
-                    "Technical SEO",
+                    {
+                        title:
+                            "Lesson 2 — Search and Analytics",
 
-                    "Web Analytics",
+                        content: `
+                            <p>
+                                Search optimization helps websites become
+                                easier to discover, while analytics tools
+                                help organizations understand user behavior.
+                            </p>
+                        `
+                    },
 
-                    "Content Systems",
+                    {
+                        title:
+                            "Lesson 3 — Growth Engineering",
 
-                    "Conversion Optimization",
-
-                    "Marketing Automation",
-
-                    "Growth Experiments",
-
-                    "Performance Measurement",
-
-                    "Growth Project"
+                        content: `
+                            <p>
+                                Growth engineering uses experimentation,
+                                automation, measurement and technology to
+                                improve customer acquisition and retention.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1646,35 +1998,56 @@
             {
                 id: "it-support-networking",
 
-                number: "18 — IT SUPPORT",
+                number: "18",
 
                 title:
                     "IT Support, Networking & Systems Troubleshooting",
 
                 description:
-                    "Learn computer support, networking fundamentals, system maintenance and troubleshooting techniques.",
+                    "Learn computer support, networking fundamentals, diagnostics and practical troubleshooting.",
 
-                modules: [
+                lessons: [
 
-                    "IT Support Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — IT Support Fundamentals",
 
-                    "Computer Hardware",
+                        content: `
+                            <p>
+                                IT support helps users and organizations
+                                maintain computers, software, networks and
+                                digital services.
+                            </p>
+                        `
+                    },
 
-                    "Operating Systems",
+                    {
+                        title:
+                            "Lesson 2 — Networking",
 
-                    "Network Fundamentals",
+                        content: `
+                            <p>
+                                Computer networks allow devices to
+                                communicate and share resources. Important
+                                concepts include IP addresses, routers,
+                                switches, DNS and network protocols.
+                            </p>
+                        `
+                    },
 
-                    "IP Addressing",
+                    {
+                        title:
+                            "Lesson 3 — Troubleshooting",
 
-                    "Routers and Switches",
-
-                    "System Troubleshooting",
-
-                    "Security Basics",
-
-                    "Maintenance",
-
-                    "IT Support Project"
+                        content: `
+                            <p>
+                                Effective troubleshooting begins by
+                                identifying the problem, gathering evidence,
+                                testing possible causes and applying a
+                                controlled solution.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1683,35 +2056,56 @@
             {
                 id: "low-code-no-code",
 
-                number: "19 — LOW-CODE / NO-CODE",
+                number: "19",
 
                 title:
                     "Low-Code / No-Code App Development",
 
                 description:
-                    "Learn how applications, workflows and digital solutions can be created using visual development platforms.",
+                    "Learn how applications and workflows can be created using visual development platforms and automation tools.",
 
-                modules: [
+                lessons: [
 
-                    "Low-Code and No-Code Fundamentals",
+                    {
+                        title:
+                            "Lesson 1 — Low-Code and No-Code",
 
-                    "Visual Application Design",
+                        content: `
+                            <p>
+                                Low-code and no-code platforms provide visual
+                                development tools that reduce the amount of
+                                traditional programming required to build
+                                applications.
+                            </p>
+                        `
+                    },
 
-                    "Data and Databases",
+                    {
+                        title:
+                            "Lesson 2 — Building Applications",
 
-                    "Forms and User Interfaces",
+                        content: `
+                            <p>
+                                Visual application builders commonly provide
+                                interfaces for forms, databases,
+                                workflows, authentication and user
+                                interfaces.
+                            </p>
+                        `
+                    },
 
-                    "Workflow Automation",
+                    {
+                        title:
+                            "Lesson 3 — Automation",
 
-                    "APIs and Integrations",
-
-                    "Authentication",
-
-                    "Testing",
-
-                    "Deployment",
-
-                    "Application Project"
+                        content: `
+                            <p>
+                                Automation platforms can connect applications
+                                and trigger actions based on events,
+                                schedules or defined conditions.
+                            </p>
+                        `
+                    }
 
                 ]
             },
@@ -1720,35 +2114,56 @@
             {
                 id: "quantum-computing",
 
-                number: "20 — QUANTUM COMPUTING",
+                number: "20",
 
                 title:
                     "Quantum Computing Foundations",
 
                 description:
-                    "Explore the fundamental concepts behind quantum computing, quantum information and quantum algorithms.",
+                    "Learn the basic concepts behind quantum computing, qubits, quantum gates and quantum algorithms.",
 
-                modules: [
+                lessons: [
 
-                    "Introduction to Quantum Computing",
+                    {
+                        title:
+                            "Lesson 1 — Introduction to Quantum Computing",
 
-                    "Classical vs Quantum Computing",
+                        content: `
+                            <p>
+                                Quantum computing is a field of computing
+                                based on principles from quantum physics.
+                                Quantum computers use quantum systems to
+                                represent and process information.
+                            </p>
+                        `
+                    },
 
-                    "Qubits",
+                    {
+                        title:
+                            "Lesson 2 — Qubits and Quantum Gates",
 
-                    "Superposition",
+                        content: `
+                            <p>
+                                A quantum bit, or qubit, is the basic unit of
+                                quantum information. Quantum gates perform
+                                operations on qubits.
+                            </p>
+                        `
+                    },
 
-                    "Entanglement",
+                    {
+                        title:
+                            "Lesson 3 — Quantum Algorithms",
 
-                    "Quantum Gates",
-
-                    "Quantum Circuits",
-
-                    "Quantum Algorithms",
-
-                    "Quantum Programming Concepts",
-
-                    "Quantum Computing Project"
+                        content: `
+                            <p>
+                                Quantum algorithms are procedures designed
+                                to run on quantum computing systems.
+                                Different algorithms are designed for
+                                different computational problems.
+                            </p>
+                        `
+                    }
 
                 ]
             }
@@ -1758,7 +2173,7 @@
 
 
         /* =====================================================
-           ELEMENT REFERENCES
+           CREATE THE 20 COURSE CARDS
         ===================================================== */
 
         const courseGrid =
@@ -1767,118 +2182,66 @@
             );
 
 
-        const courseCatalogue =
-            document.getElementById(
-                "courseCatalogue"
-            );
+        technologyCourses.forEach(
+            function(course) {
+
+                const card =
+                    document.createElement(
+                        "button"
+                    );
 
 
-        const courseView =
-            document.getElementById(
-                "courseView"
-            );
+                card.type = "button";
+
+                card.className =
+                    "course-card";
 
 
-        const courseNumber =
-            document.getElementById(
-                "courseNumber"
-            );
+                card.setAttribute(
+                    "aria-label",
+                    "Open " + course.title
+                );
 
 
-        const courseTitle =
-            document.getElementById(
-                "courseTitle"
-            );
+                card.innerHTML = `
+
+                    <div class="course-number">
+                        ${course.number} — COURSE
+                    </div>
+
+                    <h3>
+                        ${course.title}
+                    </h3>
+
+                    <p>
+                        ${course.description}
+                    </p>
+
+                    <span class="course-open">
+                        Start Course →
+                    </span>
+
+                `;
 
 
-        const courseDescription =
-            document.getElementById(
-                "courseDescription"
-            );
+                card.addEventListener(
+                    "click",
+                    function() {
 
-
-        const moduleList =
-            document.getElementById(
-                "moduleList"
-            );
-
-
-
-        /* =====================================================
-           CREATE COURSE CARDS
-        ===================================================== */
-
-        function renderCourseCatalogue() {
-
-            courseGrid.innerHTML = "";
-
-
-            technologyCourses.forEach(
-                function(course) {
-
-                    const card =
-                        document.createElement(
-                            "button"
+                        openCourse(
+                            course.id
                         );
 
-
-                    card.type =
-                        "button";
-
-
-                    card.className =
-                        "course-card";
+                    }
+                );
 
 
-                    card.setAttribute(
-                        "aria-label",
-                        "Open " +
-                        course.title +
-                        " course"
-                    );
+                courseGrid.appendChild(
+                    card
+                );
 
-
-                    card.innerHTML = `
-
-                        <div class="course-number">
-                            ${course.number}
-                        </div>
-
-                        <h3>
-                            ${course.title}
-                        </h3>
-
-                        <p>
-                            ${course.description}
-                        </p>
-
-                        <span class="course-open">
-                            Open Course →
-                        </span>
-
-                    `;
-
-
-                    card.addEventListener(
-                        "click",
-                        function() {
-
-                            openCourse(
-                                course.id
-                            );
-
-                        }
-                    );
-
-
-                    courseGrid.appendChild(
-                        card
-                    );
-
-                }
-            );
-
-        }
+            }
+        );
 
 
 
@@ -1892,8 +2255,7 @@
                 technologyCourses.find(
                     function(item) {
 
-                        return item.id ===
-                            courseId;
+                        return item.id === courseId;
 
                     }
                 );
@@ -1911,68 +2273,70 @@
             }
 
 
-            courseNumber.textContent =
-                course.number;
+            document.getElementById(
+                "courseNumber"
+            ).textContent =
+                course.number +
+                " — COURSE";
 
 
-            courseTitle.textContent =
+            document.getElementById(
+                "courseTitle"
+            ).textContent =
                 course.title;
 
 
-            courseDescription.textContent =
+            document.getElementById(
+                "courseDescription"
+            ).textContent =
                 course.description;
 
 
-            moduleList.innerHTML = "";
+            const lessonContainer =
+                document.getElementById(
+                    "lessonContainer"
+                );
 
 
-            course.modules.forEach(
-                function(module, index) {
+            lessonContainer.innerHTML = "";
 
-                    const moduleCard =
+
+            course.lessons.forEach(
+                function(lesson) {
+
+                    const lessonElement =
                         document.createElement(
                             "article"
                         );
 
 
-                    moduleCard.className =
-                        "module-card";
+                    lessonElement.className =
+                        "lesson";
 
 
-                    moduleCard.innerHTML = `
-
-                        <div class="module-card-number">
-                            MODULE ${String(index + 1).padStart(2, "0")}
-                        </div>
+                    lessonElement.innerHTML = `
 
                         <h3>
-                            ${module}
+                            ${lesson.title}
                         </h3>
 
-                        <p>
-                            This module will contain
-                            the complete lesson notes,
-                            explanations, examples and
-                            practical learning activities.
-                        </p>
-
-                        <span class="module-status">
-                            Lesson content coming next
-                        </span>
+                        ${lesson.content}
 
                     `;
 
 
-                    moduleList.appendChild(
-                        moduleCard
+                    lessonContainer.appendChild(
+                        lessonElement
                     );
 
                 }
             );
 
 
-            courseCatalogue.style.display =
-                "none";
+            const courseView =
+                document.getElementById(
+                    "courseView"
+                );
 
 
             courseView.classList.add(
@@ -1986,21 +2350,24 @@
             );
 
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
+            courseView.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
             });
 
 
+            /*
+             * Put the course in the URL.
+             * This lets JavaScript remember
+             * which course is being viewed.
+             */
+
             history.pushState(
                 {
-                    course: course.id
+                    course: courseId
                 },
                 "",
-                "#course=" +
-                encodeURIComponent(
-                    course.id
-                )
+                "?course=" + courseId
             );
 
         }
@@ -2008,10 +2375,16 @@
 
 
         /* =====================================================
-           RETURN TO COURSE CATALOGUE
+           CLOSE COURSE
         ===================================================== */
 
-        function showCourseCatalogue() {
+        function closeCourse() {
+
+            const courseView =
+                document.getElementById(
+                    "courseView"
+                );
+
 
             courseView.classList.remove(
                 "active"
@@ -2024,20 +2397,19 @@
             );
 
 
-            courseCatalogue.style.display =
-                "block";
-
-
             history.pushState(
                 {},
                 "",
-                window.location.pathname
+                "technology-guides.html"
             );
 
 
             window.scrollTo({
+
                 top: 0,
+
                 behavior: "smooth"
+
             });
 
         }
@@ -2045,105 +2417,50 @@
 
 
         /* =====================================================
-           HANDLE BROWSER BACK BUTTON
+           OPEN COURSE FROM URL
         ===================================================== */
 
-        window.addEventListener(
-            "popstate",
-            function() {
+        function loadCourseFromURL() {
 
-                const hash =
-                    window.location.hash;
-
-
-                if (
-                    hash.startsWith(
-                        "#course="
-                    )
-                ) {
-
-                    const courseId =
-                        decodeURIComponent(
-                            hash.substring(
-                                8
-                            )
-                        );
+            const parameters =
+                new URLSearchParams(
+                    window.location.search
+                );
 
 
-                    openCourse(
-                        courseId
-                    );
-
-                }
-
-                else {
-
-                    showCourseCatalogue();
-
-                }
-
-            }
-        );
+            const courseId =
+                parameters.get(
+                    "course"
+                );
 
 
+            if (courseId) {
 
-        /* =====================================================
-           HANDLE DIRECT COURSE URL
-        ===================================================== */
-
-        function loadCourseFromUrl() {
-
-            const hash =
-                window.location.hash;
-
-
-            if (
-                hash.startsWith(
-                    "#course="
-                )
-            ) {
-
-                const courseId =
-                    decodeURIComponent(
-                        hash.substring(
-                            8
-                        )
-                    );
-
-
-                const exists =
-                    technologyCourses.some(
-                        function(course) {
-
-                            return course.id ===
-                                courseId;
-
-                        }
-                    );
-
-
-                if (exists) {
-
-                    openCourse(
-                        courseId
-                    );
-
-                }
+                openCourse(
+                    courseId
+                );
 
             }
 
         }
 
 
+        loadCourseFromURL();
+
+
 
         /* =====================================================
-           INITIALIZE
+           BROWSER BACK BUTTON
         ===================================================== */
 
-        renderCourseCatalogue();
+        window.addEventListener(
+            "popstate",
+            function() {
 
-        loadCourseFromUrl();
+                loadCourseFromURL();
 
+            }
+        );
 
     </script>
 

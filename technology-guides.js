@@ -1,1225 +1,1076 @@
-/*
-========================================================
-NEXORA DIGITAL
-TECHNOLOGY-GUIDES.JS
-
-JAVASCRIPT TECHNOLOGY GUIDE
-
-This file provides the learning content for:
-
-technology-guides.html
-
-There are no quizzes in this file.
-It contains learning notes and practical examples only.
-========================================================
-*/
-
-
-const technologyGuide = [
-
-    /* ====================================================
-       LESSON 01
-    ==================================================== */
-
-    {
-        number: "01",
-        title: "What Is JavaScript?",
-
-        content: `
-
-            <p>
-                JavaScript is a programming language commonly
-                used to make web pages interactive and dynamic.
-                It can respond to user actions, update page
-                content, communicate with servers and control
-                many features of a web application.
-            </p>
-
-            <p>
-                In a browser, JavaScript can work with the
-                webpage through the Document Object Model (DOM).
-                This allows JavaScript to access and modify
-                elements on a webpage.
-            </p>
-
-            <h3>What Can JavaScript Do?</h3>
-
-            <ul>
-
-                <li>
-                    Respond to button clicks.
-                </li>
-
-                <li>
-                    Validate information entered into forms.
-                </li>
-
-                <li>
-                    Change webpage content.
-                </li>
-
-                <li>
-                    Modify HTML elements and their properties.
-                </li>
-
-                <li>
-                    Change styles and classes.
-                </li>
-
-                <li>
-                    Fetch information from servers and APIs.
-                </li>
-
-                <li>
-                    Create interactive web applications.
-                </li>
-
-            </ul>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 02
-    ==================================================== */
-
-    {
-        number: "02",
-        title: "JavaScript, HTML and CSS",
-
-        content: `
-
-            <p>
-                Modern websites commonly use HTML, CSS and
-                JavaScript together.
-            </p>
-
-            <h3>HTML</h3>
-
-            <p>
-                HTML provides the structure and content of a
-                webpage.
-            </p>
-
-            <h3>CSS</h3>
-
-            <p>
-                CSS controls presentation, layout, colors,
-                spacing, typography and visual appearance.
-            </p>
-
-            <h3>JavaScript</h3>
-
-            <p>
-                JavaScript provides programming logic and
-                interaction.
-            </p>
-
-            <p>
-                For example, HTML can create a button, CSS can
-                make the button attractive, and JavaScript can
-                determine what happens when the user clicks it.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 03
-    ==================================================== */
-
-    {
-        number: "03",
-        title: "Adding JavaScript to a Webpage",
-
-        content: `
-
-            <p>
-                JavaScript can be written directly inside an
-                HTML document or stored in a separate JavaScript
-                file.
-            </p>
-
-            <p>
-                External JavaScript files are useful for keeping
-                HTML and programming logic organized.
-            </p>
-
-            <h3>External JavaScript</h3>
-
-            <pre><code>
-&lt;script src="app.js"&gt;&lt;/script&gt;
-            </code></pre>
-
-            <p>
-                The browser loads the JavaScript file and executes
-                the code it contains.
-            </p>
-
-            <p>
-                This is the approach being used by NEXORA DIGITAL.
-                For example, this page uses
-                <strong>technology-guides.js</strong> to provide
-                its learning content.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 04
-    ==================================================== */
-
-    {
-        number: "04",
-        title: "Variables",
-
-        content: `
-
-            <p>
-                Variables allow a program to store information
-                that can be used later.
-            </p>
-
-            <p>
-                Modern JavaScript commonly uses
-                <strong>let</strong> and
-                <strong>const</strong> for variable declarations.
-            </p>
-
-            <h3>Using let</h3>
-
-            <pre><code>
-let userName = "Steven";
-
-userName = "Alex";
-            </code></pre>
-
-            <p>
-                A variable declared with
-                <strong>let</strong> can be reassigned.
-            </p>
-
-            <h3>Using const</h3>
-
-            <pre><code>
-const websiteName = "NEXORA DIGITAL";
-            </code></pre>
-
-            <p>
-                A variable declared with
-                <strong>const</strong> cannot be reassigned.
-            </p>
-
-            <p>
-                JavaScript also has the older
-                <strong>var</strong> declaration, but modern
-                code generally prefers
-                <strong>let</strong> and
-                <strong>const</strong>.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 05
-    ==================================================== */
-
-    {
-        number: "05",
-        title: "Data Types",
-
-        content: `
-
-            <p>
-                JavaScript programs work with different types
-                of values.
-            </p>
-
-            <h3>Common Primitive Types</h3>
-
-            <ul>
-
-                <li>
-                    <strong>String</strong> — text.
-                </li>
-
-                <li>
-                    <strong>Number</strong> — numeric values.
-                </li>
-
-                <li>
-                    <strong>BigInt</strong> — very large integers.
-                </li>
-
-                <li>
-                    <strong>Boolean</strong> — true or false.
-                </li>
-
-                <li>
-                    <strong>Undefined</strong> — a value that
-                    has not been assigned.
-                </li>
-
-                <li>
-                    <strong>Null</strong> — an intentional
-                    absence of a value.
-                </li>
-
-                <li>
-                    <strong>Symbol</strong> — a unique identifier.
-                </li>
-
-            </ul>
-
-            <h3>Example</h3>
-
-            <pre><code>
-const name = "NEXORA";
-
-const visitors = 100;
-
-const websiteOnline = true;
-            </code></pre>
-
-            <p>
-                JavaScript also has objects, including arrays,
-                functions and many built-in objects.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 06
-    ==================================================== */
-
-    {
-        number: "06",
-        title: "Operators",
-
-        content: `
-
-            <p>
-                Operators allow JavaScript to perform
-                calculations, comparisons and assignments.
-            </p>
-
-            <h3>Arithmetic Operators</h3>
-
-            <pre><code>
-const total = 10 + 5;
-
-const difference = 10 - 5;
-
-const product = 10 * 5;
-
-const division = 10 / 5;
-            </code></pre>
-
-            <h3>Comparison Operators</h3>
-
-            <pre><code>
-5 === 5;
-
-10 > 5;
-
-3 < 8;
-            </code></pre>
-
-            <h3>Logical Operators</h3>
-
-            <pre><code>
-conditionA && conditionB;
-
-conditionA || conditionB;
-
-!condition;
-            </code></pre>
-
-            <p>
-                Understanding operators is important because
-                they form part of conditions and program logic.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 07
-    ==================================================== */
-
-    {
-        number: "07",
-        title: "Conditional Statements",
-
-        content: `
-
-            <p>
-                Conditional statements allow a program to make
-                decisions based on conditions.
-            </p>
-
-            <h3>if Statement</h3>
-
-            <pre><code>
-const age = 20;
-
-if (age >= 18) {
-    console.log("Adult");
-}
-            </code></pre>
-
-            <h3>if...else</h3>
-
-            <pre><code>
-if (age >= 18) {
-
-    console.log("Adult");
-
-} else {
-
-    console.log("Minor");
-
-}
-            </code></pre>
-
-            <p>
-                Conditions are useful when different actions
-                need to occur depending on the information
-                available to the program.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 08
-    ==================================================== */
-
-    {
-        number: "08",
-        title: "Loops",
-
-        content: `
-
-            <p>
-                Loops allow JavaScript to repeat instructions.
-            </p>
-
-            <h3>for Loop</h3>
-
-            <pre><code>
-for (
-    let number = 1;
-    number <= 5;
-    number++
-) {
-
-    console.log(number);
-
-}
-            </code></pre>
-
-            <h3>while Loop</h3>
-
-            <pre><code>
-let number = 1;
-
-while (number <= 5) {
-
-    console.log(number);
-
-    number++;
-
-}
-            </code></pre>
-
-            <p>
-                Loops are especially useful when working with
-                collections of data such as arrays.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 09
-    ==================================================== */
-
-    {
-        number: "09",
-        title: "Functions",
-
-        content: `
-
-            <p>
-                A function is a reusable block of code designed
-                to perform a particular task.
-            </p>
-
-            <h3>Function Example</h3>
-
-            <pre><code>
-function greetUser(name) {
-
-    return "Hello " + name;
-
-}
-
-const message =
-    greetUser("Steven");
-            </code></pre>
-
-            <p>
-                Functions can accept parameters and can return
-                values.
-            </p>
-
-            <h3>Arrow Functions</h3>
-
-            <pre><code>
-const add = (first, second) => {
-
-    return first + second;
-
-};
-            </code></pre>
-
-            <p>
-                Functions are one of the fundamental building
-                blocks of JavaScript programs.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 10
-    ==================================================== */
-
-    {
-        number: "10",
-        title: "Arrays",
-
-        content: `
-
-            <p>
-                Arrays are used to store collections of values.
-            </p>
-
-            <pre><code>
-const languages = [
-    "JavaScript",
-    "HTML",
-    "CSS"
-];
-            </code></pre>
-
-            <p>
-                Individual elements can be accessed using
-                their indexes.
-            </p>
-
-            <pre><code>
-console.log(
-    languages[0]
-);
-            </code></pre>
-
-            <p>
-                JavaScript arrays provide methods for working
-                with collections of data.
-            </p>
-
-            <pre><code>
-languages.forEach(
-    function (language) {
-
-        console.log(language);
-
-    }
-);
-            </code></pre>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 11
-    ==================================================== */
-
-    {
-        number: "11",
-        title: "Objects",
-
-        content: `
-
-            <p>
-                Objects store related information using
-                properties and values.
-            </p>
-
-            <pre><code>
-const user = {
-
-    name: "Steven",
-
-    role: "Developer",
-
-    active: true
-
-};
-            </code></pre>
-
-            <p>
-                Object properties can be accessed using dot
-                notation or bracket notation.
-            </p>
-
-            <pre><code>
-console.log(user.name);
-
-console.log(user["role"]);
-            </code></pre>
-
-            <p>
-                Objects are widely used in JavaScript applications
-                to represent structured information.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 12
-    ==================================================== */
-
-    {
-        number: "12",
-        title: "The Document Object Model (DOM)",
-
-        content: `
-
-            <p>
-                The Document Object Model, commonly called the
-                DOM, represents a webpage as a structure of
-                objects that JavaScript can access and manipulate.
-            </p>
-
-            <p>
-                This is what allows JavaScript in a browser to
-                interact with HTML elements.
-            </p>
-
-            <h3>Selecting an Element</h3>
-
-            <pre><code>
-const heading =
-    document.querySelector("h1");
-            </code></pre>
-
-            <h3>Changing Content</h3>
-
-            <pre><code>
-heading.textContent =
-    "Welcome to NEXORA DIGITAL";
-            </code></pre>
-
-            <p>
-                DOM scripting is one of the most important parts
-                of browser-based JavaScript development.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 13
-    ==================================================== */
-
-    {
-        number: "13",
-        title: "JavaScript Events",
-
-        content: `
-
-            <p>
-                Events allow JavaScript to respond to actions
-                and occurrences in a webpage.
-            </p>
-
-            <p>
-                Examples include clicks, keyboard input,
-                form submission and page loading.
-            </p>
-
-            <h3>Click Event</h3>
-
-            <pre><code>
-const button =
-    document.querySelector("#myButton");
-
-button.addEventListener(
-    "click",
-    function () {
-
-        console.log(
-            "Button clicked"
-        );
-
-    }
-);
-            </code></pre>
-
-            <p>
-                Event listeners allow webpages to become
-                interactive.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 14
-    ==================================================== */
-
-    {
-        number: "14",
-        title: "Forms and User Input",
-
-        content: `
-
-            <p>
-                JavaScript can read information entered into
-                HTML forms and respond to form submissions.
-            </p>
-
-            <pre><code>
-const form =
-    document.querySelector("#contactForm");
-
-form.addEventListener(
-    "submit",
-    function (event) {
-
-        event.preventDefault();
-
-        console.log(
-            "Form submitted"
-        );
-
-    }
-);
-            </code></pre>
-
-            <p>
-                Form handling is commonly used for validation,
-                interactive interfaces and sending information
-                to a server.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 15
-    ==================================================== */
-
-    {
-        number: "15",
-        title: "Asynchronous JavaScript",
-
-        content: `
-
-            <p>
-                Some operations take time to complete, such as
-                requesting information from a server.
-            </p>
-
-            <p>
-                JavaScript provides asynchronous programming
-                mechanisms that allow other work to continue
-                while an asynchronous operation is waiting.
-            </p>
-
-            <h3>Promise</h3>
-
-            <p>
-                A Promise represents the eventual completion
-                or failure of an asynchronous operation.
-            </p>
-
-            <h3>async and await</h3>
-
-            <pre><code>
-async function loadData() {
-
-    const response =
-        await fetch("/data.json");
-
-    const data =
-        await response.json();
-
-    console.log(data);
-
-}
-            </code></pre>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 16
-    ==================================================== */
-
-    {
-        number: "16",
-        title: "Fetch and APIs",
-
-        content: `
-
-            <p>
-                The Fetch API allows browser JavaScript to make
-                network requests and work with responses.
-            </p>
-
-            <pre><code>
-fetch("/data.json")
-    .then(function (response) {
-
-        return response.json();
-
-    })
-    .then(function (data) {
-
-        console.log(data);
-
-    })
-    .catch(function (error) {
-
-        console.error(error);
-
-    });
-            </code></pre>
-
-            <p>
-                APIs allow applications to communicate with
-                other software systems and retrieve or send
-                information.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 17
-    ==================================================== */
-
-    {
-        number: "17",
-        title: "JSON",
-
-        content: `
-
-            <p>
-                JSON stands for JavaScript Object Notation.
-                It is a text-based format commonly used for
-                exchanging structured data.
-            </p>
-
-            <h3>Example JSON</h3>
-
-            <pre><code>
-{
-    "name": "NEXORA DIGITAL",
-    "active": true
-}
-            </code></pre>
-
-            <p>
-                JavaScript can convert JSON text into JavaScript
-                values and can also convert JavaScript values
-                into JSON.
-            </p>
-
-            <pre><code>
-const jsonText =
-    JSON.stringify({
-        name: "NEXORA DIGITAL"
-    });
-
-const object =
-    JSON.parse(jsonText);
-            </code></pre>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 18
-    ==================================================== */
-
-    {
-        number: "18",
-        title: "JavaScript Modules",
-
-        content: `
-
-            <p>
-                Modules allow JavaScript programs to be divided
-                into separate files.
-            </p>
-
-            <p>
-                This becomes particularly useful as a project
-                grows and the amount of JavaScript increases.
-            </p>
-
-            <h3>Export</h3>
-
-            <pre><code>
-export function greet() {
-
-    return "Hello";
-
-}
-            </code></pre>
-
-            <h3>Import</h3>
-
-            <pre><code>
-import {
-    greet
-} from "./greetings.js";
-            </code></pre>
-
-            <p>
-                Modern browsers support JavaScript modules
-                natively.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 19
-    ==================================================== */
-
-    {
-        number: "19",
-        title: "Classes",
-
-        content: `
-
-            <p>
-                JavaScript supports classes as a way to define
-                objects and organize related data and behavior.
-            </p>
-
-            <pre><code>
-class User {
-
-    constructor(name) {
-
-        this.name = name;
-
-    }
-
-
-    greet() {
-
-        return "Hello " + this.name;
-
-    }
-
-}
-            </code></pre>
-
-            <p>
-                Classes can be useful when building larger
-                applications that require organized object
-                structures.
-            </p>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 20
-    ==================================================== */
-
-    {
-        number: "20",
-        title: "Debugging JavaScript",
-
-        content: `
-
-            <p>
-                Debugging is the process of finding and fixing
-                problems in a program.
-            </p>
-
-            <h3>Console Output</h3>
-
-            <pre><code>
-console.log(
-    "Testing JavaScript"
-);
-            </code></pre>
-
-            <p>
-                The browser's developer tools can provide useful
-                information about errors, network requests,
-                elements and JavaScript execution.
-            </p>
-
-            <h3>Common Problems</h3>
-
-            <ul>
-
-                <li>
-                    Misspelled variable names.
-                </li>
-
-                <li>
-                    Incorrect selectors.
-                </li>
-
-                <li>
-                    Missing brackets or parentheses.
-                </li>
-
-                <li>
-                    Incorrect function calls.
-                </li>
-
-                <li>
-                    Problems with asynchronous operations.
-                </li>
-
-            </ul>
-
-        `
-    },
-
-
-    /* ====================================================
-       LESSON 21
-    ==================================================== */
-
-    {
-        number: "21",
-        title: "Building Practical JavaScript Projects",
-
-        content: `
-
-            <p>
-                The best way to strengthen JavaScript knowledge
-                is to use the language to build practical
-                projects.
-            </p>
-
-            <h3>Beginner Projects</h3>
-
-            <ul>
-
-                <li>
-                    Digital calculator.
-                </li>
-
-                <li>
-                    To-do list.
-                </li>
-
-                <li>
-                    Digital clock.
-                </li>
-
-                <li>
-                    Simple quiz application.
-                </li>
-
-                <li>
-                    Interactive navigation menu.
-                </li>
-
-            </ul>
-
-            <h3>Intermediate Projects</h3>
-
-            <ul>
-
-                <li>
-                    Weather application using an API.
-                </li>
-
-                <li>
-                    Expense tracker.
-                </li>
-
-                <li>
-                    Notes application.
-                </li>
-
-                <li>
-                    Search application.
-                </li>
-
-                <li>
-                    Dynamic dashboard.
-                </li>
-
-            </ul>
-
-            <p>
-                Projects help connect individual JavaScript
-                concepts into complete applications.
-            </p>
-
-        `
-    }
-
+/* =========================================================
+   NEXORA DIGITAL
+   TECHNOLOGY GUIDES COURSE SYSTEM
+   ========================================================= */
+
+const courses = [
+  {
+    id: "ai-ml",
+    number: "01",
+    title: "Artificial Intelligence & Machine Learning",
+    description: "Learn the foundations of artificial intelligence, machine learning, data preparation, models, evaluation and responsible AI.",
+    modules: [
+      {
+        title: "Introduction to Artificial Intelligence",
+        lessons: [
+          {
+            title: "What Is Artificial Intelligence?",
+            content: `
+              <h3>What Is Artificial Intelligence?</h3>
+
+              <p>
+                Artificial Intelligence (AI) is the field of computing concerned
+                with creating systems that can perform tasks that normally require
+                human intelligence.
+              </p>
+
+              <p>
+                These tasks may include understanding language, recognizing
+                images, identifying patterns, making predictions, solving
+                problems and supporting decisions.
+              </p>
+
+              <h4>Major Areas of AI</h4>
+
+              <ul>
+                <li>Machine Learning</li>
+                <li>Natural Language Processing</li>
+                <li>Computer Vision</li>
+                <li>Robotics</li>
+                <li>Expert Systems</li>
+                <li>Generative AI</li>
+              </ul>
+
+              <h4>Artificial Intelligence and Machine Learning</h4>
+
+              <p>
+                AI is the broader field. Machine Learning (ML) is one approach
+                used to build AI systems. Instead of explicitly programming
+                every rule, a machine-learning system can learn patterns from
+                data.
+              </p>
+
+              <h4>Examples of AI</h4>
+
+              <p>
+                AI is used in recommendation systems, search engines,
+                translation systems, fraud detection, voice assistants,
+                medical research, autonomous systems and many other areas.
+              </p>
+
+              <h4>Responsible AI</h4>
+
+              <p>
+                AI systems should be developed responsibly. Important concerns
+                include privacy, security, fairness, transparency, accuracy and
+                human oversight.
+              </p>
+            `
+          },
+
+          {
+            title: "Machine Learning Fundamentals",
+            content: `
+              <h3>Machine Learning Fundamentals</h3>
+
+              <p>
+                Machine Learning is a method of building computer systems that
+                learn useful patterns from data.
+              </p>
+
+              <h4>Main Types of Machine Learning</h4>
+
+              <h5>1. Supervised Learning</h5>
+              <p>
+                The model learns from examples where the desired answer is
+                already known. Classification and regression are common
+                supervised-learning tasks.
+              </p>
+
+              <h5>2. Unsupervised Learning</h5>
+              <p>
+                The model works with data that does not contain predefined
+                answers. Clustering is a common example.
+              </p>
+
+              <h5>3. Reinforcement Learning</h5>
+              <p>
+                An agent learns by interacting with an environment and
+                receiving rewards or penalties.
+              </p>
+
+              <h4>The Machine Learning Process</h4>
+
+              <ol>
+                <li>Define the problem.</li>
+                <li>Collect data.</li>
+                <li>Clean and prepare the data.</li>
+                <li>Select useful features.</li>
+                <li>Choose a model.</li>
+                <li>Train the model.</li>
+                <li>Evaluate the model.</li>
+                <li>Improve and deploy the model.</li>
+              </ol>
+            `
+          }
+        ]
+      },
+
+      {
+        title: "Data and Machine Learning",
+        lessons: [
+          {
+            title: "Understanding Data",
+            content: `
+              <h3>Understanding Data</h3>
+
+              <p>
+                Data is the foundation of machine learning. The quality of the
+                data directly affects the quality of the resulting model.
+              </p>
+
+              <h4>Common Data Types</h4>
+
+              <ul>
+                <li>Numerical data</li>
+                <li>Categorical data</li>
+                <li>Text data</li>
+                <li>Image data</li>
+                <li>Audio data</li>
+                <li>Time-series data</li>
+              </ul>
+
+              <h4>Data Preparation</h4>
+
+              <p>
+                Before training a model, data may need to be cleaned.
+                Missing values, duplicate records, inconsistent formats and
+                incorrect values should be identified and handled.
+              </p>
+
+              <p>
+                Data preparation is often one of the most important parts of
+                a machine-learning project because a model cannot compensate
+                for fundamentally poor data.
+              </p>
+            `
+          },
+
+          {
+            title: "Training and Evaluating Models",
+            content: `
+              <h3>Training and Evaluating Models</h3>
+
+              <p>
+                Training means allowing a machine-learning algorithm to learn
+                patterns from training data.
+              </p>
+
+              <h4>Training, Validation and Testing</h4>
+
+              <p>
+                A dataset can be divided into training, validation and testing
+                portions. The training set is used to learn patterns. Validation
+                data can help with model selection and tuning. Test data provides
+                an independent evaluation.
+              </p>
+
+              <h4>Overfitting</h4>
+
+              <p>
+                Overfitting occurs when a model learns the training data too
+                closely and performs poorly on new data.
+              </p>
+
+              <h4>Underfitting</h4>
+
+              <p>
+                Underfitting occurs when a model is too simple to capture
+                important patterns in the data.
+              </p>
+
+              <h4>Model Evaluation</h4>
+
+              <p>
+                Different tasks require different evaluation measures.
+                Classification can use measures such as accuracy, precision,
+                recall and F1 score, while regression can use measures such as
+                mean absolute error and mean squared error.
+              </p>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "web-development",
+    number: "02",
+    title: "Full-Stack Web Development",
+    description: "Learn how websites and web applications are designed, developed, tested and deployed.",
+    modules: [
+      {
+        title: "Web Development Foundations",
+        lessons: [
+          {
+            title: "How the Web Works",
+            content: `
+              <h3>How the Web Works</h3>
+
+              <p>
+                The World Wide Web is a system through which computers
+                communicate using internet protocols. A web browser requests
+                resources from a server and displays the returned content.
+              </p>
+
+              <h4>Frontend</h4>
+              <p>
+                Frontend development focuses on what users see and interact
+                with. HTML provides structure, CSS controls presentation and
+                JavaScript provides behavior and interactivity.
+              </p>
+
+              <h4>Backend</h4>
+              <p>
+                Backend development handles server-side logic, authentication,
+                data processing, APIs and communication with databases.
+              </p>
+
+              <h4>Database</h4>
+              <p>
+                A database stores and organizes application information.
+                Relational databases use tables while many NoSQL systems use
+                other data models.
+              </p>
+            `
+          },
+
+          {
+            title: "HTML, CSS and JavaScript",
+            content: `
+              <h3>HTML, CSS and JavaScript</h3>
+
+              <p>
+                HTML defines the structure of a webpage. CSS controls its
+                appearance and layout. JavaScript adds dynamic behavior.
+              </p>
+
+              <h4>HTML</h4>
+              <p>
+                HTML uses elements such as headings, paragraphs, links, images,
+                forms, lists and sections to structure information.
+              </p>
+
+              <h4>CSS</h4>
+              <p>
+                CSS can control colors, spacing, typography, positioning,
+                responsive layouts, animations and other visual properties.
+              </p>
+
+              <h4>JavaScript</h4>
+              <p>
+                JavaScript allows developers to respond to user actions,
+                manipulate webpage content, communicate with servers and
+                build complex application interfaces.
+              </p>
+            `
+          }
+        ]
+      },
+
+      {
+        title: "Backend Development",
+        lessons: [
+          {
+            title: "Servers and APIs",
+            content: `
+              <h3>Servers and APIs</h3>
+
+              <p>
+                A server is a computer system or software process that provides
+                services to clients. Web applications commonly communicate
+                through HTTP-based requests and responses.
+              </p>
+
+              <p>
+                An API provides a defined way for software components to
+                communicate. A REST-style API commonly uses HTTP methods such
+                as GET, POST, PUT or PATCH, and DELETE.
+              </p>
+
+              <h4>Typical Application Flow</h4>
+
+              <ol>
+                <li>The user performs an action.</li>
+                <li>The browser creates a request.</li>
+                <li>The server receives the request.</li>
+                <li>Backend logic processes the request.</li>
+                <li>The application may communicate with a database.</li>
+                <li>The server returns a response.</li>
+                <li>The browser updates the interface.</li>
+              </ol>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "cybersecurity",
+    number: "03",
+    title: "Cybersecurity & Ethical Hacking",
+    description: "Learn cybersecurity principles, security controls, threat awareness, defensive practices and ethical testing.",
+    modules: [
+      {
+        title: "Cybersecurity Foundations",
+        lessons: [
+          {
+            title: "Introduction to Cybersecurity",
+            content: `
+              <h3>Introduction to Cybersecurity</h3>
+
+              <p>
+                Cybersecurity is the practice of protecting computers,
+                networks, applications, systems and information from
+                unauthorized access, disruption, modification or destruction.
+              </p>
+
+              <h4>The CIA Triad</h4>
+
+              <ul>
+                <li><strong>Confidentiality:</strong> information is accessible only to authorized people.</li>
+                <li><strong>Integrity:</strong> information remains accurate and trustworthy.</li>
+                <li><strong>Availability:</strong> systems and information remain accessible when needed.</li>
+              </ul>
+
+              <h4>Common Threats</h4>
+
+              <ul>
+                <li>Phishing</li>
+                <li>Malware</li>
+                <li>Password attacks</li>
+                <li>Social engineering</li>
+                <li>Data breaches</li>
+                <li>Denial-of-service attacks</li>
+              </ul>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "cloud-devops",
+    number: "04",
+    title: "Cloud Computing & DevOps",
+    description: "Learn cloud concepts, infrastructure, deployment automation and DevOps practices.",
+    modules: [
+      {
+        title: "Cloud Computing Foundations",
+        lessons: [
+          {
+            title: "What Is Cloud Computing?",
+            content: `
+              <h3>What Is Cloud Computing?</h3>
+
+              <p>
+                Cloud computing provides computing resources such as servers,
+                storage, databases and applications through network-based
+                services.
+              </p>
+
+              <h4>Major Cloud Service Models</h4>
+
+              <ul>
+                <li><strong>IaaS:</strong> Infrastructure as a Service</li>
+                <li><strong>PaaS:</strong> Platform as a Service</li>
+                <li><strong>SaaS:</strong> Software as a Service</li>
+              </ul>
+
+              <p>
+                Cloud systems can provide scalability, flexibility and
+                centralized management, but they also require careful attention
+                to security, cost management and reliability.
+              </p>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "data-science",
+    number: "05",
+    title: "Data Science & Big Data Analytics",
+    description: "Learn data analysis, statistics, visualization, data pipelines and large-scale analytics.",
+    modules: [
+      {
+        title: "Data Science Foundations",
+        lessons: [
+          {
+            title: "Introduction to Data Science",
+            content: `
+              <h3>Introduction to Data Science</h3>
+
+              <p>
+                Data science combines programming, statistics, analytical
+                thinking and domain knowledge to extract useful insights from
+                data.
+              </p>
+
+              <h4>Typical Data Science Workflow</h4>
+
+              <ol>
+                <li>Define the question.</li>
+                <li>Collect relevant data.</li>
+                <li>Clean the data.</li>
+                <li>Explore the data.</li>
+                <li>Analyze or model the data.</li>
+                <li>Communicate findings.</li>
+                <li>Deploy or apply the results.</li>
+              </ol>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "mobile-development",
+    number: "06",
+    title: "Mobile App Development",
+    description: "Learn the principles of designing, developing, testing and releasing mobile applications.",
+    modules: [
+      {
+        title: "Mobile Development Foundations",
+        lessons: [
+          {
+            title: "Introduction to Mobile Applications",
+            content: `
+              <h3>Introduction to Mobile Applications</h3>
+
+              <p>
+                Mobile applications are software programs designed to operate
+                on smartphones and tablets.
+              </p>
+
+              <p>
+                Mobile development requires attention to screen sizes,
+                touch interaction, performance, battery consumption,
+                connectivity and platform-specific requirements.
+              </p>
+
+              <h4>Common Development Approaches</h4>
+
+              <ul>
+                <li>Native development</li>
+                <li>Cross-platform development</li>
+                <li>Progressive web applications</li>
+              </ul>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "ui-ux",
+    number: "07",
+    title: "UI/UX Product Design",
+    description: "Learn user interface design, user experience research, wireframing, prototyping and usability.",
+    modules: [
+      {
+        title: "UI/UX Foundations",
+        lessons: [
+          {
+            title: "Understanding UI and UX",
+            content: `
+              <h3>Understanding UI and UX</h3>
+
+              <p>
+                User Interface (UI) focuses on the visual and interactive
+                elements of a digital product. User Experience (UX) focuses on
+                the overall experience a person has while using the product.
+              </p>
+
+              <h4>Important UX Principles</h4>
+
+              <ul>
+                <li>Clarity</li>
+                <li>Consistency</li>
+                <li>Accessibility</li>
+                <li>Feedback</li>
+                <li>Simple navigation</li>
+                <li>Usability</li>
+              </ul>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "blockchain-web3",
+    number: "08",
+    title: "Blockchain & Web3 Development",
+    description: "Learn blockchain concepts, decentralized applications, smart contracts and Web3 fundamentals.",
+    modules: [
+      {
+        title: "Blockchain Foundations",
+        lessons: [
+          {
+            title: "What Is Blockchain?",
+            content: `
+              <h3>What Is Blockchain?</h3>
+
+              <p>
+                A blockchain is a distributed data structure in which records
+                are grouped into blocks and linked using cryptographic
+                techniques.
+              </p>
+
+              <p>
+                Blockchains can provide a shared record across participating
+                systems without relying on a single centralized database.
+              </p>
+
+              <h4>Important Concepts</h4>
+
+              <ul>
+                <li>Blocks</li>
+                <li>Transactions</li>
+                <li>Cryptographic hashes</li>
+                <li>Consensus mechanisms</li>
+                <li>Wallets</li>
+                <li>Smart contracts</li>
+              </ul>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "business-intelligence",
+    number: "09",
+    title: "Business Intelligence & Data Visualization",
+    description: "Learn how organizations transform data into dashboards, reports and useful business insights.",
+    modules: [
+      {
+        title: "Business Intelligence Foundations",
+        lessons: [
+          {
+            title: "Introduction to Business Intelligence",
+            content: `
+              <h3>Introduction to Business Intelligence</h3>
+
+              <p>
+                Business Intelligence (BI) involves collecting, organizing,
+                analyzing and presenting information to support better
+                organizational decisions.
+              </p>
+
+              <h4>Common BI Outputs</h4>
+
+              <ul>
+                <li>Reports</li>
+                <li>Dashboards</li>
+                <li>Charts</li>
+                <li>Performance indicators</li>
+                <li>Analytical summaries</li>
+              </ul>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "game-development",
+    number: "10",
+    title: "Game Development & VR/AR",
+    description: "Learn game design, programming, game engines and immersive technologies.",
+    modules: [
+      {
+        title: "Game Development Foundations",
+        lessons: [
+          {
+            title: "Introduction to Game Development",
+            content: `
+              <h3>Introduction to Game Development</h3>
+
+              <p>
+                Game development combines programming, design, art, audio,
+                storytelling and interactive systems to create playable
+                experiences.
+              </p>
+
+              <h4>Major Game Components</h4>
+
+              <ul>
+                <li>Game rules</li>
+                <li>Player input</li>
+                <li>Game state</li>
+                <li>Graphics</li>
+                <li>Audio</li>
+                <li>Physics</li>
+                <li>Levels and environments</li>
+              </ul>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "iot",
+    number: "11",
+    title: "Internet of Things (IoT) & Embedded Systems",
+    description: "Learn connected devices, sensors, embedded programming, communication and IoT architecture.",
+    modules: [
+      {
+        title: "IoT Foundations",
+        lessons: [
+          {
+            title: "What Is the Internet of Things?",
+            content: `
+              <h3>What Is the Internet of Things?</h3>
+
+              <p>
+                The Internet of Things describes physical devices that contain
+                sensors, software and communication capabilities allowing them
+                to collect and exchange information.
+              </p>
+
+              <h4>Examples</h4>
+
+              <ul>
+                <li>Smart home devices</li>
+                <li>Industrial sensors</li>
+                <li>Connected vehicles</li>
+                <li>Environmental monitoring systems</li>
+                <li>Wearable devices</li>
+              </ul>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "qa-testing",
+    number: "12",
+    title: "Software Quality Assurance & Automated Testing",
+    description: "Learn software testing principles, test planning, quality assurance and automation.",
+    modules: [
+      {
+        title: "Software Testing Foundations",
+        lessons: [
+          {
+            title: "Introduction to Software Testing",
+            content: `
+              <h3>Introduction to Software Testing</h3>
+
+              <p>
+                Software testing is the process of evaluating software to
+                identify defects and determine whether it meets specified
+                requirements.
+              </p>
+
+              <h4>Common Testing Levels</h4>
+
+              <ul>
+                <li>Unit testing</li>
+                <li>Integration testing</li>
+                <li>System testing</li>
+                <li>Acceptance testing</li>
+              </ul>
+
+              <h4>Automated Testing</h4>
+
+              <p>
+                Automated testing uses software tools to execute tests and
+                compare actual results with expected results. Automation can
+                improve repeatability and reduce manual effort.
+              </p>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "rpa",
+    number: "13",
+    title: "Robotic Process Automation (RPA)",
+    description: "Learn how software robots automate repetitive digital business processes.",
+    modules: [
+      {
+        title: "RPA Foundations",
+        lessons: [
+          {
+            title: "What Is RPA?",
+            content: `
+              <h3>What Is Robotic Process Automation?</h3>
+
+              <p>
+                Robotic Process Automation uses software robots to perform
+                structured, repetitive tasks that would otherwise require
+                manual computer interaction.
+              </p>
+
+              <h4>Good Candidates for Automation</h4>
+
+              <ul>
+                <li>Repetitive data entry</li>
+                <li>File processing</li>
+                <li>Routine report generation</li>
+                <li>Data transfer between systems</li>
+                <li>Structured administrative workflows</li>
+              </ul>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "database",
+    number: "14",
+    title: "Database Administration & Engineering",
+    description: "Learn database concepts, SQL, administration, security, backups and performance.",
+    modules: [
+      {
+        title: "Database Foundations",
+        lessons: [
+          {
+            title: "Understanding Databases",
+            content: `
+              <h3>Understanding Databases</h3>
+
+              <p>
+                A database is an organized collection of information that can
+                be stored, retrieved, updated and managed efficiently.
+              </p>
+
+              <h4>Relational Databases</h4>
+
+              <p>
+                Relational databases organize information into tables made up
+                of rows and columns. Relationships can be created between
+                tables using keys.
+              </p>
+
+              <h4>Database Administration</h4>
+
+              <p>
+                Database administrators may be responsible for security,
+                backups, availability, monitoring, access control and
+                performance management.
+              </p>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "api-microservices",
+    number: "15",
+    title: "API Design & Microservices Architecture",
+    description: "Learn API design, service communication, architecture and distributed applications.",
+    modules: [
+      {
+        title: "API Foundations",
+        lessons: [
+          {
+            title: "Understanding APIs",
+            content: `
+              <h3>Understanding APIs</h3>
+
+              <p>
+                An Application Programming Interface defines how software
+                components communicate with one another.
+              </p>
+
+              <p>
+                Well-designed APIs should be understandable, predictable,
+                secure, maintainable and consistent.
+              </p>
+
+              <h4>Important API Design Concerns</h4>
+
+              <ul>
+                <li>Resource naming</li>
+                <li>HTTP methods</li>
+                <li>Status codes</li>
+                <li>Authentication</li>
+                <li>Authorization</li>
+                <li>Validation</li>
+                <li>Error handling</li>
+                <li>Documentation</li>
+              </ul>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "linux",
+    number: "16",
+    title: "Linux Systems Administration & Open Source Engineering",
+    description: "Learn Linux fundamentals, command-line administration, permissions, processes and open-source practices.",
+    modules: [
+      {
+        title: "Linux Foundations",
+        lessons: [
+          {
+            title: "Introduction to Linux",
+            content: `
+              <h3>Introduction to Linux</h3>
+
+              <p>
+                Linux is an open-source operating-system kernel used in many
+                operating systems and computing environments.
+              </p>
+
+              <h4>Linux Administration Concepts</h4>
+
+              <ul>
+                <li>Files and directories</li>
+                <li>Users and groups</li>
+                <li>Permissions</li>
+                <li>Processes</li>
+                <li>Packages</li>
+                <li>Networking</li>
+                <li>System services</li>
+              </ul>
+
+              <p>
+                The command line is an important administration interface
+                because it allows administrators to perform precise and
+                repeatable operations.
+              </p>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "digital-marketing",
+    number: "17",
+    title: "Technical Digital Marketing & Growth Engineering",
+    description: "Learn technical approaches to digital marketing, analytics, SEO, experimentation and growth.",
+    modules: [
+      {
+        title: "Technical Marketing Foundations",
+        lessons: [
+          {
+            title: "Introduction to Technical Digital Marketing",
+            content: `
+              <h3>Introduction to Technical Digital Marketing</h3>
+
+              <p>
+                Technical digital marketing combines marketing strategy with
+                technology, analytics, automation and data-driven
+                experimentation.
+              </p>
+
+              <h4>Important Areas</h4>
+
+              <ul>
+                <li>Search engine optimization</li>
+                <li>Web analytics</li>
+                <li>Conversion optimization</li>
+                <li>Marketing automation</li>
+                <li>Performance measurement</li>
+                <li>Content systems</li>
+              </ul>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "it-support",
+    number: "18",
+    title: "IT Support, Networking & Systems Troubleshooting",
+    description: "Learn computer support, networking fundamentals, diagnostics and systematic troubleshooting.",
+    modules: [
+      {
+        title: "IT Support Foundations",
+        lessons: [
+          {
+            title: "Introduction to IT Support",
+            content: `
+              <h3>Introduction to IT Support</h3>
+
+              <p>
+                IT support involves helping users and organizations maintain
+                reliable computer systems, applications, networks and devices.
+              </p>
+
+              <h4>Troubleshooting Method</h4>
+
+              <ol>
+                <li>Identify the problem.</li>
+                <li>Gather information.</li>
+                <li>Determine possible causes.</li>
+                <li>Test the most likely cause.</li>
+                <li>Apply a solution.</li>
+                <li>Verify that the problem is resolved.</li>
+                <li>Document the result.</li>
+              </ol>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "low-code",
+    number: "19",
+    title: "Low-Code / No-Code App Development",
+    description: "Learn how applications and workflows can be created using visual development platforms.",
+    modules: [
+      {
+        title: "Low-Code Foundations",
+        lessons: [
+          {
+            title: "Understanding Low-Code and No-Code",
+            content: `
+              <h3>Understanding Low-Code and No-Code</h3>
+
+              <p>
+                Low-code and no-code platforms provide visual tools that allow
+                applications and workflows to be created with less traditional
+                programming.
+              </p>
+
+              <h4>Benefits</h4>
+
+              <ul>
+                <li>Faster prototyping</li>
+                <li>Reduced development effort</li>
+                <li>Visual workflow design</li>
+                <li>Accessibility for non-specialist builders</li>
+              </ul>
+
+              <p>
+                These platforms still require careful planning, testing,
+                security considerations and understanding of the business
+                problem being solved.
+              </p>
+            `
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "quantum",
+    number: "20",
+    title: "Quantum Computing Foundations",
+    description: "Learn the fundamental ideas behind quantum computing and quantum information.",
+    modules: [
+      {
+        title: "Quantum Computing Foundations",
+        lessons: [
+          {
+            title: "Introduction to Quantum Computing",
+            content: `
+              <h3>Introduction to Quantum Computing</h3>
+
+              <p>
+                Quantum computing is a computing approach based on principles
+                from quantum physics.
+              </p>
+
+              <h4>Qubits</h4>
+
+              <p>
+                A quantum bit, or qubit, is the basic unit of quantum
+                information. Unlike a classical bit, which is represented as
+                either 0 or 1, a qubit can exist in a quantum state involving
+                both basis states.
+              </p>
+
+              <h4>Important Concepts</h4>
+
+              <ul>
+                <li>Qubits</li>
+                <li>Superposition</li>
+                <li>Entanglement</li>
+                <li>Quantum gates</li>
+                <li>Measurement</li>
+                <li>Quantum algorithms</li>
+              </ul>
+
+              <p>
+                Quantum computers are not simply faster versions of ordinary
+                computers. They are specialized machines that may provide
+                advantages for particular classes of problems.
+              </p>
+            `
+          }
+        ]
+      }
+    ]
+  }
 ];
 
 
+/* =========================================================
+   COURSE LIST
+   ========================================================= */
 
-/*
-========================================================
-DISPLAY TECHNOLOGY GUIDE
-========================================================
-*/
+const courseContainer = document.getElementById("courseContainer");
 
-function loadTechnologyGuide() {
+if (courseContainer) {
 
-    const container =
-        document.getElementById(
-            "technologyGuideContent"
-        );
+  courses.forEach(course => {
 
+    const card = document.createElement("a");
 
-    if (!container) {
+    card.href = `course.html?course=${course.id}`;
+    card.className = "course-card";
 
-        console.error(
-            "Technology guide content container was not found."
-        );
+    card.innerHTML = `
+      <div class="course-number">
+        ${course.number}
+      </div>
 
-        return;
+      <h2>${course.title}</h2>
 
-    }
+      <p>${course.description}</p>
 
+      <span class="course-button">
+        Start Course →
+      </span>
+    `;
 
-    container.innerHTML = "";
-
-
-    technologyGuide.forEach(
-        function (lesson) {
-
-            const article =
-                document.createElement(
-                    "article"
-                );
-
-
-            article.className =
-                "content-card";
-
-
-            const number =
-                document.createElement(
-                    "div"
-                );
-
-
-            number.className =
-                "lesson-number";
-
-
-            number.textContent =
-                "LESSON " + lesson.number;
-
-
-            const title =
-                document.createElement(
-                    "h2"
-                );
-
-
-            title.textContent =
-                lesson.title;
-
-
-            const content =
-                document.createElement(
-                    "div"
-                );
-
-
-            content.className =
-                "lesson-content";
-
-
-            content.innerHTML =
-                lesson.content;
-
-
-            article.appendChild(
-                number
-            );
-
-
-            article.appendChild(
-                title
-            );
-
-
-            article.appendChild(
-                content
-            );
-
-
-            container.appendChild(
-                article
-            );
-
-        }
-    );
-
+    courseContainer.appendChild(card);
+  });
 }
-
-
-
-/*
-========================================================
-START GUIDE
-========================================================
-*/
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        loadTechnologyGuide();
-
-    }
-);

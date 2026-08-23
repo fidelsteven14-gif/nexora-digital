@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nexora Digital | Connect</title>
+
+  <style>
+    :root {
+      --white: #ffffff;
+      --gold: #d4a017;
+      --gold-light: #f4d47c;
+      --blue: #1769aa;
+      --blue-dark: #0d3b66;
+      --brown: #3b2416;
+      --brown-light: #65452f;
+      --purple: #7b3fbf;
+      --green: #238636;
+      --red: #c0392b;
+      --gray: #667085;
+      --light-gray: #f5f7fa;
+      --border: #e4e7ec;
+      --shadow: 0 12px 35px rgba(59, 36, 22, 0.10);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #f8f5ef 45%,
+          #eef6ff 100%
+        );
+      color: var(--brown);
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(
+        135deg,
+        var(--brown),
+        var(--gold)
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 5px 15px rgba(212,160,23,0.25);
+    }
+
+    .brand-icon svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    .brand-text h1 {
+      font-size: 20px;
+      color: var(--brown);
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .brand-text p {
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 2px;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      color: var(--green);
+      font-weight: 700;
+      background: #ecfdf3;
+      padding: 8px 11px;
+      border-radius: 20px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    main {
+      flex: 1;
+      width: 100%;
+      padding: 35px 18px 50px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 30px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #fff8e6;
+      color: var(--brown);
+      border: 1px solid #efd38a;
+      padding: 8px 13px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero-badge svg {
+      width: 15px;
+      height: 15px;
+      color: var(--gold);
+    }
+
+    .hero h2 {
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.1;
+      color: var(--brown);
+      margin-bottom: 12px;
+    }
+
+    .hero h2 span {
+      color: var(--blue);
+    }
+
+    .hero p {
+      color: var(--gray);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* =========================
+       CONNECTION CARD
+    ========================== */
+
+    .connect-card {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      background: rgba(255,255,255,0.96);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 25px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .section-title-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #eef6ff;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-title-icon svg {
+      width: 21px;
+      height: 21px;
+    }
+
+    .section-title h3 {
+      font-size: 19px;
+      color: var(--brown);
+    }
+
+    .section-title p {
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 3px;
+    }
+
+    .input-group {
+      margin-bottom: 18px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--brown);
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray);
+      display: flex;
+    }
+
+    .input-icon svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    input {
+      width: 100%;
+      height: 52px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0 15px 0 45px;
+      font-size: 15px;
+      color: var(--brown);
+      background: #fff;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(23,105,170,0.10);
+    }
+
+    /* =========================
+       PACKAGE SELECTION
+    ========================== */
+
+    .packages-heading {
+      margin: 32px 0 16px;
+    }
+
+    .packages-heading h3 {
+      font-size: 20px;
+      color: var(--brown);
+    }
+
+    .packages-heading p {
+      color: var(--gray);
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .package {
+      position: relative;
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 17px;
+      padding: 20px;
+      cursor: pointer;
+      transition: 0.25s ease;
+      overflow: hidden;
+    }
+
+    .package:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .package.selected {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(23,105,170,0.10);
+    }
+
+    .package-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .package-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .package-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .package-basic .package-icon {
+      background: #fff4d6;
+      color: #a36d00;
+    }
+
+    .package-standard .package-icon {
+      background: #eaf4ff;
+      color: var(--blue);
+    }
+
+    .package-premium .package-icon {
+      background: #f3eaff;
+      color: var(--purple);
+    }
+
+    .package-name {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--brown);
+    }
+
+    .package-description {
+      font-size: 12px;
+      color: var(--gray);
+      line-height: 1.5;
+      margin: 5px 0 13px;
+    }
+
+    .package-price {
+      font-size: 25px;
+      font-weight: 900;
+      color: var(--brown);
+    }
+
+    .package-price small {
+      font-size: 11px;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    .package-duration {
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--gray);
+    }
+
+    .radio {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #c9ced6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .package.selected .radio {
+      border-color: var(--blue);
+    }
+
+    .package.selected .radio::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: var(--blue);
+      border-radius: 50%;
+    }
+
+    /* =========================
+       CONNECT BUTTON
+    ========================== */
+
+    .connect-button {
+      width: 100%;
+      height: 54px;
+      border: none;
+      border-radius: 13px;
+      margin-top: 25px;
+      background: linear-gradient(
+        135deg,
+        var(--blue-dark),
+        var(--blue)
+      );
+      color: white;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      transition: 0.2s ease;
+    }
+
+    .connect-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(13,59,102,0.25);
+    }
+
+    .connect-button:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .connect-button svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    /* =========================
+       INFORMATION CARDS
+    ========================== */
+
+    .info-grid {
+      max-width: 760px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
+    }
+
+    .info-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 17px;
+      text-align: center;
+    }
+
+    .info-icon {
+      width: 38px;
+      height: 38px;
+      margin: 0 auto 10px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .info-icon svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .info-card:nth-child(1) .info-icon {
+      background: #fff4d6;
+      color: #a36d00;
+    }
+
+    .info-card:nth-child(2) .info-icon {
+      background: #eaf4ff;
+      color: var(--blue);
+    }
+
+    .info-card:nth-child(3) .info-icon {
+      background: #f3eaff;
+      color: var(--purple);
+    }
+
+    .info-card h4 {
+      font-size: 13px;
+      color: var(--brown);
+      margin-bottom: 5px;
+    }
+
+    .info-card p {
+      font-size: 11px;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    /* =========================
+       MESSAGE
+    ========================== */
+
+    .message {
+      display: none;
+      max-width: 760px;
+      margin: 20px auto 0;
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .message.success {
+      display: block;
+      background: #ecfdf3;
+      color: #176b3a;
+      border: 1px solid #b7ebca;
+    }
+
+    .message.error {
+      display: block;
+      background: #fff1f0;
+      color: #a12620;
+      border: 1px solid #f3c3bf;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: var(--brown);
+      color: white;
+      padding: 25px 18px;
+      margin-top: auto;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .footer-text {
+      margin-top: 6px;
+      font-size: 11px;
+      color: #d9cec6;
+    }
+
+    .footer-line {
+      width: 55px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 5px;
+      margin: 12px auto;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 800px) {
+      .packages {
+        grid-template-columns: 1fr;
+      }
+
+      .package {
+        padding: 18px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .connect-card {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .header-inner {
+        padding: 13px 15px;
+      }
+
+      .brand-icon {
+        width: 41px;
+        height: 41px;
+      }
+
+      .brand-text h1 {
+        font-size: 17px;
+      }
+
+      .brand-text p {
+        font-size: 10px;
+      }
+
+      .status {
+        font-size: 10px;
+        padding: 7px 9px;
+      }
+
+      main {
+        padding: 27px 13px 40px;
+      }
+
+      .hero h2 {
+        font-size: 30px;
+      }
+
+      .hero p {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+
+      <div class="brand">
+
+        <div class="brand-icon">
+          <!-- Signal Icon -->
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor"
+               stroke-width="2"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+            <path d="M5 19a10 10 0 0 1 14 0"/>
+            <path d="M8 16a6 6 0 0 1 8 0"/>
+            <path d="M11 13a2 2 0 0 1 2 0"/>
+            <circle cx="12" cy="20" r="1"/>
+          </svg>
+        </div>
+
+        <div class="brand-text">
+          <h1>NEXORA DIGITAL</h1>
+          <p>Internet Access Portal</p>
+        </div>
+
+      </div>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        Network Available
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- MAIN -->
+  <main>
+
+    <div class="container">
+
+      <section class="hero">
+
+        <div class="hero-badge">
+          <!-- Wifi Icon -->
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor"
+               stroke-width="2"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+            <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+            <path d="M12 20h.01"/>
+          </svg>
+
+          Secure Network Connection
+        </div>
+
+        <h2>
+          Connect to <span>Nexora Digital</span>
+        </h2>
+
+        <p>
+          Select an internet package, enter your voucher or access
+          information, and connect to the network.
+        </p>
+
+      </section>
+
+
+      <!-- CONNECTION CARD -->
+      <section class="connect-card">
+
+        <div class="section-title">
+
+          <div class="section-title-icon">
+            <!-- Lock Icon -->
+            <svg viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+              <rect x="4" y="10" width="16" height="11" rx="2"/>
+              <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+            </svg>
+          </div>
+
+          <div>
+            <h3>Access the Network</h3>
+            <p>Enter your voucher code below.</p>
+          </div>
+
+        </div>
+
+
+        <!-- VOUCHER -->
+        <div class="input-group">
+
+          <label for="voucher">
+            Voucher / Access Code
+          </label>
+
+          <div class="input-wrapper">
+
+            <span class="input-icon">
+              <!-- Ticket Icon -->
+              <svg viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor"
+                   stroke-width="2"
+                   stroke-linecap="round"
+                   stroke-linejoin="round">
+                <path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4V7z"/>
+                <path d="M13 5v2"/>
+                <path d="M13 17v2"/>
+                <path d="M13 11v2"/>
+              </svg>
+            </span>
+
+            <input
+              type="text"
+              id="voucher"
+              placeholder="Enter voucher code"
+              autocomplete="off"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- PACKAGES -->
+        <div class="packages-heading">
+
+          <h3>Select a Package</h3>
+
+          <p>
+            Choose the package you want to use for your connection.
+          </p>
+
+        </div>
+
+
+        <div class="packages">
+
+          <!-- BASIC -->
+          <div
+            class="package package-basic"
+            data-package="basic"
+            onclick="selectPackage(this)"
+          >
+
+            <div class="package-top">
+
+              <div class="package-icon">
+                <!-- Clock Icon -->
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 7v5l3 2"/>
+                </svg>
+              </div>
+
+              <div class="radio"></div>
+
+            </div>
+
+            <div class="package-name">
+              Basic
+            </div>
+
+            <div class="package-description">
+              Affordable access for light browsing and messaging.
+            </div>
+
+            <div class="package-price">
+              KSh 10
+              <small>/ package</small>
+            </div>
+
+            <div class="package-duration">
+              Standard access period
+            </div>
+
+          </div>
+
+
+          <!-- STANDARD -->
+          <div
+            class="package package-standard"
+            data-package="standard"
+            onclick="selectPackage(this)"
+          >
+
+            <div class="package-top">
+
+              <div class="package-icon">
+                <!-- Lightning Icon -->
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+
+              <div class="radio"></div>
+
+            </div>
+
+            <div class="package-name">
+              Standard
+            </div>
+
+            <div class="package-description">
+              Faster access for social media, browsing and downloads.
+            </div>
+
+            <div class="package-price">
+              KSh 20
+              <small>/ package</small>
+            </div>
+
+            <div class="package-duration">
+              Extended access period
+            </div>
+
+          </div>
+
+
+          <!-- PREMIUM -->
+          <div
+            class="package package-premium"
+            data-package="premium"
+            onclick="selectPackage(this)"
+          >
+
+            <div class="package-top">
+
+              <div class="package-icon">
+                <!-- Crown Icon -->
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                  <path d="M3 7l4 4 5-7 5 7 4-4-2 12H5L3 7z"/>
+                  <path d="M5 19h14"/>
+                </svg>
+              </div>
+
+              <div class="radio"></div>
+
+            </div>
+
+            <div class="package-name">
+              Premium
+            </div>
+
+            <div class="package-description">
+              Premium access for streaming, downloads and heavy use.
+            </div>
+
+            <div class="package-price">
+              KSh 50
+              <small>/ package</small>
+            </div>
+
+            <div class="package-duration">
+              Premium access period
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CONNECT -->
+        <button
+          class="connect-button"
+          id="connectButton"
+          onclick="connectToNetwork()"
+        >
+
+          <!-- Link Icon -->
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor"
+               stroke-width="2"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+
+          Connect to Network
+
+        </button>
+
+      </section>
+
+
+      <!-- MESSAGE -->
+      <div id="message" class="message"></div>
+
+
+      <!-- INFORMATION -->
+      <div class="info-grid">
+
+        <div class="info-card">
+
+          <div class="info-icon">
+            <!-- Shield -->
+            <svg viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+              <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+
+          <h4>Secure Access</h4>
+
+          <p>
+            Your connection is protected through the network access system.
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <div class="info-icon">
+            <!-- Signal -->
+            <svg viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+              <path d="M2 8.5a15 15 0 0 1 20 0"/>
+              <path d="M5 12a10 10 0 0 1 14 0"/>
+              <path d="M8.5 15.5a5 5 0 0 1 7 0"/>
+              <path d="M12 19h.01"/>
+            </svg>
+          </div>
+
+          <h4>Reliable Network</h4>
+
+          <p>
+            Select the package that best matches your internet needs.
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <div class="info-icon">
+            <!-- Headset -->
+            <svg viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+              <path d="M4 13a8 8 0 0 1 16 0"/>
+              <path d="M4 13v5a2 2 0 0 0 2 2h2v-7H4z"/>
+              <path d="M20 13v5a2 2 0 0 1-2 2h-2v-7h4z"/>
+            </svg>
+          </div>
+
+          <h4>Customer Support</h4>
+
+          <p>
+            Contact the network operator if you experience connection problems.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        NEXORA DIGITAL
+      </div>
+
+      <div class="footer-line"></div>
+
+      <div class="footer-text">
+        Digital connectivity and technology services
+      </div>
+
+      <div class="footer-text">
+        © 2026 Nexora Digital. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+</div>
+
+
+<script>
+
+  let selectedPackage = null;
+
+
+  function selectPackage(element) {
+
+    document.querySelectorAll(".package").forEach(function(pkg) {
+      pkg.classList.remove("selected");
+    });
+
+    element.classList.add("selected");
+
+    selectedPackage = element.dataset.package;
+
+    clearMessage();
+  }
+
+
+  function showMessage(text, type) {
+
+    const message = document.getElementById("message");
+
+    message.textContent = text;
+
+    message.className = "message " + type;
+
+  }
+
+
+  function clearMessage() {
+
+    const message = document.getElementById("message");
+
+    message.textContent = "";
+
+    message.className = "message";
+
+  }
+
+
+  async function connectToNetwork() {
+
+    const voucher =
+      document.getElementById("voucher").value.trim();
+
+    const button =
+      document.getElementById("connectButton");
+
+
+    if (!voucher) {
+
+      showMessage(
+        "Please enter your voucher or access code.",
+        "error"
+      );
+
+      return;
+    }
+
+
+    if (!selectedPackage) {
+
+      showMessage(
+        "Please select an internet package.",
+        "error"
+      );
+
+      return;
+    }
+
+
+    button.disabled = true;
+
+    button.innerHTML = `
+      <svg viewBox="0 0 24 24"
+           fill="none"
+           stroke="currentColor"
+           stroke-width="2"
+           stroke-linecap="round"
+           stroke-linejoin="round">
+        <path d="M12 2v4"/>
+        <path d="M12 18v4"/>
+        <path d="M4.93 4.93l2.83 2.83"/>
+        <path d="M16.24 16.24l2.83 2.83"/>
+        <path d="M2 12h4"/>
+        <path d="M18 12h4"/>
+        <path d="M4.93 19.07l2.83-2.83"/>
+        <path d="M16.24 7.76l2.83-2.83"/>
+      </svg>
+      Connecting...
+    `;
+
+
+    try {
+
+      /*
+       * This endpoint should connect to the backend
+       * voucher validation system.
+       *
+       * Change the URL below if your server.js uses
+       * a different endpoint.
+       */
+
+      const response = await fetch(
+        "/api/connect",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json"
+          },
+
+          body: JSON.stringify({
+            voucher: voucher,
+            package: selectedPackage
+          })
+        }
+      );
+
+
+      const data = await response.json();
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          data.message ||
+          "Unable to connect using this voucher."
+        );
+
+      }
+
+
+      showMessage(
+        data.message ||
+        "Connection successful. You are now connected.",
+        "success"
+      );
+
+
+      /*
+       * If the backend supplies a redirect URL,
+       * send the customer there.
+       */
+
+      if (data.redirect) {
+
+        setTimeout(function() {
+
+          window.location.href = data.redirect;
+
+        }, 1200);
+
+      }
+
+
+    } catch (error) {
+
+      /*
+       * If the backend is not yet connected,
+       * show a clean error rather than exposing
+       * technical information to the customer.
+       */
+
+      showMessage(
+        error.message ||
+        "Connection could not be completed. Please try again.",
+        "error"
+      );
+
+    } finally {
+
+      button.disabled = false;
+
+      button.innerHTML = `
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+        </svg>
+
+        Connect to Network
+      `;
+
+    }
+
+  }
+
+
+  /*
+   * Automatically convert voucher input to uppercase.
+   */
+
+  document
+    .getElementById("voucher")
+    .addEventListener("input", function() {
+
+      this.value = this.value
+        .toUpperCase()
+        .replace(/\s/g, "");
+
+    });
+
+
+  /*
+   * Allow pressing Enter inside the voucher field
+   * to start the connection.
+   */
+
+  document
+    .getElementById("voucher")
+    .addEventListener("keydown", function(event) {
+
+      if (event.key === "Enter") {
+
+        connectToNetwork();
+
+      }
+
+    });
+
+</script>
+
+</body>
+  </html>

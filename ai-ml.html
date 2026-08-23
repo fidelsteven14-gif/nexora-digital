@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Nexora Digital — Artificial Intelligence and Machine Learning complete learning course.">
+<meta name="theme-color" content="#06111f">
+<title>AI & Machine Learning | Nexora Digital</title>
 
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#06111f;
+  color:#eaf4ff;
+  line-height:1.7;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input{
+  font:inherit;
+}
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(4,14,27,.96);
+  border-bottom:1px solid #19334d;
+  backdrop-filter:blur(12px);
+}
+
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:20px 22px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:20px;
+}
+
+.brand img{
+  width:72px;
+  height:42px;
+  object-fit:contain;
+  border-radius:6px;
+}
+
+.brand-name{
+  font-size:clamp(25px,5vw,42px);
+  font-weight:800;
+  letter-spacing:1px;
+  color:#39c9ff;
+}
+
+.nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.nav a{
+  padding:10px 15px;
+  border-radius:10px;
+  color:#d7e7f7;
+  font-weight:700;
+}
+
+.nav a:hover{
+  background:#10283d;
+  color:#40d4ff;
+}
+
+.container{
+  width:min(1150px,94%);
+  margin:auto;
+}
+
+.hero{
+  padding:65px 0 35px;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border:1px solid #22516d;
+  border-radius:999px;
+  color:#42d2ff;
+  font-weight:800;
+  font-size:13px;
+  letter-spacing:1.5px;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-size:clamp(38px,8vw,74px);
+  line-height:1.05;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:#3ed1ff;
+}
+
+.hero p{
+  max-width:850px;
+  color:#a9bed2;
+  font-size:19px;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin:30px 0;
+}
+
+.info-card{
+  background:#0c2033;
+  border:1px solid #1c3b55;
+  border-radius:18px;
+  padding:20px;
+}
+
+.info-card strong{
+  display:block;
+  font-size:26px;
+  color:#42d2ff;
+}
+
+.info-card span{
+  color:#9eb5ca;
+  font-size:14px;
+}
+
+.progress-area{
+  background:#0b1e31;
+  border:1px solid #1d405a;
+  padding:20px;
+  border-radius:18px;
+  margin:25px 0 35px;
+}
+
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  margin-bottom:10px;
+}
+
+.progress-bar{
+  height:12px;
+  background:#071421;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:#35caff;
+  transition:.3s;
+}
+
+.controls{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:12px;
+  margin-bottom:35px;
+}
+
+.search{
+  width:100%;
+  padding:15px 17px;
+  background:#0a1c2e;
+  border:1px solid #24465f

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -13,40 +15,90 @@
         content="NEXORA DIGITAL — A modern digital platform for discovering useful tools, resources, guides and knowledge."
     >
 
+    <meta
+        name="theme-color"
+        content="#06111f"
+    >
+
     <title>NEXORA DIGITAL | Explore. Learn. Create.</title>
 
+
     <style>
+
+        /* =====================================================
+           NEXORA DIGITAL
+           INDEX.HTML
+           
+           COMPLETE POLISHED VERSION
+           
+           IMPORTANT:
+           - Existing sections retained
+           - Resources section appears once
+           - Learn cards are now clickable
+           - tools.html remains connected
+           - Website name remains large
+           - Mobile responsive
+        ===================================================== */
+
 
         /* =====================================================
            BASIC RESET
         ===================================================== */
 
-        * {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 120px;
         }
+
 
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             background: #06111f;
+
             color: #ffffff;
+
             overflow-x: hidden;
+
             line-height: 1.6;
+
+            -webkit-font-smoothing: antialiased;
+
+            text-rendering: optimizeLegibility;
         }
+
 
         img {
             display: block;
+
             max-width: 100%;
         }
 
+
         a {
             text-decoration: none;
+
+            color: inherit;
+        }
+
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
         }
 
 
@@ -56,27 +108,41 @@
 
         header {
             position: sticky;
+
             top: 0;
+
             z-index: 9999;
 
-            background: rgba(5, 16, 29, 0.97);
+            width: 100%;
 
-            border-bottom: 1px solid #17304a;
+            background:
+                rgba(5, 16, 29, 0.97);
 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            border-bottom:
+                1px solid #17304a;
+
+            backdrop-filter:
+                blur(12px);
+
+            -webkit-backdrop-filter:
+                blur(12px);
         }
+
 
         .navbar {
             width: 100%;
+
             max-width: 1200px;
 
             margin: 0 auto;
 
-            padding: 22px 30px;
+            padding:
+                22px 30px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
             gap: 30px;
@@ -84,29 +150,39 @@
 
 
         /* =====================================================
-           LOGO + WEBSITE NAME
-
-           THIS IS THE ONLY PLACE WHERE THE WEBSITE NAME
-           FONT SIZE HAS BEEN INCREASED.
+           BRAND
         ===================================================== */
 
         .brand {
             display: flex;
+
             align-items: center;
 
             gap: 14px;
 
             white-space: nowrap;
+
+            flex-shrink: 0;
         }
+
 
         .brand img {
             width: 58px;
+
             height: 58px;
 
             object-fit: contain;
 
             border-radius: 8px;
         }
+
+
+        /*
+           WEBSITE NAME
+
+           This is intentionally large and visible.
+           This is the ONLY website-name font-size rule.
+        */
 
         .brand-name {
             color: #4ddcff;
@@ -121,29 +197,80 @@
         }
 
 
+        .brand:hover .brand-name {
+            color: #71e5ff;
+        }
+
+
         /* =====================================================
            NAVIGATION
         ===================================================== */
 
         .navigation {
             display: flex;
+
             align-items: center;
+
+            justify-content: center;
 
             gap: 28px;
         }
 
+
         .navigation a {
+            position: relative;
+
             color: #dce8f3;
 
             font-size: 17px;
 
             font-weight: 700;
 
-            transition: color 0.25s ease;
+            padding:
+                8px 0;
+
+            transition:
+                color 0.25s ease;
         }
+
+
+        .navigation a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: 0;
+
+            width: 0;
+
+            height: 2px;
+
+            background: #4ddcff;
+
+            transition:
+                width 0.25s ease;
+        }
+
 
         .navigation a:hover {
             color: #4ddcff;
+        }
+
+
+        .navigation a:hover::after {
+            width: 100%;
+        }
+
+
+        .navigation a:focus-visible {
+            outline:
+                2px solid #4ddcff;
+
+            outline-offset: 5px;
+
+            border-radius: 3px;
         }
 
 
@@ -154,43 +281,54 @@
         .hero {
             min-height: 720px;
 
-            padding: 110px 25px 100px;
+            padding:
+                110px 25px 100px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             text-align: center;
 
             background:
+
                 radial-gradient(
                     circle at 20% 20%,
                     rgba(25, 102, 145, 0.25),
                     transparent 35%
                 ),
+
                 radial-gradient(
                     circle at 80% 70%,
                     rgba(0, 205, 255, 0.12),
                     transparent 35%
                 ),
+
                 #06111f;
         }
 
+
         .hero-content {
             width: 100%;
+
             max-width: 900px;
 
             margin: 0 auto;
         }
+
 
         .hero-label {
             display: inline-block;
 
             margin-bottom: 34px;
 
-            padding: 10px 25px;
+            padding:
+                10px 25px;
 
-            border: 1px solid #245773;
+            border:
+                1px solid #245773;
 
             border-radius: 50px;
 
@@ -201,28 +339,40 @@
             font-weight: 800;
 
             letter-spacing: 1.5px;
+
+            background:
+                rgba(10, 35, 53, 0.35);
         }
+
 
         .hero h1 {
-            margin: 0 0 30px;
+            margin:
+                0 0 30px;
 
-            font-size: clamp(52px, 9vw, 92px);
+            font-size:
+                clamp(52px, 9vw, 92px);
 
-            line-height: 0.98;
+            line-height:
+                0.98;
 
-            letter-spacing: -3px;
+            letter-spacing:
+                -3px;
 
-            font-weight: 900;
+            font-weight:
+                900;
         }
+
 
         .hero h1 span {
             color: #4ddcff;
         }
 
+
         .hero-description {
             max-width: 780px;
 
-            margin: 0 auto 40px;
+            margin:
+                0 auto 40px;
 
             color: #a9bdcf;
 
@@ -240,6 +390,7 @@
             display: flex;
 
             justify-content: center;
+
             align-items: center;
 
             gap: 16px;
@@ -247,15 +398,18 @@
             flex-wrap: wrap;
         }
 
+
         .button {
             display: inline-flex;
 
             align-items: center;
+
             justify-content: center;
 
             min-width: 190px;
 
-            padding: 16px 25px;
+            padding:
+                16px 25px;
 
             border-radius: 10px;
 
@@ -266,12 +420,25 @@
             transition:
                 transform 0.25s ease,
                 background 0.25s ease,
-                border-color 0.25s ease;
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
+
         .button:hover {
-            transform: translateY(-3px);
+            transform:
+                translateY(-3px);
         }
+
+
+        .button:focus-visible {
+            outline:
+                3px solid #ffffff;
+
+            outline-offset:
+                4px;
+        }
+
 
         .button-primary {
             background: #4ddcff;
@@ -279,25 +446,37 @@
             color: #06111f;
 
             box-shadow:
-                0 10px 30px rgba(77, 220, 255, 0.18);
+                0 10px 30px
+                rgba(77, 220, 255, 0.18);
         }
+
 
         .button-primary:hover {
             background: #71e5ff;
+
+            box-shadow:
+                0 15px 35px
+                rgba(77, 220, 255, 0.28);
         }
+
 
         .button-secondary {
             background: transparent;
 
             color: #ffffff;
 
-            border: 1px solid #31516b;
+            border:
+                1px solid #31516b;
         }
+
 
         .button-secondary:hover {
             color: #4ddcff;
 
             border-color: #4ddcff;
+
+            background:
+                rgba(77, 220, 255, 0.04);
         }
 
 
@@ -307,20 +486,25 @@
 
         .section {
             width: 100%;
+
             max-width: 1200px;
 
             margin: 0 auto;
 
-            padding: 100px 30px;
+            padding:
+                100px 30px;
         }
+
 
         .section-heading {
             max-width: 800px;
 
-            margin: 0 auto 60px;
+            margin:
+                0 auto 60px;
 
             text-align: center;
         }
+
 
         .section-heading h2 {
             margin-bottom: 16px;
@@ -332,6 +516,7 @@
             font-weight: 800;
         }
 
+
         .section-heading p {
             color: #9db2c6;
 
@@ -342,7 +527,7 @@
 
 
         /* =====================================================
-           RESOURCE CARDS
+           RESOURCE GRID
         ===================================================== */
 
         .resource-grid {
@@ -354,12 +539,18 @@
             gap: 28px;
         }
 
+
+        /* =====================================================
+           RESOURCE CARD
+        ===================================================== */
+
         .resource-card {
             overflow: hidden;
 
             background: #0b1d2e;
 
-            border: 1px solid #1b3851;
+            border:
+                1px solid #1b3851;
 
             border-radius: 22px;
 
@@ -369,14 +560,19 @@
                 box-shadow 0.3s ease;
         }
 
-        .resource-card:hover {
-            transform: translateY(-6px);
 
-            border-color: #35cce9;
+        .resource-card:hover {
+            transform:
+                translateY(-6px);
+
+            border-color:
+                #35cce9;
 
             box-shadow:
-                0 20px 50px rgba(0, 0, 0, 0.25);
+                0 20px 50px
+                rgba(0, 0, 0, 0.25);
         }
+
 
         .resource-card-image {
             width: 100%;
@@ -384,11 +580,15 @@
             height: 250px;
 
             object-fit: cover;
+
+            background: #091827;
         }
+
 
         .resource-card-content {
             padding: 32px;
         }
+
 
         .resource-number {
             display: block;
@@ -404,6 +604,7 @@
             letter-spacing: 2px;
         }
 
+
         .resource-card h3 {
             margin-bottom: 13px;
 
@@ -411,6 +612,7 @@
 
             line-height: 1.2;
         }
+
 
         .resource-card p {
             margin-bottom: 24px;
@@ -422,6 +624,7 @@
             line-height: 1.7;
         }
 
+
         .card-link {
             display: inline-block;
 
@@ -431,13 +634,29 @@
 
             font-weight: 800;
 
-            border-bottom: 1px solid transparent;
+            border-bottom:
+                1px solid transparent;
 
-            transition: border-color 0.25s ease;
+            transition:
+                border-color 0.25s ease,
+                transform 0.25s ease;
         }
+
 
         .card-link:hover {
             border-color: #4ddcff;
+
+            transform:
+                translateX(3px);
+        }
+
+
+        .card-link:focus-visible {
+            outline:
+                2px solid #4ddcff;
+
+            outline-offset:
+                4px;
         }
 
 
@@ -450,19 +669,25 @@
 
             background: #071525;
 
-            border-top: 1px solid #142d44;
+            border-top:
+                1px solid #142d44;
 
-            border-bottom: 1px solid #142d44;
+            border-bottom:
+                1px solid #142d44;
         }
+
 
         .learn-container {
             width: 100%;
+
             max-width: 1200px;
 
             margin: 0 auto;
 
-            padding: 100px 30px;
+            padding:
+                100px 30px;
         }
+
 
         .learn-grid {
             display: grid;
@@ -473,25 +698,63 @@
             gap: 24px;
         }
 
+
+        /* =====================================================
+           LEARN CARD
+
+           IMPORTANT:
+           The entire card is now an actual link.
+           Clicking Technology Guides,
+           Digital Skills or Productivity
+           opens learn.html with the correct topic.
+        ===================================================== */
+
         .learn-card {
+            display: block;
+
             padding: 35px;
 
             background: #0b1d2e;
 
-            border: 1px solid #1b3851;
+            border:
+                1px solid #1b3851;
 
             border-radius: 20px;
 
             transition:
                 transform 0.3s ease,
-                border-color 0.3s ease;
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+
+            cursor: pointer;
         }
+
 
         .learn-card:hover {
-            transform: translateY(-6px);
+            transform:
+                translateY(-7px);
 
-            border-color: #4ddcff;
+            border-color:
+                #4ddcff;
+
+            box-shadow:
+                0 18px 45px
+                rgba(0, 0, 0, 0.22);
+
+            background:
+                #0d2235;
         }
+
+
+        .learn-card:focus-visible {
+            outline:
+                3px solid #4ddcff;
+
+            outline-offset:
+                4px;
+        }
+
 
         .learn-number {
             margin-bottom: 28px;
@@ -505,18 +768,52 @@
             letter-spacing: 2px;
         }
 
+
         .learn-card h3 {
             margin-bottom: 15px;
 
             font-size: 28px;
+
+            line-height: 1.25;
         }
 
+
         .learn-card p {
+            margin-bottom: 24px;
+
             color: #9fb4c8;
 
             font-size: 16px;
 
             line-height: 1.8;
+        }
+
+
+        .learn-card-action {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color: #4ddcff;
+
+            font-size: 15px;
+
+            font-weight: 800;
+        }
+
+
+        .learn-card-action span {
+            transition:
+                transform 0.25s ease;
+        }
+
+
+        .learn-card:hover
+        .learn-card-action span {
+            transform:
+                translateX(5px);
         }
 
 
@@ -534,18 +831,22 @@
                     #06111f
                 );
 
-            border-bottom: 1px solid #142d44;
+            border-bottom:
+                1px solid #142d44;
         }
+
 
         .about-container {
             max-width: 850px;
 
             margin: 0 auto;
 
-            padding: 100px 30px;
+            padding:
+                100px 30px;
 
             text-align: center;
         }
+
 
         .about-container p {
             margin-bottom: 20px;
@@ -564,34 +865,41 @@
 
         .contact-section {
             width: 100%;
+
             max-width: 1200px;
 
             margin: 0 auto;
 
-            padding: 100px 30px;
+            padding:
+                100px 30px;
 
             text-align: center;
         }
+
 
         .contact-box {
             max-width: 850px;
 
             margin: 0 auto;
 
-            padding: 55px 35px;
+            padding:
+                55px 35px;
 
             background: #0b1d2e;
 
-            border: 1px solid #1b3851;
+            border:
+                1px solid #1b3851;
 
             border-radius: 22px;
         }
+
 
         .contact-box h2 {
             margin-bottom: 15px;
 
             font-size: 40px;
         }
+
 
         .contact-box p {
             margin-bottom: 30px;
@@ -603,6 +911,7 @@
             line-height: 1.7;
         }
 
+
         .email-link {
             color: #4ddcff;
 
@@ -610,11 +919,26 @@
 
             font-weight: 800;
 
-            border-bottom: 1px solid transparent;
+            border-bottom:
+                1px solid transparent;
+
+            transition:
+                border-color 0.25s ease;
         }
 
+
         .email-link:hover {
-            border-color: #4ddcff;
+            border-color:
+                #4ddcff;
+        }
+
+
+        .email-link:focus-visible {
+            outline:
+                2px solid #4ddcff;
+
+            outline-offset:
+                4px;
         }
 
 
@@ -623,23 +947,32 @@
         ===================================================== */
 
         footer {
-            padding: 35px 20px;
+            padding:
+                35px 20px;
 
-            background: #040b14;
+            background:
+                #040b14;
 
-            border-top: 1px solid #13283c;
+            border-top:
+                1px solid #13283c;
 
-            text-align: center;
+            text-align:
+                center;
 
-            color: #71879b;
+            color:
+                #71879b;
         }
+
 
         footer p {
-            margin: 5px 0;
+            margin:
+                5px 0;
         }
 
+
         footer strong {
-            color: #4ddcff;
+            color:
+                #4ddcff;
         }
 
 
@@ -647,49 +980,98 @@
            TABLET
         ===================================================== */
 
-        @media (max-width: 850px) {
+        @media (max-width: 1000px) {
 
             .navbar {
-                flex-direction: column;
-
-                padding: 20px;
-
-                gap: 22px;
-            }
-
-            .brand-name {
-                font-size: 32px;
-            }
-
-            .navigation {
-                justify-content: center;
-
-                flex-wrap: wrap;
-
                 gap: 20px;
             }
 
-            .resource-grid {
-                grid-template-columns: 1fr;
+
+            .brand-name {
+                font-size: 34px;
             }
+
+
+            .navigation {
+                gap: 20px;
+            }
+
+
+            .navigation a {
+                font-size: 16px;
+            }
+
+        }
+
+
+        @media (max-width: 850px) {
+
+            .navbar {
+                flex-direction:
+                    column;
+
+                padding:
+                    20px;
+
+                gap:
+                    22px;
+            }
+
+
+            .brand-name {
+                font-size:
+                    32px;
+            }
+
+
+            .navigation {
+                justify-content:
+                    center;
+
+                flex-wrap:
+                    wrap;
+
+                gap:
+                    20px;
+            }
+
+
+            .resource-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
 
             .learn-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
             }
+
 
             .hero {
-                min-height: 650px;
+                min-height:
+                    650px;
 
-                padding: 80px 20px;
+                padding:
+                    80px 20px;
             }
+
 
             .hero h1 {
-                font-size: clamp(48px, 12vw, 72px);
+                font-size:
+                    clamp(
+                        48px,
+                        12vw,
+                        72px
+                    );
             }
 
+
             .hero-description {
-                font-size: 18px;
+                font-size:
+                    18px;
             }
+
         }
 
 
@@ -700,100 +1082,233 @@
         @media (max-width: 520px) {
 
             .navbar {
-                padding: 18px 15px;
+                padding:
+                    18px 15px;
             }
+
 
             .brand {
-                gap: 10px;
+                gap:
+                    10px;
             }
+
 
             .brand img {
-                width: 50px;
-                height: 50px;
+                width:
+                    50px;
+
+                height:
+                    50px;
             }
+
 
             /*
-             * Still intentionally large and bold.
-             * This is the website name only.
-             */
-            .brand-name {
-                font-size: 28px;
+               Website name remains large and visible.
+            */
 
-                letter-spacing: 0.5px;
+            .brand-name {
+                font-size:
+                    28px;
+
+                letter-spacing:
+                    0.5px;
             }
+
 
             .navigation {
-                gap: 16px;
+                gap:
+                    16px;
             }
+
 
             .navigation a {
-                font-size: 14px;
+                font-size:
+                    14px;
             }
+
 
             .hero {
-                padding: 75px 18px;
+                padding:
+                    75px 18px;
             }
+
 
             .hero-label {
-                padding: 9px 16px;
+                padding:
+                    9px 16px;
 
-                font-size: 12px;
+                font-size:
+                    12px;
             }
+
 
             .hero h1 {
-                font-size: 48px;
+                font-size:
+                    48px;
 
-                letter-spacing: -2px;
+                letter-spacing:
+                    -2px;
             }
+
 
             .hero-description {
-                font-size: 17px;
+                font-size:
+                    17px;
             }
+
 
             .section,
             .learn-container,
             .contact-section {
-                padding: 75px 18px;
+                padding:
+                    75px 18px;
             }
+
 
             .section-heading {
-                margin-bottom: 45px;
+                margin-bottom:
+                    45px;
             }
+
 
             .section-heading h2 {
-                font-size: 34px;
+                font-size:
+                    34px;
             }
+
 
             .resource-card-image {
-                height: 210px;
+                height:
+                    210px;
             }
+
 
             .resource-card-content {
-                padding: 27px;
+                padding:
+                    27px;
             }
+
 
             .resource-card h3 {
-                font-size: 25px;
+                font-size:
+                    25px;
             }
+
 
             .resource-card p {
-                font-size: 16px;
+                font-size:
+                    16px;
             }
+
 
             .learn-card {
-                padding: 28px;
+                padding:
+                    28px;
             }
+
+
+            .learn-card h3 {
+                font-size:
+                    26px;
+            }
+
 
             .contact-box {
-                padding: 40px 25px;
+                padding:
+                    40px 25px;
             }
 
+
             .contact-box h2 {
-                font-size: 32px;
+                font-size:
+                    32px;
             }
+
+        }
+
+
+        /* =====================================================
+           VERY SMALL PHONES
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+            .brand {
+                gap:
+                    7px;
+            }
+
+
+            .brand img {
+                width:
+                    44px;
+
+                height:
+                    44px;
+            }
+
+
+            .brand-name {
+                font-size:
+                    23px;
+            }
+
+
+            .navigation {
+                gap:
+                    11px;
+            }
+
+
+            .navigation a {
+                font-size:
+                    13px;
+            }
+
+
+            .hero h1 {
+                font-size:
+                    42px;
+            }
+
+
+            .hero-label {
+                font-size:
+                    10px;
+
+                letter-spacing:
+                    1px;
+            }
+
+        }
+
+
+        /* =====================================================
+           REDUCED MOTION
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior:
+                    auto;
+            }
+
+
+            *,
+            *::before,
+            *::after {
+                transition:
+                    none !important;
+
+                animation:
+                    none !important;
+            }
+
         }
 
     </style>
+
 </head>
 
 
@@ -809,7 +1324,9 @@
         <div class="navbar">
 
 
-            <!-- WEBSITE BRAND -->
+            <!-- =================================================
+                 WEBSITE BRAND
+            ================================================== -->
 
             <a
                 href="index.html"
@@ -822,6 +1339,7 @@
                     alt="NEXORA DIGITAL Logo"
                 >
 
+
                 <span class="brand-name">
                     NEXORA DIGITAL
                 </span>
@@ -829,32 +1347,46 @@
             </a>
 
 
-            <!-- NAVIGATION -->
+            <!-- =================================================
+                 MAIN NAVIGATION
+            ================================================== -->
 
             <nav
                 class="navigation"
                 aria-label="Main navigation"
             >
 
-                <a href="index.html">
+                <a
+                    href="index.html"
+                >
                     Home
                 </a>
 
-                <!-- DIRECT LINK TO YOUR EXISTING tools.html -->
 
-                <a href="tools.html">
+                <a
+                    href="tools.html"
+                >
                     Resources
                 </a>
 
-                <a href="#learn">
+
+                <a
+                    href="#learn"
+                >
                     Learn
                 </a>
 
-                <a href="#about">
+
+                <a
+                    href="#about"
+                >
                     About
                 </a>
 
-                <a href="#contact">
+
+                <a
+                    href="#contact"
+                >
                     Contact
                 </a>
 
@@ -891,24 +1423,32 @@
 
 
                 <h1>
+
                     Explore.
+
                     <br>
-                    <span>Learn. Create.</span>
+
+                    <span>
+                        Learn. Create.
+                    </span>
+
                 </h1>
 
 
                 <p class="hero-description">
+
                     NEXORA DIGITAL is a modern digital platform
                     for discovering useful tools, resources,
                     guides and knowledge to help you learn,
                     work and create.
+
                 </p>
 
 
                 <div class="hero-buttons">
 
 
-                    <!-- THIS NOW OPENS tools.html -->
+                    <!-- EXISTING TOOLS PAGE -->
 
                     <a
                         href="tools.html"
@@ -934,10 +1474,9 @@
 
 
         <!-- =================================================
-             RESOURCES
+             DIGITAL RESOURCES
 
-             IMPORTANT:
-             THIS SECTION EXISTS ONLY ONCE.
+             THIS SECTION APPEARS ONLY ONCE.
         ================================================== -->
 
         <section
@@ -962,11 +1501,13 @@
             <div class="resource-grid">
 
 
-                <!-- =========================================
+                <!-- =================================================
                      CARD 01 — DIGITAL TOOLS
-                ========================================== -->
+                ================================================== -->
 
-                <article class="resource-card">
+                <article
+                    class="resource-card"
+                >
 
                     <img
                         src="design-solutions.png"
@@ -974,15 +1515,18 @@
                         class="resource-card-image"
                     >
 
+
                     <div class="resource-card-content">
 
                         <span class="resource-number">
                             01 — DIGITAL TOOLS
                         </span>
 
+
                         <h3>
                             Digital Tools
                         </h3>
+
 
                         <p>
                             Discover useful digital tools that
@@ -990,8 +1534,6 @@
                             faster and more productive.
                         </p>
 
-
-                        <!-- DIRECT LINK TO tools.html -->
 
                         <a
                             href="tools.html"
@@ -1006,11 +1548,13 @@
 
 
 
-                <!-- =========================================
+                <!-- =================================================
                      CARD 02 — WEB RESOURCES
-                ========================================== -->
+                ================================================== -->
 
-                <article class="resource-card">
+                <article
+                    class="resource-card"
+                >
 
                     <img
                         src="web-development.png"
@@ -1018,15 +1562,18 @@
                         class="resource-card-image"
                     >
 
+
                     <div class="resource-card-content">
 
                         <span class="resource-number">
                             02 — WEB RESOURCES
                         </span>
 
+
                         <h3>
                             Web Resources
                         </h3>
+
 
                         <p>
                             Find useful resources and inspiration
@@ -1048,11 +1595,13 @@
 
 
 
-                <!-- =========================================
+                <!-- =================================================
                      CARD 03 — SOFTWARE DEVELOPMENT
-                ========================================== -->
+                ================================================== -->
 
-                <article class="resource-card">
+                <article
+                    class="resource-card"
+                >
 
                     <img
                         src="software-development.png"
@@ -1060,15 +1609,18 @@
                         class="resource-card-image"
                     >
 
+
                     <div class="resource-card-content">
 
                         <span class="resource-number">
                             03 — SOFTWARE
                         </span>
 
+
                         <h3>
                             Software Development
                         </h3>
+
 
                         <p>
                             Explore resources for learning
@@ -1090,11 +1642,13 @@
 
 
 
-                <!-- =========================================
+                <!-- =================================================
                      CARD 04 — LEARNING RESOURCES
-                ========================================== -->
+                ================================================== -->
 
-                <article class="resource-card">
+                <article
+                    class="resource-card"
+                >
 
                     <img
                         src="learning-resources.png"
@@ -1102,15 +1656,18 @@
                         class="resource-card-image"
                     >
 
+
                     <div class="resource-card-content">
 
                         <span class="resource-number">
                             04 — LEARNING
                         </span>
 
+
                         <h3>
                             Learning Resources
                         </h3>
+
 
                         <p>
                             Access useful educational materials,
@@ -1139,7 +1696,11 @@
         <!-- =================================================
              LEARN SECTION
 
-             THIS IS SEPARATE FROM THE RESOURCE SECTION.
+             EACH CARD NOW OPENS A REAL PAGE.
+
+             technology-guides.html
+             digital-skills.html
+             productivity.html
         ================================================== -->
 
         <section
@@ -1156,6 +1717,7 @@
                         Learn Something New
                     </h2>
 
+
                     <p>
                         Practical knowledge and ideas for
                         the modern digital world.
@@ -1167,17 +1729,25 @@
                 <div class="learn-grid">
 
 
-                    <!-- LEARN CARD 01 -->
+                    <!-- =================================================
+                         TECHNOLOGY GUIDES
+                    ================================================== -->
 
-                    <article class="learn-card">
+                    <a
+                        href="technology-guides.html"
+                        class="learn-card"
+                        aria-label="Open Technology Guides"
+                    >
 
                         <div class="learn-number">
                             01 — KNOWLEDGE
                         </div>
 
+
                         <h3>
                             Technology Guides
                         </h3>
+
 
                         <p>
                             Simple guides explaining useful
@@ -1185,21 +1755,41 @@
                             practices in an easy-to-understand way.
                         </p>
 
-                    </article>
+
+                        <span
+                            class="learn-card-action"
+                        >
+                            Open Technology Guides
+
+                            <span>
+                                →
+                            </span>
+
+                        </span>
+
+                    </a>
 
 
 
-                    <!-- LEARN CARD 02 -->
+                    <!-- =================================================
+                         DIGITAL SKILLS
+                    ================================================== -->
 
-                    <article class="learn-card">
+                    <a
+                        href="digital-skills.html"
+                        class="learn-card"
+                        aria-label="Open Digital Skills"
+                    >
 
                         <div class="learn-number">
                             02 — SKILLS
                         </div>
 
+
                         <h3>
                             Digital Skills
                         </h3>
+
 
                         <p>
                             Explore practical skills that can
@@ -1207,21 +1797,41 @@
                             using modern technology.
                         </p>
 
-                    </article>
+
+                        <span
+                            class="learn-card-action"
+                        >
+                            Open Digital Skills
+
+                            <span>
+                                →
+                            </span>
+
+                        </span>
+
+                    </a>
 
 
 
-                    <!-- LEARN CARD 03 -->
+                    <!-- =================================================
+                         PRODUCTIVITY
+                    ================================================== -->
 
-                    <article class="learn-card">
+                    <a
+                        href="productivity.html"
+                        class="learn-card"
+                        aria-label="Open Productivity"
+                    >
 
                         <div class="learn-number">
                             03 — PRODUCTIVITY
                         </div>
 
+
                         <h3>
                             Productivity
                         </h3>
+
 
                         <p>
                             Discover useful ideas and resources
@@ -1229,8 +1839,19 @@
                             more done with digital tools.
                         </p>
 
-                    </article>
 
+                        <span
+                            class="learn-card-action"
+                        >
+                            Open Productivity
+
+                            <span>
+                                →
+                            </span>
+
+                        </span>
+
+                    </a>
 
                 </div>
 
@@ -1262,17 +1883,21 @@
 
 
                 <p>
+
                     NEXORA DIGITAL is an independent digital
                     platform created to bring useful digital
                     resources, knowledge and tools together
                     in one accessible place.
+
                 </p>
 
 
                 <p>
+
                     Our goal is simple: make useful digital
                     information easier to discover, understand
                     and use.
+
                 </p>
 
             </div>
@@ -1292,13 +1917,17 @@
 
             <div class="contact-box">
 
+
                 <h2>
                     Stay Connected
                 </h2>
 
+
                 <p>
+
                     Have a question, suggestion or resource
                     to share? Get in touch with NEXORA DIGITAL.
+
                 </p>
 
 
@@ -1313,7 +1942,6 @@
 
         </section>
 
-
     </main>
 
 
@@ -1325,10 +1953,17 @@
     <footer>
 
         <p>
+
             © 2026
-            <strong>NEXORA DIGITAL</strong>.
+
+            <strong>
+                NEXORA DIGITAL
+            </strong>.
+
             All Rights Reserved.
+
         </p>
+
 
         <p>
             Developed by Steven Fidel.
@@ -1337,5 +1972,66 @@
     </footer>
 
 
+
+    <!-- =====================================================
+         JAVASCRIPT
+         
+         This does not replace your HTML links.
+         It provides a small safety feature for images.
+    ====================================================== -->
+
+    <script>
+
+        /*
+         * If one of the optional resource images is missing,
+         * prevent the page from showing a broken-image icon.
+         */
+
+        document
+            .querySelectorAll("img")
+            .forEach(function (image) {
+
+                image.addEventListener(
+                    "error",
+                    function () {
+
+                        image.style.display = "none";
+
+                    },
+                    {
+                        once: true
+                    }
+                );
+
+            });
+
+
+        /*
+         * Prevent accidental double-tapping from causing
+         * unexpected visual behavior on touch devices.
+         */
+
+        document
+            .querySelectorAll("a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        link.setAttribute(
+                            "aria-busy",
+                            "true"
+                        );
+
+                    }
+                );
+
+            });
+
+    </script>
+
+
 </body>
-    </html>
+
+                    </html>

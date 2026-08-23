@@ -1,0 +1,14 @@
+{
+  "name": "nexora-wifi-backend",
+  "version": "1.0.0",
+  "description": "NEXORA Wi-Fi hotspot billing and network management backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }

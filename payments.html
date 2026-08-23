@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexora Digital - Payments</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b1120;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #111827;
+      border-bottom: 1px solid #263244;
+      padding: 18px;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #8b5cf6;
+    }
+
+    .home-btn {
+      background: #1f2937;
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 18px 50px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 7px;
+    }
+
+    .subtitle {
+      color: #9ca3af;
+      margin-bottom: 25px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: #111827;
+      border: 1px solid #263244;
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .card h2 {
+      margin-bottom: 18px;
+      font-size: 19px;
+    }
+
+    label {
+      display: block;
+      color: #d1d5db;
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #374151;
+      background: #0f172a;
+      color: white;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #8b5cf6;
+    }
+
+    .amount-box {
+      background: #0f172a;
+      border: 1px solid #374151;
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .amount-box p {
+      color: #9ca3af;
+      margin-bottom: 7px;
+    }
+
+    .amount {
+      color: #a78bfa;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .pay-btn {
+      width: 100%;
+      border: none;
+      padding: 14px;
+      border-radius: 9px;
+      background: #7c3aed;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .pay-btn:hover {
+      background: #6d28d9;
+    }
+
+    .status {
+      display: none;
+      margin-top: 15px;
+      padding: 13px;
+      border-radius: 8px;
+      background: #13251c;
+      color: #4ade80;
+    }
+
+    .transactions {
+      margin-top: 20px;
+    }
+
+    .transaction {
+      background: #0f172a;
+      border: 1px solid #263244;
+      border-radius: 9px;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+
+    .transaction-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .transaction-id {
+      color: #a78bfa;
+      font-weight: bold;
+    }
+
+    .paid {
+      color: #22c55e;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .transaction-details {
+      display: flex;
+      justify-content: space-between;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    .empty {
+      color: #9ca3af;
+      text-align: center;
+      padding: 25px;
+    }
+
+    @media (max-width: 750px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      NEXORA <span>DIGITAL</span>
+    </div>
+
+    <a href="index.html" class="home-btn">← Home</a>
+  </div>
+</header>
+
+<main>
+
+  <h1>Payments</h1>
+  <p class="subtitle">
+    Process customer payments and monitor transactions.
+  </p>
+
+  <div class="grid">
+
+    <!-- PAYMENT FORM -->
+    <section class="card">
+
+      <h2>Process Payment</h2>
+
+      <label for="customer">
+        Customer Phone Number
+      </label>
+
+      <input
+        id="customer"
+        type="tel"
+        placeholder="07XXXXXXXX"
+      >
+
+      <label for="package">
+        Package
+      </label>
+
+      <select id="package" onchange="updateAmount()">
+
+        <option value="">
+          Select package
+        </option>
+
+        <option value="Daily Package" data-price="50">
+          Daily Package — KSh 50
+        </option>
+
+        <option value="Weekly Package" data-price="250">
+          Weekly Package — KSh 250
+        </option>
+
+        <option value="Monthly Package" data-price="800">
+          Monthly Package — KSh 800
+        </option>
+
+      </select>
+
+      <div class="amount-box">
+
+        <p>Amount to Pay</p>
+
+        <div class="amount" id="amount">
+          KSh 0
+        </div>
+
+      </div>
+
+      <label for="method">
+        Payment Method
+      </label>
+
+      <select id="method">
+
+        <option value="M-Pesa">
+          M-Pesa
+        </option>
+
+        <option value="Cash">
+          Cash
+        </option>
+
+      </select>
+
+      <button
+        class="pay-btn"
+        onclick="processPayment()">
+        Process Payment
+      </button>
+
+      <div
+        class="status"
+        id="status">
+      </div>
+
+    </section>
+
+
+    <!-- TRANSACTIONS -->
+    <section class="card">
+
+      <h2>Recent Transactions</h2>
+
+      <div
+        class="transactions"
+        id="transactions">
+
+        <div class="empty">
+          No transactions yet.
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+<script>
+
+  function updateAmount() {
+
+    const select =
+      document.getElementById("package");
+
+    const option =
+      select.options[select.selectedIndex];
+
+    const price =
+      option.dataset.price || 0;
+
+    document.getElementById("amount").textContent =
+      "KSh " + price;
+  }
+
+
+  function processPayment() {
+
+    const customer =
+      document.getElementById("customer").value.trim();
+
+    const packageSelect =
+      document.getElementById("package");
+
+    const option =
+      packageSelect.options[packageSelect.selectedIndex];
+
+    const method =
+      document.getElementById("method").value;
+
+    const status =
+      document.getElementById("status");
+
+    if (!customer) {
+      showStatus("Enter the customer phone number.", false);
+      return;
+    }
+
+    if (!option.value) {
+      showStatus("Select a package first.", false);
+      return;
+    }
+
+    const amount =
+      option.dataset.price;
+
+    const transactionId =
+      "NX-PAY-" +
+      Date.now().toString().slice(-8);
+
+    const transaction = {
+      id: transactionId,
+      customer: customer,
+      package: option.value,
+      amount: amount,
+      method: method,
+      date: new Date().toLocaleString()
+    };
+
+    saveTransaction(transaction);
+
+    showStatus(
+      "Payment processed successfully.",
+      true
+    );
+
+    addTransaction(transaction);
+
+    document.getElementById("customer").value = "";
+    document.getElementById("package").value = "";
+    document.getElementById("amount").textContent = "KSh 0";
+  }
+
+
+  function showStatus(message, success) {
+
+    const status =
+      document.getElementById("status");
+
+    status.textContent = message;
+
+    status.style.display = "block";
+
+    if (!success) {
+      status.style.color = "#f87171";
+      status.style.background = "#2a1717";
+    } else {
+      status.style.color = "#4ade80";
+      status.style.background = "#13251c";
+    }
+  }
+
+
+  function saveTransaction(transaction) {
+
+    const transactions =
+      JSON.parse(
+        localStorage.getItem("nexoraTransactions") || "[]"
+      );
+
+    transactions.unshift(transaction);
+
+    localStorage.setItem(
+      "nexoraTransactions",
+      JSON.stringify(transactions)
+    );
+  }
+
+
+  function loadTransactions() {
+
+    const transactions =
+      JSON.parse(
+        localStorage.getItem("nexoraTransactions") || "[]"
+      );
+
+    const container =
+      document.getElementById("transactions");
+
+    container.innerHTML = "";
+
+    if (transactions.length === 0) {
+
+      container.innerHTML =
+        '<div class="empty">No transactions yet.</div>';
+
+      return;
+    }
+
+    transactions
+      .slice(0, 10)
+      .forEach(addTransaction);
+  }
+
+
+  function addTransaction(transaction) {
+
+    const container =
+      document.getElementById("transactions");
+
+    const empty =
+      container.querySelector(".empty");
+
+    if (empty) {
+      empty.remove();
+    }
+
+    const item =
+      document.createElement("div");
+
+    item.className = "transaction";
+
+    item.innerHTML = `
+
+      <div class="transaction-top">
+
+        <span class="transaction-id">
+          ${transaction.id}
+        </span>
+
+        <span class="paid">
+          PAID
+        </span>
+
+      </div>
+
+      <div class="transaction-details">
+
+        <span>
+          ${transaction.package}
+        </span>
+
+        <span>
+          KSh ${transaction.amount}
+        </span>
+
+      </div>
+
+      <div class="transaction-details">
+
+        <span>
+          ${transaction.customer}
+        </span>
+
+        <span>
+          ${transaction.method}
+        </span>
+
+      </div>
+
+    `;
+
+    container.prepend(item);
+  }
+
+
+  loadTransactions();
+
+</script>
+
+</body>
+</html>

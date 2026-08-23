@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NEXORA DIGITAL — Course</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #061321;
+      color: white;
+      line-height: 1.8;
+    }
+
+    header {
+      background: #061321;
+      border-bottom: 1px solid #173047;
+      padding: 25px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: #45d4ff;
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .back {
+      color: #45d4ff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .course-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .course-number {
+      color: #45d4ff;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    .course-header h1 {
+      font-size: 52px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .course-header p {
+      color: #a8bbcf;
+      font-size: 20px;
+    }
+
+    .module {
+      background: #0b1d2e;
+      border: 1px solid #19374d;
+      border-radius: 22px;
+      padding: 35px;
+      margin-bottom: 30px;
+    }
+
+    .module-label {
+      color: #45d4ff;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .module h2 {
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+
+    .lesson {
+      border-top: 1px solid #19374d;
+      padding-top: 25px;
+      margin-top: 25px;
+    }
+
+    .lesson h3 {
+      font-size: 26px;
+      margin-bottom: 18px;
+      color: #ffffff;
+    }
+
+    .lesson h4,
+    .lesson h5 {
+      color: #45d4ff;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+    .lesson p {
+      color: #c4d2df;
+      margin-bottom: 15px;
+    }
+
+    .lesson ul,
+    .lesson ol {
+      color: #c4d2df;
+      padding-left: 25px;
+      margin-bottom: 20px;
+    }
+
+    .lesson li {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 700px) {
+
+      .course-header h1 {
+        font-size: 38px;
+      }
+
+      .module {
+        padding: 25px;
+      }
+
+      .module h2 {
+        font-size: 27px;
+      }
+
+      .lesson h3 {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+
+    <div class="brand">
+      NEXORA DIGITAL
+    </div>
+
+    <a class="back" href="technology-guides.html">
+      ← Technology Guides
+    </a>
+
+  </div>
+</header>
+
+<main id="courseContent">
+  Loading course...
+</main>
+
+<script src="technology-guides.js"></script>
+
+<script>
+  const parameters = new URLSearchParams(window.location.search);
+  const courseId = parameters.get("course");
+
+  const course = courses.find(item => item.id === courseId);
+
+  const container = document.getElementById("courseContent");
+
+  if (!course) {
+
+    container.innerHTML = `
+      <div class="course-header">
+        <h1>Course Not Found</h1>
+        <p>
+          The course you selected could not be found.
+        </p>
+      </div>
+    `;
+
+  } else {
+
+    document.title = `NEXORA DIGITAL — ${course.title}`;
+
+    let html = `
+      <section class="course-header">
+
+        <div class="course-number">
+          COURSE ${course.number}
+        </div>
+
+        <h1>${course.title}</h1>
+
+        <p>${course.description}</p>
+
+      </section>
+    `;
+
+    course.modules.forEach((module, moduleIndex) => {
+
+      html += `
+        <section class="module">
+
+          <div class="module-label">
+            MODULE ${String(moduleIndex + 1).padStart(2, "0")}
+          </div>
+
+          <h2>${module.title}</h2>
+      `;
+
+      module.lessons.forEach(lesson => {
+
+        html += `
+          <article class="lesson">
+            ${lesson.content}
+          </article>
+        `;
+
+      });
+
+      html += `
+        </section>
+      `;
+
+    });
+
+    container.innerHTML = html;
+  }
+</script>
+
+</body>
+</html>

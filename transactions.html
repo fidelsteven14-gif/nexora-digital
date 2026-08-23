@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexora Digital - Transactions</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b1120;
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #111827;
+      border-bottom: 1px solid #263244;
+      padding: 18px;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #8b5cf6;
+    }
+
+    .home-btn {
+      text-decoration: none;
+      color: white;
+      background: #1f2937;
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 25px 18px 50px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #9ca3af;
+      margin-bottom: 25px;
+    }
+
+    .toolbar {
+      background: #111827;
+      border: 1px solid #263244;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+
+    .toolbar-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr auto;
+      gap: 12px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #374151;
+      background: #0f172a;
+      color: white;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #8b5cf6;
+    }
+
+    .clear-btn {
+      border: none;
+      background: #374151;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .clear-btn:hover {
+      background: #4b5563;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .summary-card {
+      background: #111827;
+      border: 1px solid #263244;
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .summary-card p {
+      color: #9ca3af;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .summary-card strong {
+      font-size: 25px;
+      color: #a78bfa;
+    }
+
+    .table-card {
+      background: #111827;
+      border: 1px solid #263244;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .table-header {
+      padding: 18px;
+      border-bottom: 1px solid #263244;
+    }
+
+    .table-header h2 {
+      font-size: 19px;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+    }
+
+    th,
+    td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #263244;
+    }
+
+    th {
+      color: #9ca3af;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    td {
+      font-size: 14px;
+    }
+
+    .transaction-id {
+      color: #a78bfa;
+      font-weight: bold;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .paid {
+      background: #143521;
+      color: #4ade80;
+    }
+
+    .pending {
+      background: #352c14;
+      color: #facc15;
+    }
+
+    .failed {
+      background: #351919;
+      color: #f87171;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 40px;
+      color: #9ca3af;
+    }
+
+    .delete-btn {
+      border: none;
+      background: #351919;
+      color: #f87171;
+      padding: 7px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 750px) {
+      .toolbar-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .summary {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+
+    <div class="logo">
+      NEXORA <span>DIGITAL</span>
+    </div>
+
+    <a href="index.html" class="home-btn">
+      ← Home
+    </a>
+
+  </div>
+</header>
+
+<main>
+
+  <h1>Transactions</h1>
+
+  <p class="subtitle">
+    View, search and manage payment transactions.
+  </p>
+
+
+  <!-- SEARCH / FILTERS -->
+
+  <section class="toolbar">
+
+    <div class="toolbar-grid">
+
+      <input
+        type="text"
+        id="search"
+        placeholder="Search transaction, phone or package..."
+        oninput="filterTransactions()"
+      >
+
+      <select
+        id="statusFilter"
+        onchange="filterTransactions()"
+      >
+        <option value="">All Statuses</option>
+        <option value="PAID">Paid</option>
+        <option value="PENDING">Pending</option>
+        <option value="FAILED">Failed</option>
+      </select>
+
+      <select
+        id="methodFilter"
+        onchange="filterTransactions()"
+      >
+        <option value="">All Methods</option>
+        <option value="M-Pesa">M-Pesa</option>
+        <option value="Cash">Cash</option>
+      </select>
+
+      <button
+        class="clear-btn"
+        onclick="clearFilters()"
+      >
+        Clear
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- SUMMARY -->
+
+  <section class="summary">
+
+    <div class="summary-card">
+      <p>Total Transactions</p>
+      <strong id="totalTransactions">0</strong>
+    </div>
+
+    <div class="summary-card">
+      <p>Successful Payments</p>
+      <strong id="successfulPayments">0</strong>
+    </div>
+
+    <div class="summary-card">
+      <p>Total Revenue</p>
+      <strong id="totalRevenue">KSh 0</strong>
+    </div>
+
+  </section>
+
+
+  <!-- TRANSACTION TABLE -->
+
+  <section class="table-card">
+
+    <div class="table-header">
+      <h2>Transaction History</h2>
+    </div>
+
+    <div class="table-wrapper">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Transaction ID</th>
+            <th>Customer</th>
+            <th>Package</th>
+            <th>Amount</th>
+            <th>Method</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="transactionTable">
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<script>
+
+  let transactions = [];
+
+
+  function loadTransactions() {
+
+    transactions = JSON.parse(
+      localStorage.getItem("nexoraTransactions") || "[]"
+    );
+
+    renderTransactions(transactions);
+    updateSummary(transactions);
+  }
+
+
+  function renderTransactions(data) {
+
+    const table =
+      document.getElementById("transactionTable");
+
+    table.innerHTML = "";
+
+
+    if (data.length === 0) {
+
+      table.innerHTML = `
+        <tr>
+          <td colspan="8" class="empty">
+            No transactions found.
+          </td>
+        </tr>
+      `;
+
+      return;
+    }
+
+
+    data.forEach((transaction, index) => {
+
+      const status =
+        transaction.status || "PAID";
+
+      const row =
+        document.createElement("tr");
+
+
+      row.innerHTML = `
+
+        <td>
+          <span class="transaction-id">
+            ${escapeHTML(transaction.id || "N/A")}
+          </span>
+        </td>
+
+        <td>
+          ${escapeHTML(transaction.customer || "N/A")}
+        </td>
+
+        <td>
+          ${escapeHTML(transaction.package || "N/A")}
+        </td>
+
+        <td>
+          KSh ${escapeHTML(transaction.amount || "0")}
+        </td>
+
+        <td>
+          ${escapeHTML(transaction.method || "N/A")}
+        </td>
+
+        <td>
+          <span class="status ${status.toLowerCase()}">
+            ${escapeHTML(status)}
+          </span>
+        </td>
+
+        <td>
+          ${escapeHTML(transaction.date || "N/A")}
+        </td>
+
+        <td>
+          <button
+            class="delete-btn"
+            onclick="deleteTransaction(${index})"
+          >
+            Delete
+          </button>
+        </td>
+
+      `;
+
+      table.appendChild(row);
+
+    });
+
+  }
+
+
+  function filterTransactions() {
+
+    const search =
+      document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    const status =
+      document
+        .getElementById("statusFilter")
+        .value;
+
+    const method =
+      document
+        .getElementById("methodFilter")
+        .value;
+
+
+    const filtered =
+      transactions.filter(transaction => {
+
+        const searchable = (
+
+          (transaction.id || "") +
+          " " +
+          (transaction.customer || "") +
+          " " +
+          (transaction.package || "")
+
+        ).toLowerCase();
+
+
+        const matchesSearch =
+          searchable.includes(search);
+
+        const matchesStatus =
+          !status ||
+          (transaction.status || "PAID") === status;
+
+        const matchesMethod =
+          !method ||
+          (transaction.method || "") === method;
+
+
+        return (
+          matchesSearch &&
+          matchesStatus &&
+          matchesMethod
+        );
+
+      });
+
+
+    renderTransactions(filtered);
+    updateSummary(filtered);
+  }
+
+
+  function updateSummary(data) {
+
+    document.getElementById(
+      "totalTransactions"
+    ).textContent = data.length;
+
+
+    const successful =
+      data.filter(
+        transaction =>
+          (transaction.status || "PAID") === "PAID"
+      );
+
+
+    document.getElementById(
+      "successfulPayments"
+    ).textContent = successful.length;
+
+
+    const revenue =
+      successful.reduce(
+        (total, transaction) =>
+          total + Number(transaction.amount || 0),
+        0
+      );
+
+
+    document.getElementById(
+      "totalRevenue"
+    ).textContent =
+      "KSh " + revenue.toLocaleString();
+
+  }
+
+
+  function deleteTransaction(index) {
+
+    const transaction =
+      transactions[index];
+
+    if (!transaction) {
+      return;
+    }
+
+
+    const confirmed =
+      confirm(
+        "Delete this transaction?"
+      );
+
+
+    if (!confirmed) {
+      return;
+    }
+
+
+    transactions.splice(index, 1);
+
+
+    localStorage.setItem(
+      "nexoraTransactions",
+      JSON.stringify(transactions)
+    );
+
+
+    loadTransactions();
+
+  }
+
+
+  function clearFilters() {
+
+    document.getElementById(
+      "search"
+    ).value = "";
+
+    document.getElementById(
+      "statusFilter"
+    ).value = "";
+
+    document.getElementById(
+      "methodFilter"
+    ).value = "";
+
+
+    loadTransactions();
+
+  }
+
+
+  function escapeHTML(value) {
+
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  loadTransactions();
+
+</script>
+
+</body>
+  </html>

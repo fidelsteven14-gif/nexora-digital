@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexora Digital - Billing</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b1120;
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #111827;
+      padding: 18px 20px;
+      border-bottom: 1px solid #263244;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-content {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #8b5cf6;
+    }
+
+    .back-btn {
+      color: #fff;
+      text-decoration: none;
+      background: #1f2937;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 18px 50px;
+    }
+
+    .page-title {
+      margin-bottom: 22px;
+    }
+
+    .page-title h1 {
+      font-size: 28px;
+      margin-bottom: 7px;
+    }
+
+    .page-title p {
+      color: #9ca3af;
+    }
+
+    .billing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: #111827;
+      border: 1px solid #263244;
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .card h2 {
+      font-size: 19px;
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      color: #d1d5db;
+      font-size: 14px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 13px;
+      border-radius: 8px;
+      border: 1px solid #374151;
+      background: #0f172a;
+      color: #fff;
+      outline: none;
+      margin-bottom: 15px;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #8b5cf6;
+    }
+
+    .package-info {
+      background: #0f172a;
+      border: 1px solid #374151;
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 5px;
+      margin-bottom: 18px;
+      display: none;
+    }
+
+    .package-info div {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .package-info div:last-child {
+      margin-bottom: 0;
+    }
+
+    .package-info span:last-child {
+      font-weight: bold;
+    }
+
+    .amount {
+      font-size: 25px;
+      color: #a78bfa;
+      font-weight: bold;
+    }
+
+    .payment-methods {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .payment-method {
+      border: 1px solid #374151;
+      background: #0f172a;
+      padding: 13px;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .payment-method.active {
+      border-color: #8b5cf6;
+      background: #25164b;
+    }
+
+    .generate-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 9px;
+      background: #7c3aed;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .generate-btn:hover {
+      background: #6d28d9;
+    }
+
+    .receipt {
+      display: none;
+    }
+
+    .receipt-box {
+      border: 1px dashed #4b5563;
+      border-radius: 10px;
+      padding: 18px;
+      background: #0f172a;
+    }
+
+    .receipt-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 10px 0;
+      border-bottom: 1px solid #263244;
+    }
+
+    .receipt-row:last-child {
+      border-bottom: none;
+    }
+
+    .receipt-row span:first-child {
+      color: #9ca3af;
+    }
+
+    .success {
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    .receipt-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .receipt-actions button {
+      flex: 1;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .print-btn {
+      background: #374151;
+      color: #fff;
+    }
+
+    .new-btn {
+      background: #7c3aed;
+      color: #fff;
+    }
+
+    .message {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      display: none;
+      background: #172033;
+      color: #d1d5db;
+    }
+
+    @media (max-width: 750px) {
+      .billing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-content">
+    <div class="logo">
+      NEXORA <span>DIGITAL</span>
+    </div>
+
+    <a href="index.html" class="back-btn">← Home</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="page-title">
+    <h1>Billing</h1>
+    <p>Create and process a customer bill.</p>
+  </div>
+
+  <div class="billing-grid">
+
+    <!-- BILLING FORM -->
+    <section class="card">
+
+      <h2>Create Bill</h2>
+
+      <label for="customer">Customer / Phone Number</label>
+      <input
+        type="text"
+        id="customer"
+        placeholder="Enter customer phone number"
+      >
+
+      <label for="package">Select Package</label>
+
+      <select id="package" onchange="showPackage()">
+        <option value="">Choose a package</option>
+
+        <option
+          value="daily"
+          data-name="Daily Package"
+          data-price="50"
+          data-duration="24 Hours">
+          Daily Package - KSh 50
+        </option>
+
+        <option
+          value="weekly"
+          data-name="Weekly Package"
+          data-price="250"
+          data-duration="7 Days">
+          Weekly Package - KSh 250
+        </option>
+
+        <option
+          value="monthly"
+          data-name="Monthly Package"
+          data-price="800"
+          data-duration="30 Days">
+          Monthly Package - KSh 800
+        </option>
+
+      </select>
+
+      <div class="package-info" id="packageInfo">
+
+        <div>
+          <span>Package</span>
+          <span id="selectedPackage">-</span>
+        </div>
+
+        <div>
+          <span>Duration</span>
+          <span id="duration">-</span>
+        </div>
+
+        <div>
+          <span>Amount</span>
+          <span class="amount" id="amount">KSh 0</span>
+        </div>
+
+      </div>
+
+      <label>Payment Method</label>
+
+      <div class="payment-methods">
+
+        <button
+          type="button"
+          class="payment-method active"
+          onclick="selectPayment(this, 'M-Pesa')">
+          M-Pesa
+        </button>
+
+        <button
+          type="button"
+          class="payment-method"
+          onclick="selectPayment(this, 'Cash')">
+          Cash
+        </button>
+
+      </div>
+
+      <button class="generate-btn" onclick="createBill()">
+        Generate Bill
+      </button>
+
+      <div class="message" id="message"></div>
+
+    </section>
+
+
+    <!-- RECEIPT -->
+    <section class="card receipt" id="receipt">
+
+      <h2>Bill Receipt</h2>
+
+      <div class="receipt-box">
+
+        <div class="receipt-row">
+          <span>Status</span>
+          <span class="success">PAID</span>
+        </div>
+
+        <div class="receipt-row">
+          <span>Receipt No.</span>
+          <span id="receiptNumber">-</span>
+        </div>
+
+        <div class="receipt-row">
+          <span>Customer</span>
+          <span id="receiptCustomer">-</span>
+        </div>
+
+        <div class="receipt-row">
+          <span>Package</span>
+          <span id="receiptPackage">-</span>
+        </div>
+
+        <div class="receipt-row">
+          <span>Duration</span>
+          <span id="receiptDuration">-</span>
+        </div>
+
+        <div class="receipt-row">
+          <span>Payment</span>
+          <span id="receiptPayment">-</span>
+        </div>
+
+        <div class="receipt-row">
+          <span>Total</span>
+          <span class="amount" id="receiptAmount">KSh 0</span>
+        </div>
+
+      </div>
+
+      <div class="receipt-actions">
+
+        <button
+          class="print-btn"
+          onclick="window.print()">
+          Print
+        </button>
+
+        <button
+          class="new-btn"
+          onclick="newBill()">
+          New Bill
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+
+<script>
+
+  let selectedPayment = "M-Pesa";
+
+  function showPackage() {
+
+    const select = document.getElementById("package");
+    const option = select.options[select.selectedIndex];
+
+    const packageInfo = document.getElementById("packageInfo");
+
+    if (!option.value) {
+      packageInfo.style.display = "none";
+      return;
+    }
+
+    document.getElementById("selectedPackage").textContent =
+      option.dataset.name;
+
+    document.getElementById("duration").textContent =
+      option.dataset.duration;
+
+    document.getElementById("amount").textContent =
+      "KSh " + option.dataset.price;
+
+    packageInfo.style.display = "block";
+  }
+
+
+  function selectPayment(button, method) {
+
+    document.querySelectorAll(".payment-method")
+      .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    selectedPayment = method;
+  }
+
+
+  function createBill() {
+
+    const customer =
+      document.getElementById("customer").value.trim();
+
+    const packageSelect =
+      document.getElementById("package");
+
+    const option =
+      packageSelect.options[packageSelect.selectedIndex];
+
+    const message =
+      document.getElementById("message");
+
+    if (!customer) {
+      showMessage("Please enter the customer phone number.");
+      return;
+    }
+
+    if (!option.value) {
+      showMessage("Please select a package.");
+      return;
+    }
+
+    const receiptNumber =
+      "NX-" +
+      Date.now().toString().slice(-8);
+
+    document.getElementById("receiptNumber").textContent =
+      receiptNumber;
+
+    document.getElementById("receiptCustomer").textContent =
+      customer;
+
+    document.getElementById("receiptPackage").textContent =
+      option.dataset.name;
+
+    document.getElementById("receiptDuration").textContent =
+      option.dataset.duration;
+
+    document.getElementById("receiptPayment").textContent =
+      selectedPayment;
+
+    document.getElementById("receiptAmount").textContent =
+      "KSh " + option.dataset.price;
+
+    document.getElementById("receipt").style.display =
+      "block";
+
+    message.style.display = "none";
+
+    document.getElementById("receipt")
+      .scrollIntoView({
+        behavior: "smooth"
+      });
+  }
+
+
+  function showMessage(text) {
+
+    const message =
+      document.getElementById("message");
+
+    message.textContent = text;
+    message.style.display = "block";
+  }
+
+
+  function newBill() {
+
+    document.getElementById("customer").value = "";
+
+    document.getElementById("package").value = "";
+
+    document.getElementById("packageInfo").style.display =
+      "none";
+
+    document.getElementById("receipt").style.display =
+      "none";
+
+    document.getElementById("message").style.display =
+      "none";
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+</script>
+
+</body>
+  </html>

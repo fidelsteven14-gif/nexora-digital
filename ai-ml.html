@@ -191,4 +191,1172 @@ input{
   width:100%;
   padding:15px 17px;
   background:#0a1c2e;
-  border:1px solid #24465f
+  border:1px solid #24465f;
+  border-radius:12px;
+  color:#fff;
+  outline:none;
+}
+
+.search:focus{
+  border-color:#38cfff;
+}
+
+.control-button{
+  padding:12px 18px;
+  border:1px solid #2b5a76;
+  border-radius:12px;
+  background:#102a40;
+  color:#dceeff;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.control-button:hover{
+  background:#163b55;
+}
+
+.course-map{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:40px;
+}
+
+.module-link{
+  border:1px solid #23475e;
+  background:#0b1d2f;
+  color:#a9c2d6;
+  border-radius:9px;
+  padding:7px 10px;
+  cursor:pointer;
+}
+
+.module-link:hover{
+  color:#42d2ff;
+  border-color:#42d2ff;
+}
+
+.module{
+  background:#0b2033;
+  border:1px solid #1d4059;
+  border-radius:22px;
+  margin:25px 0;
+  overflow:hidden;
+  scroll-margin-top:110px;
+}
+
+.module-header{
+  padding:30px;
+  background:linear-gradient(135deg,#0d263c,#0a1c2e);
+  border-bottom:1px solid #1d4059;
+}
+
+.module-number{
+  color:#40d3ff;
+  font-weight:900;
+  letter-spacing:2px;
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.module-title{
+  font-size:clamp(25px,5vw,38px);
+  line-height:1.2;
+  margin-bottom:10px;
+}
+
+.module-focus{
+  color:#a9bfd2;
+  max-width:900px;
+}
+
+.learning-outcomes{
+  margin-top:20px;
+  padding:18px;
+  border-radius:14px;
+  background:#071725;
+  border:1px solid #193b53;
+}
+
+.learning-outcomes strong{
+  color:#43d2ff;
+}
+
+.learning-outcomes ul{
+  margin:10px 0 0 20px;
+  color:#c2d3e2;
+}
+
+.lessons{
+  padding:0;
+}
+
+.lesson{
+  border-bottom:1px solid #18384f;
+}
+
+.lesson:last-child{
+  border-bottom:0;
+}
+
+.lesson-head{
+  width:100%;
+  padding:22px 25px;
+  background:#0c2134;
+  color:#f1f8ff;
+  border:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  text-align:left;
+  cursor:pointer;
+}
+
+.lesson-head:hover{
+  background:#102a40;
+}
+
+.lesson-title{
+  font-size:19px;
+  font-weight:800;
+}
+
+.lesson-status{
+  min-width:30px;
+  height:30px;
+  border:1px solid #356078;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#668ca4;
+}
+
+.lesson.open .lesson-status{
+  color:#42d2ff;
+}
+
+.lesson.complete .lesson-status{
+  background:#38cfff;
+  color:#04111c;
+  border-color:#38cfff;
+}
+
+.lesson-body{
+  display:none;
+  padding:25px;
+  background:#081827;
+}
+
+.lesson.open .lesson-body{
+  display:block;
+}
+
+.lesson-body h3{
+  color:#45d4ff;
+  margin:18px 0 8px;
+}
+
+.lesson-body h3:first-child{
+  margin-top:0;
+}
+
+.lesson-body p{
+  color:#b8cad9;
+  margin-bottom:15px;
+}
+
+.lesson-body ul{
+  margin:0 0 18px 22px;
+  color:#b8cad9;
+}
+
+.lesson-body li{
+  margin-bottom:7px;
+}
+
+.key-points{
+  margin-top:20px;
+  padding:18px;
+  background:#0d263b;
+  border-left:4px solid #39cfff;
+  border-radius:8px;
+}
+
+.lesson-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+
+.complete-button{
+  border:1px solid #27627d;
+  background:#102c42;
+  color:#dcefff;
+  padding:10px 14px;
+  border-radius:9px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.complete-button:hover{
+  background:#153c57;
+}
+
+.complete-button.done{
+  background:#35caff;
+  color:#03101b;
+}
+
+.footer{
+  text-align:center;
+  padding:60px 20px;
+  margin-top:50px;
+  border-top:1px solid #17354c;
+  color:#7892a7;
+}
+
+.no-results{
+  display:none;
+  padding:30px;
+  text-align:center;
+  background:#0b2033;
+  border:1px solid #24465f;
+  border-radius:16px;
+  color:#a9bfd2;
+}
+
+@media(max-width:800px){
+  .info-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .controls{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:560px){
+  .header-inner{
+    padding:15px;
+  }
+
+  .brand{
+    gap:10px;
+  }
+
+  .brand img{
+    width:55px;
+    height:34px;
+  }
+
+  .nav a{
+    padding:8px 10px;
+    font-size:14px;
+  }
+
+  .hero{
+    padding-top:40px;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .module-header{
+    padding:22px;
+  }
+
+  .lesson-head{
+    padding:18px;
+  }
+
+  .lesson-body{
+    padding:20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+
+    <div class="brand">
+      <img src="nexora-digital-logo.png" alt="Nexora Digital logo">
+      <div class="brand-name">NEXORA DIGITAL</div>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="technology-guides.html">Technology Guides</a>
+      <a href="course.html">Courses</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="container">
+
+<section class="hero">
+  <span class="badge">COURSE 01 • TECHNOLOGY ACADEMY</span>
+
+  <h1>
+    Artificial Intelligence
+    <span>& Machine Learning</span>
+  </h1>
+
+  <p>
+    A structured 50-module learning programme covering artificial
+    intelligence, machine learning, mathematics, data preparation,
+    classical algorithms, deep learning, NLP, generative AI, LLMs,
+    MLOps, responsible AI, security and a final practical project.
+  </p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <strong>50</strong>
+      <span>Modules</span>
+    </div>
+
+    <div class="info-card">
+      <strong>200</strong>
+      <span>Lessons</span>
+    </div>
+
+    <div class="info-card">
+      <strong>4</strong>
+      <span>Lessons per module</span>
+    </div>
+
+    <div class="info-card">
+      <strong>AI/ML</strong>
+      <span>Course pathway</span>
+    </div>
+  </div>
+
+  <div class="progress-area">
+    <div class="progress-top">
+      <strong>Your Course Progress</strong>
+      <strong id="progressText">0%</strong>
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <p style="margin-top:10px;color:#8fa8bc;">
+      Your completed lessons are saved automatically on this device.
+    </p>
+  </div>
+
+  <div class="controls">
+    <input
+      id="searchInput"
+      class="search"
+      type="search"
+      placeholder="Search modules and lessons..."
+      aria-label="Search course">
+    <button class="control-button" onclick="resetProgress()">
+      Reset Progress
+    </button>
+  </div>
+
+  <div id="courseMap" class="course-map"></div>
+</section>
+
+<div id="noResults" class="no-results">
+  No module or lesson matches your search.
+</div>
+
+<section id="courseContent"></section>
+
+</main>
+
+<footer class="footer">
+  <p>Nexora Digital Technology Academy</p>
+  <p>Artificial Intelligence & Machine Learning Course</p>
+</footer>
+
+<script>
+/*
+==========================================================
+NEXORA DIGITAL
+ARTIFICIAL INTELLIGENCE & MACHINE LEARNING
+50 MODULES / 200 LESSONS
+==========================================================
+*/
+
+const modules = [
+
+{
+title:"AI Foundations",
+focus:"definitions, history, capabilities, limitations and the role of artificial intelligence",
+lessons:[
+["What Artificial Intelligence Means","Artificial intelligence is the field of building computational systems that perform tasks normally associated with aspects of human intelligence, such as perception, prediction, language processing, planning and decision-making. AI systems do not need to imitate the human brain exactly. The important engineering question is whether a system can transform available inputs into useful outputs under defined conditions."],
+["History and Major Milestones","AI developed through several periods, including symbolic reasoning, expert systems, statistical learning and modern neural-network methods. Progress has been driven by algorithms, larger datasets, improved hardware and better software frameworks. Understanding this history helps learners distinguish enduring ideas from temporary trends and explains why modern AI combines mathematics, computing, data and domain knowledge."],
+["AI Capabilities and Limitations","AI can identify patterns, generate predictions, classify information, optimize decisions and produce content. However, an AI system remains dependent on its training data, objectives, architecture and operating environment. A model can produce confident but incorrect outputs, fail on unfamiliar conditions or reproduce problems in its data. Evaluation and human oversight are therefore essential."],
+["AI Problem Categories","Common AI tasks include classification, regression, ranking, recommendation, clustering, generation, anomaly detection, forecasting and control. Choosing the correct task is one of the first engineering decisions. A poorly formulated problem can produce an impressive model that does not solve the real business or scientific requirement."]
+]
+},
+
+{
+title:"Problem Formulation",
+focus:"turning real-world requirements into measurable AI problems",
+lessons:[
+["Problem Framing","Before writing model code, describe the real problem in operational terms. Identify who needs the result, what decision will be improved, what information is available and what action follows the prediction. A good problem statement prevents teams from building models simply because a dataset happens to be available."],
+["Objectives and Constraints","AI projects operate under constraints such as accuracy, latency, cost, privacy, interpretability, availability and regulatory requirements. These constraints should be recorded before model selection. A technically accurate model may still be unsuitable if it is too slow, too expensive or impossible to explain to its intended users."],
+["Success Criteria","Define measurable success criteria for both the model and the complete system. Metrics may include precision, recall, mean absolute error, latency, cost or user outcomes. Establish a baseline before training advanced models so that improvement can be demonstrated rather than assumed."],
+["AI Feasibility","Not every problem requires machine learning. Compare AI with rules, conventional software, search, optimization or manual workflows. Machine learning is appropriate when useful patterns exist in data and the desired behavior can be evaluated. Feasibility analysis should consider data availability, quality, labels, infrastructure and operational risks."]
+]
+},
+
+{
+title:"Python for AI",
+focus:"Python programming foundations used throughout practical machine-learning development",
+lessons:[
+["Python Syntax","Python provides readable syntax and a large ecosystem for scientific computing and machine learning. Learn variables, expressions, conditions, loops, functions, exceptions and modules. Good Python code uses meaningful names, small functions and predictable behavior rather than putting the entire application into one large script."],
+["Functions and Modules","Functions allow repeated operations to be tested and reused. Modules organize related functionality and make larger projects easier to maintain. In AI projects, separate data loading, preprocessing, training, evaluation and inference logic so that each stage can be inspected independently."],
+["Data Structures","Lists, tuples, dictionaries and sets are fundamental Python structures. They are useful for representing collections, configuration values, mappings and unique categories. Understanding mutability, iteration and membership operations reduces common programming errors when manipulating datasets or model configuration."],
+["Virtual Environments","Machine-learning projects depend on many packages and versions. Virtual environments isolate dependencies so that one project does not accidentally break another. Record dependencies and versions, avoid unnecessary packages and keep the environment reproducible for development, testing and deployment."]
+]
+},
+
+{
+title:"NumPy and Numerical Computing",
+focus:"arrays, vectorization, broadcasting and numerical computation",
+lessons:[
+["Arrays and Shapes","NumPy arrays provide efficient numerical storage and operations. Shape describes the dimensions of an array while dtype describes the stored numerical type. In machine learning, understanding dimensions is essential because incorrect shapes can produce invalid matrix operations or silently produce unintended results."],
+["Indexing and Broadcasting","Indexing selects portions of arrays, while broadcasting allows compatible shapes to participate in arithmetic operations. These features make numerical code concise and fast. Always verify shapes when transforming features, labels, images or batches because shape mistakes are among the most common numerical programming errors."],
+["Vectorized Computation","Vectorization performs operations over complete arrays instead of manually iterating through every element in Python. This improves clarity and often performance. Learn arithmetic, aggregation, comparisons, masking and matrix operations so that preprocessing and numerical algorithms can be expressed efficiently."],
+["Numerical Stability","Numerical algorithms can suffer from overflow, underflow, division by zero and loss of precision. Stable implementations use appropriate data types, scaling, safe transformations and mathematically equivalent formulations. Numerical stability becomes increasingly important in optimization and deep learning."]
+]
+},
+
+{
+title:"Pandas and Data Handling",
+focus:"tabular data loading, transformation, inspection and analysis",
+lessons:[
+["Series and DataFrames","Pandas provides Series and DataFrame structures for working with labelled data. Learn columns, indexes, data types and selection. DataFrames are particularly useful for inspecting structured datasets before converting information into arrays suitable for machine-learning algorithms."],
+["Loading Datasets","Data can come from CSV files, spreadsheets, databases, APIs and other systems. When loading data, inspect column names, data types, missing values, duplicates and unexpected records. Never assume that a file is clean simply because it loaded without an error."],
+["Filtering and Transformation","Filtering selects records that meet conditions while transformations create or modify columns. Common transformations include type conversion, date extraction, string cleaning and numerical calculations. Every transformation should have a documented reason because preprocessing directly affects what the model can learn."],
+["Grouping and Aggregation","Grouping allows data to be summarized by categories such as region, product or customer segment. Aggregations can reveal distributions and relationships before modeling. Avoid aggregating in ways that leak future information into training data or remove important variation."]
+]
+},
+
+{
+title:"Data Collection",
+focus:"data sources, formats, sampling, APIs and data governance",
+lessons:[
+["Data Sources","AI systems may use transactional records, sensors, documents, images, logs, surveys, public datasets or APIs. Source selection affects bias, completeness and reliability. Document where data came from, when it was collected, what population it represents and what permissions apply."],
+["APIs and Files","APIs provide programmatic access to data while files provide portable datasets. Learn structured formats such as JSON and CSV and understand authentication, rate limits and error handling when consuming APIs. Data ingestion should be repeatable rather than dependent on manual copying."],
+["Sampling","Sampling determines which observations enter a dataset. Random, stratified and time-based sampling have different purposes. A sample that does not represent the target population can produce a model that appears accurate during development but performs poorly in real use."],
+["Data Governance","Governance covers ownership, access, retention, documentation, quality and lawful use. Sensitive data requires additional controls. A mature AI project maintains a clear record of where data originated, how it was transformed and who is permitted to use it."]
+]
+},
+
+{
+title:"Data Cleaning",
+focus:"missing values, duplicates, errors, outliers and validation",
+lessons:[
+["Missing Data","Missing values may occur because information was not collected, was unavailable or was recorded incorrectly. Strategies include removal, statistical imputation, model-based imputation and explicit missing categories. The correct method depends on why values are missing and whether the missingness itself carries information."],
+["Duplicates and Errors","Duplicate records can distort frequencies and model training. Invalid dates, impossible measurements, inconsistent labels and incorrect data types must also be detected. Build validation rules rather than manually correcting isolated rows because repeatable rules make future data processing safer."],
+["Outliers","An outlier is an observation that differs substantially from the rest of a distribution. It may be a legitimate rare event or a measurement error. Use domain knowledge and multiple diagnostics before removing values. Blindly deleting outliers can eliminate exactly the cases a model needs to understand."],
+["Validation Rules","Validation checks should run before training and, where possible, during production ingestion. Examples include range checks, uniqueness checks, required fields and relationship constraints. Failed validation should generate an actionable error rather than allowing questionable data to silently enter a model."]
+]
+},
+
+{
+title:"Exploratory Data Analysis",
+focus:"understanding distributions, relationships and patterns before modeling",
+lessons:[
+["Descriptive Statistics","Descriptive statistics summarize a dataset using measures such as mean, median, variance, minimum, maximum and quantiles. They provide an initial picture of scale and variability. Statistics should be interpreted alongside domain knowledge because the same numerical distribution can have different meanings in different applications."],
+["Distributions","Histograms, density estimates and quantiles help reveal skewness, concentration, heavy tails and unusual observations. Distribution analysis guides decisions about transformations and scaling. Always inspect both numerical summaries and visual representations when possible."],
+["Relationships","Relationships between variables can be explored with correlation, cross-tabulation and visual comparisons. Association does not establish causation. Strong correlation may result from a third factor, shared trend or data collection process. Use EDA to generate hypotheses rather than treating every observed pattern as causal truth."],
+["EDA Workflow","A disciplined EDA workflow moves from dataset structure to quality checks, univariate analysis, pairwise relationships and target-focused analysis. Keep a record of findings and decisions. EDA should be repeated when new data sources or production behavior reveal patterns that were absent from the original sample."]
+]
+},
+
+{
+title:"Data Visualization",
+focus:"communicating patterns and model results with effective visualizations",
+lessons:[
+["Choosing Charts","Select a visualization based on the question. Line charts are useful for trends, bar charts for category comparisons, histograms for distributions and scatter plots for relationships. Decorative complexity should not replace clarity. A chart should make the intended comparison easier to see."],
+["Matplotlib","Matplotlib provides a flexible foundation for Python visualization. Learn figures, axes, labels, legends, scales and annotations. Reusable plotting functions help keep analytical reports consistent and reduce repeated code."],
+["Statistical Visualization","Statistical visualization adds context through distributions, uncertainty, groups and relationships. Libraries such as Seaborn build on Matplotlib to simplify common statistical charts. Interpret plots carefully and avoid visual choices that exaggerate differences."],
+["Visualization Ethics","A misleading chart can communicate a false conclusion even when every underlying number is correct. Pay attention to axis ranges, bin widths, omitted categories, sample sizes and uncertainty. Good visualization communicates both what the data shows and what it cannot establish."]
+]
+},
+
+{
+title:"Probability",
+focus:"uncertainty, conditional probability, Bayes reasoning and random variables",
+lessons:[
+["Probability Basics","Probability quantifies uncertainty about events. Concepts include sample spaces, events, complements, unions and intersections. Probability is foundational to machine learning because many models represent uncertainty rather than producing only deterministic answers."],
+["Conditional Probability","Conditional probability describes the likelihood of an event given information about another event. It is central to classification, diagnosis and probabilistic inference. Distinguish carefully between P(A|B) and P(B|A), because reversing conditional statements is a common reasoning error."],
+["Bayes Theorem","Bayes theorem connects prior beliefs, likelihood and posterior probability. It provides a formal way to update beliefs when evidence arrives. Bayesian reasoning is used directly in probabilistic models and indirectly in many decisions involving uncertain evidence."],
+["Random Variables","Random variables map outcomes to numerical values. Discrete variables have countable outcomes while continuous variables are represented through distributions over ranges. Expected value, variance and probability distributions provide the mathematical language needed for statistical learning."]
+]
+},
+
+{
+title:"Statistics",
+focus:"estimation, sampling, confidence intervals and hypothesis testing",
+lessons:[
+["Descriptive Statistics","Mean, median, variance, standard deviation and quantiles describe observed data. Understand when each statistic is appropriate and how outliers affect them. Descriptive statistics summarize evidence but do not by themselves establish conclusions about a wider population."],
+["Sampling Distributions","A sampling distribution describes how a statistic behaves across repeated samples. Concepts such as standard error and the central limit theorem explain why sample-based estimates can support inference about populations. Sampling assumptions must be considered before applying statistical procedures."],
+["Confidence Intervals","A confidence interval gives a procedure for estimating a population parameter with quantified uncertainty. It should not be interpreted as a probability statement about a fixed parameter after the interval is calculated. Wider intervals generally reflect greater uncertainty."],
+["Hypothesis Testing","Hypothesis tests compare observed evidence with a null model. Learn hypotheses, test statistics, p-values, significance levels and statistical power. Statistical significance is not the same as practical importance, and repeated testing can increase false-positive findings."]
+]
+},
+
+{
+title:"Linear Algebra",
+focus:"vectors, matrices, transformations and concepts used by machine learning",
+lessons:[
+["Vectors","Vectors represent ordered numerical quantities and are used for features, parameters and embeddings. Learn vector addition, scalar multiplication, dot products and norms. Geometric interpretation helps explain similarity, distance and optimization."],
+["Matrices","Matrices organize numerical values into rows and columns. Machine-learning datasets are commonly represented as matrices with observations and features. Understand dimensions and matrix notation because compatible dimensions are required for valid operations."],
+["Matrix Operations","Matrix multiplication combines linear transformations and is central to neural-network computation. Learn transpose, inverse concepts, multiplication and matrix-vector products. Do not treat matrix multiplication as ordinary element-by-element multiplication; the operations have different meanings."],
+["Eigen Concepts","Eigenvectors and eigenvalues describe directions and scaling behavior of linear transformations. They appear in methods such as principal component analysis. Full numerical computation is often delegated to scientific libraries, but conceptual understanding helps explain why dimensionality-reduction techniques work."]
+]
+},
+
+{
+title:"Calculus for ML",
+focus:"derivatives, gradients and the chain rule behind learning algorithms",
+lessons:[
+["Functions and Derivatives","A derivative measures how a function changes with respect to an input. Machine-learning optimization uses derivatives to determine how model parameters affect error. Understanding slope and local change provides the foundation for gradient-based training."],
+["Partial Derivatives","Models commonly have many parameters, so we need partial derivatives with respect to individual parameters. These derivatives form the components of the gradient. Each component indicates how changing one parameter locally affects the objective."],
+["Gradients","A gradient points in the direction of greatest local increase of a scalar function. Optimization algorithms typically move in the opposite direction to reduce loss. Gradient magnitude and direction provide information about the local geometry of the optimization problem."],
+["Chain Rule","The chain rule explains how derivatives propagate through nested functions. Backpropagation in neural networks is essentially efficient application of the chain rule across a computational graph. This connection is fundamental to understanding how deep networks learn."]
+]
+},
+
+{
+title:"Optimization",
+focus:"objective functions, gradient descent, learning rates and regularization",
+lessons:[
+["Objective Functions","An objective or loss function converts model errors into a quantity that can be minimized or maximized. The choice of loss determines what the model is encouraged to optimize. Always connect mathematical optimization to the real-world cost of making predictions."],
+["Gradient Descent","Gradient descent repeatedly adjusts parameters in the direction that reduces the objective. Batch, stochastic and mini-batch approaches trade computational cost and noise differently. Training requires monitoring both optimization progress and generalization performance."],
+["Learning Rates","The learning rate controls the size of parameter updates. A rate that is too small can make training unnecessarily slow while a rate that is too large can cause unstable or divergent behavior. Schedules and adaptive optimizers can help manage this trade-off."],
+["Regularization","Regularization discourages overly complex solutions and can improve generalization. L1 and L2 penalties are common examples, while dropout and early stopping provide related approaches in neural networks. Regularization should be evaluated using validation data rather than chosen only because it sounds safer."]
+]
+},
+
+{
+title:"Machine Learning Overview",
+focus:"learning paradigms and the complete machine-learning lifecycle",
+lessons:[
+["Supervised Learning","Supervised learning uses examples containing inputs and known target outputs. Regression predicts numerical quantities while classification predicts categories. The quality and relevance of target labels strongly influence what the model can learn."],
+["Unsupervised Learning","Unsupervised methods analyze data without a predefined target, often to discover groups, structure or compact representations. Clustering and dimensionality reduction are common examples. Results require interpretation because discovered patterns are not automatically meaningful."],
+["Semi-Supervised Learning","Semi-supervised learning combines labelled and unlabelled data. It can be useful when labels are expensive but raw data is abundant. The assumptions behind how unlabelled examples relate to labelled data must be checked carefully."],
+["ML Lifecycle","A typical lifecycle includes problem definition, data collection, cleaning, exploration, feature engineering, training, validation, deployment and monitoring. The lifecycle is iterative. Production feedback can reveal data drift, changing user behavior or failure modes that require retraining or redesign."]
+]
+},
+
+{
+title:"Linear Regression",
+focus:"continuous prediction using linear models",
+lessons:[
+["Simple Regression","Linear regression models a numerical target as a weighted combination of input features. The simplest form uses one predictor and an intercept. Although simple, linear regression provides an important baseline and introduces concepts used by many more complex models."],
+["Multiple Regression","Multiple regression uses several features to estimate a target. Coefficients represent the model's fitted relationship under its assumptions. Correlated predictors can make coefficient interpretation unstable, so model performance and feature relationships should be examined together."],
+["Loss Functions","Ordinary least squares minimizes the sum of squared residuals. Squared loss strongly penalizes large errors and leads to useful mathematical properties. Alternative losses may be preferred when robustness or a different error objective is required."],
+["Regression Assumptions","Classical interpretation often relies on assumptions about linearity, independence, error variance and residual behavior. Prediction can sometimes work even when these assumptions are imperfect, but inference and interpretation require greater care."]
+]
+},
+
+{
+title:"Logistic Regression",
+focus:"classification with probabilistic outputs",
+lessons:[
+["Binary Classification","Logistic regression estimates the probability of one class using a logistic transformation of a linear score. It is a strong baseline because it is relatively simple, fast and interpretable while still producing useful probabilities."],
+["Sigmoid Function","The sigmoid function maps any real-valued score to a value between zero and one. This output can be interpreted as a probability under the model. The classification threshold is a separate decision rule and does not have to remain at 0.5."],
+["Decision Thresholds","Changing the classification threshold changes the trade-off between false positives and false negatives. Threshold selection should reflect the cost of errors in the application rather than relying automatically on a default."],
+["Multiclass Extensions","Multiclass logistic regression can use approaches such as one-vs-rest or multinomial modeling. Evaluation should examine class-specific behavior because aggregate accuracy can hide poor performance on smaller or more important classes."]
+]
+},
+
+{
+title:"k-Nearest Neighbors",
+focus:"instance-based prediction using distances between observations",
+lessons:[
+["Distance Metrics","k-NN predicts using nearby training examples. Distance metrics such as Euclidean or Manhattan distance determine what 'nearby' means. Features on different scales can dominate distance, making preprocessing important."],
+["Choosing k","Small values of k can create flexible decision boundaries and sensitivity to noise, while larger values smooth predictions but may overlook local structure. Select k using validation rather than optimizing against the test set."],
+["Classification","For classification, neighboring labels can be combined by majority vote or distance-weighted voting. Inspect class imbalance because a dominant class can overwhelm local decisions."],
+["Regression","For regression, neighboring target values can be averaged or weighted by distance. k-NN regression is intuitive but can become computationally expensive as the dataset grows because prediction requires finding neighbors."]
+]
+},
+
+{
+title:"Decision Trees",
+focus:"interpretable rule-based predictive models",
+lessons:[
+["Tree Structure","Decision trees recursively divide data according to feature conditions. Internal nodes represent decisions and leaves represent predictions. Trees are easy to visualize, but unrestricted growth can memorize training examples."],
+["Splitting Criteria","Classification trees may use measures such as Gini impurity or entropy to select splits. Regression trees use criteria based on prediction error. The chosen split should improve the objective without relying on information unavailable at prediction time."],
+["Pruning","Pruning limits unnecessary complexity. Maximum depth, minimum samples and cost-complexity approaches can reduce overfitting. Validation data should guide these settings."],
+["Interpretation","Trees can provide understandable decision paths and feature importance measures. Importance scores can be misleading when features are correlated, so interpretability should be supported by additional analysis rather than treated as proof of causation."]
+]
+},
+
+{
+title:"Random Forests",
+focus:"ensemble learning with randomized decision trees",
+lessons:[
+["Bagging","Random forests build many trees using bootstrapped samples and combine their predictions. Averaging or voting reduces the variance of individual trees and often improves generalization."],
+["Feature Randomness","Each tree considers a random subset of features at splitting points. This reduces correlation between trees and makes the ensemble more diverse. Diversity is valuable because averaging highly similar models provides less benefit."],
+["Training Forests","Important parameters include the number of trees, feature sampling strategy, tree depth and minimum leaf size. More trees can improve stability but increase computation. Tune parameters with validation rather than assuming the largest forest is best."],
+["Interpretation and Tuning","Random forests can provide feature importance and out-of-bag estimates. Importance should be interpreted carefully, especially with correlated variables. Compare the forest against simpler baselines to justify its additional complexity."]
+]
+},
+
+{
+title:"Gradient Boosting",
+focus:"sequential ensemble learning through error correction",
+lessons:[
+["Boosting Idea","Boosting builds models sequentially so later models focus on errors made by earlier ones. Weak learners, often shallow trees, are combined into a strong predictor. The method can achieve excellent performance on structured data."],
+["Residual Fitting","In regression-style boosting, later learners approximate remaining errors or gradients of the loss. This creates an additive model. Understanding residual correction explains why many small trees can outperform a single large tree."],
+["Hyperparameters","Learning rate, number of estimators, tree depth and subsampling strongly influence performance. Smaller learning rates usually require more stages. Tune these parameters using a validation strategy that matches the data-generating process."],
+["Practical Considerations","Boosting can overfit when complexity is uncontrolled. Early stopping, regularization and careful validation are important. Modern libraries provide optimized gradient-boosting implementations, but the underlying principles remain the same."]
+]
+},
+
+{
+title:"Support Vector Machines",
+focus:"margin-based classification and regression",
+lessons:[
+["Margins","Support vector machines seek decision boundaries with useful separation between classes. The margin measures the distance from the boundary to influential training examples. Maximizing the margin can improve generalization under appropriate assumptions."],
+["Kernels","Kernel methods allow models to represent nonlinear relationships without explicitly constructing every transformed feature. Common kernels include linear, polynomial and radial basis function kernels. Kernel choice affects both flexibility and computational cost."],
+["Soft Margins","Real datasets are rarely perfectly separable. Soft-margin SVMs permit some violations while balancing margin width against classification errors. The regularization parameter controls this trade-off."],
+["Scaling and Tuning","SVMs are sensitive to feature scales because distance and dot-product calculations are central to the method. Standardize suitable numerical features and tune parameters using cross-validation."]
+]
+},
+
+{
+title:"Naive Bayes",
+focus:"probabilistic classification based on Bayes reasoning",
+lessons:[
+["Bayes Rule","Naive Bayes applies Bayes theorem to estimate the probability of a class given observed features. The method combines prior class probabilities with feature likelihoods."],
+["Conditional Independence","The naive assumption is that features are conditionally independent given the class. This assumption is often unrealistic, but the resulting classifier can still perform surprisingly well, especially in high-dimensional text problems."],
+["Text Classification","Naive Bayes is commonly used for document and message classification. Word or token frequencies can become features, and smoothing prevents zero probabilities from eliminating an entire class."],
+["Model Limitations","Because independence assumptions can be strong, Naive Bayes may struggle when feature interactions are essential. Evaluate it as a baseline and compare its behavior with discriminative and neural alternatives."]
+]
+},
+
+{
+title:"Clustering",
+focus:"discovering groups and structure without labelled targets",
+lessons:[
+["k-Means","k-means partitions observations into a chosen number of clusters by minimizing within-cluster squared distance. Initialization and the chosen number of clusters affect results, so multiple runs and validation are often useful."],
+["Hierarchical Clustering","Hierarchical methods build nested groupings represented by a dendrogram. Agglomerative approaches begin with individual observations and merge groups according to a linkage rule. They can reveal structure without requiring a fixed cluster count at the beginning."],
+["DBSCAN","DBSCAN identifies dense regions separated by lower-density areas and can label isolated points as noise. It is useful when clusters are irregularly shaped and when meaningful density structure exists."],
+["Cluster Evaluation","There is no universal metric that proves clusters are meaningful. Silhouette scores and other internal measures can help, but domain interpretation remains essential. A mathematically clean partition may have no practical value."]
+]
+},
+
+{
+title:"Dimensionality Reduction",
+focus:"representing high-dimensional data with fewer informative dimensions",
+lessons:[
+["Principal Component Analysis","PCA finds orthogonal directions that explain variance in numerical data. It transforms the original features into principal components. Scaling is often important because variables with larger units can dominate the variance."],
+["Explained Variance","Explained variance indicates how much variation is represented by selected components. It can guide the number of components, but retaining variance does not necessarily mean retaining every feature relevant to the prediction task."],
+["Visualization","Reducing high-dimensional data to two or three dimensions can make patterns easier to visualize. Visual separation should not be interpreted as proof that groups are naturally distinct in the original feature space."],
+["Limitations","Dimensionality reduction can remove information and make transformed features difficult to interpret. Choose it based on the objective: visualization, compression, noise reduction or computational efficiency."]
+]
+},
+
+{
+title:"Feature Engineering",
+focus:"creating informative model inputs from raw information",
+lessons:[
+["Transformations","Useful transformations include logarithms, ratios, date components and domain-specific measurements. The transformation should reflect a meaningful relationship rather than being added simply to increase the number of features."],
+["Encoding Categories","Categorical variables can be represented using one-hot, ordinal or learned encodings depending on their meaning and model. Never impose an artificial numeric order on categories that do not possess one."],
+["Interactions","An interaction feature represents the combined effect of two or more variables. Interactions can allow simple models to represent relationships that are not additive. Add them selectively because feature explosion increases complexity."],
+["Feature Selection","Feature selection removes irrelevant, redundant or unstable inputs. Methods include domain filtering, statistical analysis and model-based selection. Selection must be performed within the training process to avoid leaking information from validation or test data."]
+]
+},
+
+{
+title:"Feature Scaling",
+focus:"standardization, normalization and robust numerical preprocessing",
+lessons:[
+["Standardization","Standardization typically centers a feature around its mean and scales by its standard deviation. It is useful for algorithms sensitive to feature magnitude, including many distance-based and gradient-based methods."],
+["Normalization","Normalization can rescale values to a bounded interval such as zero to one. It can be useful when the original range has a meaningful fixed boundary. The appropriate transformation depends on the algorithm and data distribution."],
+["Robust Scaling","Median and interquartile-range based scaling is less sensitive to extreme observations. It can be useful when numerical features contain substantial outliers that would distort mean and standard-deviation based scaling."],
+["When Scaling Matters","Tree-based models generally do not require feature scaling, while k-NN, SVMs, logistic regression and neural networks often benefit from it. Fit preprocessing parameters only on training data and apply the learned transformation unchanged to validation and test data."]
+]
+},
+
+{
+title:"Model Evaluation",
+focus:"measuring generalization using appropriate performance metrics",
+lessons:[
+["Train Validation Test","Training data fits parameters, validation data supports model selection, and test data provides an approximately unbiased final estimate when used only at the end. Repeatedly checking the test set turns it into an informal validation set."],
+["Classification Metrics","Accuracy, precision, recall, F1 score, ROC-AUC and precision-recall analysis answer different questions. Choose metrics according to the costs of false positives and false negatives and the prevalence of classes."],
+["Regression Metrics","MAE, MSE, RMSE and R-squared measure different aspects of regression performance. MAE is easier to interpret in target units, while squared-error metrics emphasize large mistakes."],
+["Calibration","A classifier can rank cases correctly while producing poorly calibrated probabilities. Calibration compares predicted probabilities with observed frequencies. Reliable probabilities matter when predictions are used for risk estimates or threshold-based decisions."]
+]
+},
+
+{
+title:"Cross-Validation",
+focus:"reliable estimation of model performance and generalization",
+lessons:[
+["k-Fold Cross-Validation","k-fold validation divides training data into several folds and repeatedly trains on some folds while validating on another. It provides multiple estimates of performance and uses data efficiently for model selection."],
+["Stratified Cross-Validation","For classification, stratification helps maintain similar class proportions across folds. This is particularly important when classes are unevenly distributed and a random split could produce unstable validation sets."],
+["Time-Series Cross-Validation","Randomly shuffling time-dependent observations can leak future information into training. Time-series validation preserves temporal order so that models are evaluated using information that would actually have been available at prediction time."],
+["Nested Validation","Nested cross-validation separates model selection from final performance estimation. It is useful when many hyperparameters are tuned and a less biased estimate of the entire selection process is required."]
+]
+},
+
+{
+title:"Hyperparameter Tuning",
+focus:"systematically selecting model configuration settings",
+lessons:[
+["Hyperparameters","Hyperparameters control how an algorithm behaves but are not usually learned directly from the training objective. Examples include tree depth, regularization strength, learning rate and number of estimators."],
+["Grid Search","Grid search evaluates predefined combinations of parameter values. It is simple and reproducible but can become expensive when many parameters and values are included."],
+["Random Search","Random search samples configurations from specified distributions. It can explore large spaces more efficiently when only a few hyperparameters strongly affect performance."],
+["Bayesian Optimization","Bayesian optimization builds a model of the relationship between configurations and validation performance, then selects promising experiments. It can reduce expensive trials when model training is costly."]
+]
+},
+
+{
+title:"Pipelines",
+focus:"reproducible preprocessing, training and inference workflows",
+lessons:[
+["Pipeline Design","A pipeline connects preprocessing and modeling into one reproducible sequence. This reduces mistakes caused by manually applying transformations in different orders during training and inference."],
+["Leakage Prevention","Data leakage occurs when information unavailable at prediction time influences training. Pipelines help prevent leakage by fitting preprocessing transformations only within the appropriate training partitions."],
+["Feature Transformers","Transformers can perform scaling, encoding, imputation and feature generation. Combining them with the estimator ensures the same transformations are applied consistently during evaluation and production inference."],
+["Reproducibility","Record software versions, random seeds where appropriate, preprocessing rules, datasets and model configurations. Reproducibility does not guarantee identical results across every hardware environment, but it makes differences explainable and experiments repeatable."]
+]
+},
+
+{
+title:"Imbalanced Learning",
+focus:"classification when some classes occur much less frequently than others",
+lessons:[
+["Imbalance Diagnosis","Start by measuring class frequencies and understanding the consequences of unequal classes. Accuracy may appear high simply because the model predicts the majority class."],
+["Class Weights","Many algorithms allow greater importance to minority-class errors through class weights. This changes the training objective rather than changing the underlying data distribution."],
+["Resampling","Oversampling increases representation of minority examples while undersampling reduces majority examples. Synthetic approaches can create additional training observations but should be applied only within training partitions."],
+["Precision-Recall Tradeoffs","Increasing sensitivity to a minority class can increase false positives. Precision-recall analysis and threshold selection should therefore reflect operational costs rather than chasing one universal metric."]
+]
+},
+
+{
+title:"Time-Series Machine Learning",
+focus:"machine learning for ordered observations and forecasting",
+lessons:[
+["Time Dependence","Time-series observations are ordered and often dependent on previous observations. Randomly mixing future and past records can create unrealistic evaluation. Always define the prediction time and information available at that time."],
+["Lag Features","Lag features represent previous observations and can help models learn temporal relationships. Rolling statistics can summarize recent behavior, but their calculation must exclude future information."],
+["Validation","Use chronological splits or rolling evaluation when appropriate. The validation procedure should reproduce how the model will actually encounter future observations."],
+["Forecasting Models","Forecasting can use statistical models, tree-based learners or neural networks. Model choice depends on the amount of data, seasonality, horizon, noise and operational requirements."]
+]
+},
+
+{
+title:"Natural Language Processing",
+focus:"computational processing of human language",
+lessons:[
+["Text Preprocessing","Text may contain punctuation, casing differences, spelling variation, markup and noise. Preprocessing should preserve information that matters for the task rather than deleting words automatically."],
+["Tokenization","Tokenization divides text into units used by a model. Modern language systems may use subword tokenization rather than whole words, allowing better handling of rare words and unfamiliar terms."],
+["Representations","Text can be represented using counts, TF-IDF vectors, embeddings or contextual representations. The representation determines what relationships a model can easily learn."],
+["NLP Evaluation","NLP tasks require task-specific evaluation. Accuracy may be useful for classification, while generation and retrieval require additional metrics and human review. Evaluation should include difficult examples and failure categories."]
+]
+},
+
+{
+title:"Text Classification",
+focus:"building systems that assign categories to documents or messages",
+lessons:[
+["Bag of Words","Bag-of-words represents text using token counts while ignoring most word order. It is simple, transparent and often surprisingly effective for baseline classification."],
+["TF-IDF","TF-IDF reduces the importance of common terms and emphasizes terms that are distinctive within a document. It creates sparse numerical features suitable for many classical machine-learning models."],
+["Linear Classifiers","Linear models can perform efficient text classification using sparse representations. Regularization helps control model complexity and is usually tuned through validation."],
+["Error Analysis","Inspect false positives and false negatives rather than relying only on aggregate metrics. Look for ambiguous language, missing categories, annotation errors, domain shifts and systematic failure patterns."]
+]
+},
+
+{
+title:"Embeddings",
+focus:"dense vector representations that capture semantic relationships",
+lessons:[
+["Word Embeddings","Word embeddings represent words as dense numerical vectors. Similar usage contexts can lead to similar representations. Classical embeddings may struggle with words whose meaning changes substantially across contexts."],
+["Sentence Embeddings","Sentence and document embeddings represent larger pieces of text in vector form. They can support semantic search, clustering and retrieval. The embedding model should match the language and task domain."],
+["Similarity","Vector similarity measures such as cosine similarity compare embeddings. Similarity search can identify semantically related content even when exact words differ."],
+["Embedding Search","Embedding indexes allow systems to retrieve relevant content efficiently. Retrieval quality depends on chunking, embedding choice, indexing, metadata filtering and evaluation rather than the vector database alone."]
+]
+},
+
+{
+title:"Neural Network Foundations",
+focus:"neurons, activation functions, forward propagation and backpropagation",
+lessons:[
+["Neurons","A neuron combines inputs with learned weights and a bias before applying an activation function. Many neurons arranged in layers can represent complex nonlinear functions."],
+["Activations","Activation functions introduce nonlinearity. Common choices include ReLU, sigmoid and tanh. The choice affects gradient behavior, expressiveness and optimization."],
+["Forward Propagation","During a forward pass, input data moves through network layers to produce an output. Intermediate activations form a computational graph that connects parameters to the final loss."],
+["Backpropagation","Backpropagation computes gradients of the loss with respect to network parameters using the chain rule. An optimizer then uses those gradients to update the parameters."]
+]
+},
+
+{
+title:"Deep Learning Training",
+focus:"loss functions, optimizers, batching and regularization",
+lessons:[
+["Loss Functions","The loss function defines what the neural network learns to minimize. Classification commonly uses cross-entropy while regression may use squared or absolute error. The loss should correspond to the learning objective."],
+["Optimizers","Optimizers update parameters using gradients. SGD, momentum-based methods and adaptive optimizers have different convergence behavior. Hyperparameters such as learning rate are often more important than simply choosing a sophisticated optimizer."],
+["Batching","Mini-batches divide training data into manageable groups. Batching affects memory use, gradient noise and computational efficiency. Batch size should be selected with both hardware and optimization behavior in mind."],
+["Regularization","Dropout, weight decay, data augmentation and early stopping can reduce overfitting. Regularization should be evaluated through validation performance rather than assuming that more regularization is always better."]
+]
+},
+
+{
+title:"Convolutional Neural Networks",
+focus:"deep learning for images and spatially structured data",
+lessons:[
+["Convolutions","Convolutional layers apply learnable filters across spatial regions. Shared weights allow a network to detect patterns such as edges and textures regardless of their exact location."],
+["Pooling","Pooling reduces spatial resolution and can make representations more compact. Modern architectures may replace traditional pooling with strided convolutions or other downsampling methods."],
+["CNN Architectures","CNNs are commonly organized into repeated feature-extraction and transformation stages. Residual connections and normalization help train deeper networks."],
+["Image Classification","Image classification maps an image to one or more categories. A reliable workflow includes consistent preprocessing, augmentation when appropriate, class-balanced evaluation and careful inspection of incorrect predictions."]
+]
+},
+
+{
+title:"Sequence Models",
+focus:"learning patterns in ordered, temporal and sequential information",
+lessons:[
+["RNNs","Recurrent neural networks process sequences while maintaining a hidden state. This allows information from earlier positions to influence later outputs, although basic RNNs can struggle with long-term dependencies."],
+["LSTM and GRU","LSTM and GRU architectures introduce gating mechanisms that regulate information flow. They improve the ability to retain or discard information across longer sequences."],
+["Sequence Training","Sequence models require careful handling of sequence length, padding, masking and batching. Training data must preserve the order that matters for the task."],
+["Applications","Sequence models can be used for forecasting, language processing, event detection and other ordered data. Transformer architectures have replaced recurrent networks in many large-scale language applications, but recurrent concepts remain important historically and practically."]
+]
+},
+
+{
+title:"Transformers",
+focus:"attention-based architectures for language and other sequence tasks",
+lessons:[
+["Attention","Attention allows a model to assign different importance to elements of an input when producing a representation or output. This makes it easier to model relationships between distant positions."],
+["Self-Attention","Self-attention compares representations within the same sequence. Query, key and value projections produce weighted combinations that allow each position to incorporate contextual information."],
+["Transformer Blocks","A transformer block typically combines attention, feed-forward transformations, residual connections and normalization. Stacking blocks produces progressively richer representations."],
+["Applications","Transformers are used in language, vision, audio and multimodal systems. Their scalability has made them central to modern generative AI, retrieval systems and foundation models."]
+]
+},
+
+{
+title:"Generative AI",
+focus:"models that generate text, images, audio, code and other content",
+lessons:[
+["Generative Modeling","Generative models learn patterns in data that allow them to produce new samples. They differ from discriminative systems that primarily predict labels or scores. Generation quality must be evaluated for usefulness, correctness and safety."],
+["Autoregressive Models","Autoregressive models generate outputs step by step, conditioning each new element on previous context. Language models commonly use this approach for text generation."],
+["Diffusion Concepts","Diffusion models learn to generate data by reversing a gradual corruption process. They have become especially important in image and other generative applications."],
+["Generative AI Use Cases","Applications include drafting, summarization, coding assistance, image generation, data augmentation and retrieval interfaces. Production use requires controls for accuracy, intellectual property, privacy, security and harmful outputs."]
+]
+},
+
+{
+title:"Large Language Models",
+focus:"architecture, pretraining, instruction tuning and inference",
+lessons:[
+["LLM Architecture","Large language models commonly use transformer-based architectures and learn statistical relationships among tokens. Their apparent capabilities arise from large-scale training, model architecture, data and optimization."],
+["Pretraining","Pretraining exposes a model to large amounts of text or other data under a self-supervised objective. Data quality, duplication, contamination and licensing considerations strongly affect the resulting system."],
+["Instruction Tuning","Instruction tuning adapts a pretrained model to follow human-readable requests. Additional alignment methods can improve usefulness and reduce undesirable behavior, but they do not guarantee factual correctness."],
+["Inference","Inference is the process of producing outputs from a trained model. Parameters such as temperature, token limits and sampling strategies affect behavior. Production systems must also consider latency, cost, context limits and monitoring."]
+]
+},
+
+{
+title:"Prompt Engineering",
+focus:"designing instructions and context for reliable AI model behavior",
+lessons:[
+["Prompt Structure","A strong prompt clearly states the task, context, constraints and desired output format. Ambiguous prompts increase variability. Structured instructions are particularly useful when outputs must be consumed by another system."],
+["Few-Shot Prompting","Few-shot prompting provides examples that demonstrate the expected behavior. Examples should be representative, correct and diverse enough to communicate the desired pattern without introducing contradictions."],
+["Grounding","Grounding supplies relevant external information to reduce reliance on unsupported model memory. The supplied context should be authoritative, current where necessary and clearly separated from the instruction."],
+["Evaluation","Prompt quality should be measured using a fixed evaluation set rather than judged from one impressive response. Test normal cases, edge cases, adversarial inputs and cases where the correct behavior is to refuse or request clarification."]
+]
+},
+
+{
+title:"Retrieval-Augmented Generation",
+focus:"retrieving external knowledge and providing it to generative models",
+lessons:[
+["Retrieval","A RAG system first searches a knowledge source for relevant information and then supplies selected context to a generative model. Retrieval quality directly affects the quality of the final answer."],
+["Chunking","Documents are divided into chunks before indexing. Chunks that are too small can lose context while chunks that are too large can reduce retrieval precision and consume unnecessary context."],
+["Embeddings and Indexes","Embeddings can represent documents and queries in a shared vector space. An index then retrieves nearby representations. Metadata filters and hybrid keyword/vector retrieval can improve precision."],
+["RAG Evaluation","Evaluate retrieval and generation separately. Check whether the correct source passages were retrieved, whether the answer is supported by them and whether the system properly handles questions for which no supporting information exists."]
+]
+},
+
+{
+title:"MLOps",
+focus:"deploying, monitoring, versioning and maintaining machine-learning systems",
+lessons:[
+["Deployment","Deployment makes a trained model available for predictions. Common patterns include batch inference, real-time APIs and embedded inference. Choose the pattern based on latency, volume, reliability and cost requirements."],
+["Model Versioning","Models should be versioned alongside relevant code, configuration and training information. A model identifier alone is insufficient if the training dataset and preprocessing process cannot be reproduced."],
+["Monitoring","Production monitoring should cover system health and model behavior. Useful signals include latency, error rates, input distributions, prediction distributions and, when labels become available, performance metrics."],
+["CI/CD for ML","Machine-learning delivery pipelines can automate tests, packaging, deployment and rollback. Tests should cover data contracts, preprocessing, model behavior and service interfaces rather than only application code."]
+]
+},
+
+{
+title:"Responsible AI",
+focus:"fairness, privacy, safety, accountability and governance",
+lessons:[
+["Bias and Fairness","Bias can enter through sampling, labels, historical decisions, measurement choices and model design. Fairness analysis should examine relevant groups and determine whether unequal performance has meaningful consequences."],
+["Privacy","AI systems may process sensitive or identifying information. Minimize unnecessary data collection, control access, protect stored information and understand applicable privacy obligations."],
+["Safety","AI systems can fail through incorrect predictions, unsafe recommendations, harmful generated content or unexpected interactions. Safety engineering uses threat analysis, testing, safeguards and human escalation paths."],
+["Governance","Responsible AI requires documentation of purpose, data, limitations, evaluation and ownership. Governance is not a final checklist; it should influence design, deployment and ongoing monitoring."]
+]
+},
+
+{
+title:"AI Capstone Project",
+focus:"integrating problem definition, data, modeling, deployment and evaluation",
+lessons:[
+["Project Planning","Begin with a clear problem statement, target users, constraints and success criteria. Define milestones for data, baseline modeling, evaluation and delivery. A project should have a measurable outcome rather than simply a trained model."],
+["Data and Modeling","Build a reproducible data pipeline, perform exploratory analysis and establish a baseline before trying advanced methods. Compare alternatives using the same evaluation protocol and document why the final model was selected."],
+["Deployment","Package preprocessing and inference consistently. Expose the model through an appropriate interface and test realistic inputs, invalid inputs and expected failure conditions before release."],
+["Reporting and Maintenance","A professional project report should describe the problem, data, methods, experiments, results, limitations, risks and future work. After deployment, monitor the system and establish a process for retraining or redesign when conditions change."]
+]
+},
+
+{
+title:"Reinforcement Learning",
+focus:"learning through actions, rewards and interaction with environments",
+lessons:[
+["Agents and Environments","Reinforcement learning describes an agent that observes a state, chooses an action and receives a reward from an environment. The goal is to learn behavior that maximizes cumulative reward rather than a single immediate outcome."],
+["Markov Decision Processes","A Markov decision process represents states, actions, transition dynamics and rewards. The Markov property means that the current state contains the information required to predict future transitions under the chosen action."],
+["Q-Learning","Q-learning estimates the value of taking an action in a state. The agent balances exploration of unknown actions with exploitation of actions that currently appear valuable."],
+["Policy Methods","Policy-based methods learn how actions should be selected directly. Reinforcement learning is powerful for sequential decision problems but can be expensive or unsafe when real-world exploration has consequences."]
+]
+},
+
+{
+title:"AI Security and Reliability",
+focus:"protecting AI systems and testing their behavior under failure and attack",
+lessons:[
+["Threat Modeling","AI threat modeling identifies assets, attackers, attack surfaces and consequences. Consider training data, model files, prompts, APIs, retrieval systems, credentials and user interfaces."],
+["Adversarial Inputs","Attackers may deliberately construct inputs intended to confuse a model or bypass safety controls. Testing should include malformed inputs, prompt injection, data poisoning scenarios and unusual examples relevant to the system."],
+["Data and Model Security","Protect datasets, model artifacts, secrets and service endpoints. Restrict access according to need and validate external inputs. A secure model is not useful if its surrounding application exposes sensitive data or privileged operations."],
+["Reliability Testing","Reliability requires systematic tests for expected behavior, edge cases, degradation and recovery. Track failure rates and define safe fallback behavior. High-impact systems should have monitoring and human intervention mechanisms."]
+]
+}
+
+];
+
+/*
+==========================================================
+RENDERING
+==========================================================
+*/
+
+const courseContent = document.getElementById("courseContent");
+const courseMap = document.getElementById("courseMap");
+const searchInput = document.getElementById("searchInput");
+const noResults = document.getElementById("noResults");
+
+const STORAGE_KEY = "nexora_ai_ml_completed_v2";
+
+let completedLessons = JSON.parse(
+  localStorage.getItem(STORAGE_KEY) || "[]"
+);
+
+function lessonKey(moduleIndex, lessonIndex){
+  return `${moduleIndex}-${lessonIndex}`;
+}
+
+function saveProgress(){
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(completedLessons)
+  );
+}
+
+function isComplete(moduleIndex, lessonIndex){
+  return completedLessons.includes(
+    lessonKey(moduleIndex, lessonIndex)
+  );
+}
+
+function toggleComplete(moduleIndex, lessonIndex){
+  const key = lessonKey(moduleIndex, lessonIndex);
+
+  if(completedLessons.includes(key)){
+    completedLessons = completedLessons.filter(item => item !== key);
+  }else{
+    completedLessons.push(key);
+  }
+
+  saveProgress();
+  render();
+}
+
+function toggleLesson(element){
+  element.classList.toggle("open");
+}
+
+function renderMap(){
+  courseMap.innerHTML = "";
+
+  modules.forEach((module,index)=>{
+    const button = document.createElement("button");
+
+    button.className = "module-link";
+    button.textContent = `M${index+1}`;
+
+    button.onclick = ()=>{
+      const target = document.getElementById(`module-${index+1}`);
+      if(target){
+        target.scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        });
+      }
+    };
+
+    courseMap.appendChild(button);
+  });
+}
+
+function createLessonHTML(moduleIndex, lessonIndex, lesson){
+  const complete = isComplete(moduleIndex, lessonIndex);
+
+  return `
+    <article class="lesson ${complete ? "complete" : ""}">
+
+      <button
+        class="lesson-head"
+        onclick="toggleLesson(this.parentElement)"
+        type="button">
+
+        <span class="lesson-title">
+          Lesson ${lessonIndex+1}: ${lesson[0]}
+        </span>
+
+        <span class="lesson-status">
+          ${complete ? "✓" : "+"}
+        </span>
+
+      </button>
+
+      <div class="lesson-body">
+
+        <h3>Lesson Notes</h3>
+
+        <p>
+          ${lesson[1]}
+        </p>
+
+        <h3>Study Guidance</h3>
+
+        <p>
+          Do not learn this topic only by memorising definitions.
+          Connect the concept to the complete machine-learning workflow.
+          Ask what information enters the system, what transformation
+          takes place, what output is produced, how that output is
+          evaluated, and what can cause the method to fail.
+        </p>
+
+        <h3>Practical Focus</h3>
+
+        <ul>
+          <li>Understand the terminology and underlying principle.</li>
+          <li>Identify the inputs, outputs and assumptions.</li>
+          <li>Relate the concept to a realistic AI/ML project.</li>
+          <li>Consider performance, reliability and failure cases.</li>
+          <li>Document the approach so another developer can reproduce it.</li>
+        </ul>
+
+        <div class="key-points">
+          <strong>Key learning point:</strong>
+          This lesson is part of Module ${moduleIndex+1}.
+          You should be able to explain the concept in your own words,
+          describe where it is useful, identify its limitations and
+          connect it to practical AI/ML development.
+        </div>
+
+        <div class="lesson-actions">
+
+          <button
+            class="complete-button ${complete ? "done" : ""}"
+            onclick="toggleComplete(${moduleIndex},${lessonIndex})"
+            type="button">
+
+            ${complete ? "✓ Lesson Completed" : "Mark Lesson Complete"}
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+  `;
+}
+
+function render(searchTerm=""){
+  courseContent.innerHTML = "";
+
+  let visibleModules = 0;
+
+  modules.forEach((module,moduleIndex)=>{
+
+    const moduleMatches =
+      module.title.toLowerCase().includes(searchTerm) ||
+      module.focus.toLowerCase().includes(searchTerm);
+
+    const matchingLessons = module.lessons.filter(lesson =>
+      lesson[0].toLowerCase().includes(searchTerm) ||
+      lesson[1].toLowerCase().includes(searchTerm)
+    );
+
+    if(searchTerm && !moduleMatches && matchingLessons.length === 0){
+      return;
+    }
+
+    visibleModules++;
+
+    const moduleElement = document.createElement("section");
+
+    moduleElement.className = "module";
+    moduleElement.id = `module-${moduleIndex+1}`;
+
+    const lessonsToRender =
+      searchTerm && !moduleMatches
+      ? module.lessons.filter(lesson =>
+          lesson[0].toLowerCase().includes(searchTerm) ||
+          lesson[1].toLowerCase().includes(searchTerm)
+        )
+      : module.lessons;
+
+    moduleElement.innerHTML = `
+      <div class="module-header">
+
+        <div class="module-number">
+          MODULE ${String(moduleIndex+1).padStart(2,"0")}
+        </div>
+
+        <h2 class="module-title">
+          ${module.title}
+        </h2>
+
+        <p class="module-focus">
+          ${module.focus}.
+        </p>
+
+        <div class="learning-outcomes">
+
+          <strong>Module Learning Outcomes</strong>
+
+          <ul>
+            <li>Explain the major concepts covered in this module.</li>
+            <li>Describe how the concepts are used in AI/ML systems.</li>
+            <li>Identify important assumptions and limitations.</li>
+            <li>Apply the knowledge within a practical development workflow.</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="

@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nezora Wi-Fi — Vouchers</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+}
+
+.app{
+    display:flex;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:250px;
+    background:#111827;
+    color:white;
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    padding:24px 16px;
+}
+
+.brand{
+    font-size:23px;
+    font-weight:800;
+    margin-bottom:35px;
+    padding:0 12px;
+}
+
+.brand span{
+    color:#38bdf8;
+}
+
+.menu-title{
+    color:#8b95a7;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin:22px 12px 10px;
+}
+
+.nav-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:13px 12px;
+    margin-bottom:5px;
+    border-radius:9px;
+    color:#cbd5e1;
+    text-decoration:none;
+}
+
+.nav-item:hover,
+.nav-item.active{
+    background:#1e293b;
+    color:white;
+}
+
+.nav-icon{
+    width:22px;
+    text-align:center;
+}
+
+/* MAIN */
+.main{
+    margin-left:250px;
+    width:calc(100% - 250px);
+}
+
+.topbar{
+    height:72px;
+    background:white;
+    border-bottom:1px solid #e5e7eb;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+}
+
+.page-title{
+    font-size:21px;
+    font-weight:700;
+}
+
+.operator{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.avatar{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#0ea5e9;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+/* CONTENT */
+.content{
+    padding:30px;
+}
+
+.heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.heading h1{
+    font-size:27px;
+}
+
+.heading p{
+    color:#64748b;
+    margin-top:6px;
+}
+
+.primary{
+    border:none;
+    background:#0284c7;
+    color:white;
+    padding:13px 18px;
+    border-radius:9px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.primary:hover{
+    background:#0369a1;
+}
+
+/* GENERATOR */
+.generator{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:13px;
+    padding:25px;
+    margin-bottom:25px;
+}
+
+.generator h2{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.field label{
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:7px;
+}
+
+.field input,
+.field select{
+    width:100%;
+    padding:12px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    background:white;
+    font-size:14px;
+}
+
+.generate{
+    margin-top:20px;
+}
+
+/* TABLE */
+.table-panel{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:13px;
+    padding:25px;
+}
+
+.table-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.table-header h2{
+    font-size:18px;
+}
+
+.search{
+    padding:10px 13px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    width:220px;
+}
+
+.table-wrapper{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    text-align:left;
+    background:#f8fafc;
+    color:#64748b;
+    font-size:12px;
+    text-transform:uppercase;
+    padding:13px;
+}
+
+td{
+    padding:14px 13px;
+    border-top:1px solid #f1f5f9;
+    font-size:14px;
+}
+
+.code{
+    font-family:monospace;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.status{
+    display:inline-block;
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.available{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.used{
+    background:#fee2e2;
+    color:#b91c1c;
+}
+
+.expired{
+    background:#fef3c7;
+    color:#92400e;
+}
+
+.delete{
+    border:none;
+    background:#fee2e2;
+    color:#b91c1c;
+    padding:7px 10px;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:12px;
+    font-weight:600;
+}
+
+.delete:hover{
+    background:#fecaca;
+}
+
+/* EMPTY */
+.empty{
+    text-align:center;
+    padding:45px 20px;
+    color:#64748b;
+}
+
+.empty-icon{
+    font-size:45px;
+    margin-bottom:12px;
+}
+
+/* MOBILE */
+.mobile-menu{
+    display:none;
+    font-size:25px;
+}
+
+@media(max-width:1000px){
+
+    .form-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .sidebar{
+        transform:translateX(-100%);
+        transition:.3s;
+        z-index:1000;
+    }
+
+    .sidebar.open{
+        transform:translateX(0);
+    }
+
+    .main{
+        margin-left:0;
+        width:100%;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .topbar{
+        padding:0 18px;
+    }
+
+    .content{
+        padding:18px;
+    }
+
+    .heading{
+        align-items:flex-start;
+        gap:15px;
+        flex-direction:column;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .operator > div:not(.avatar){
+        display:none;
+    }
+
+    .search{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+        Nezora <span>Wi-Fi</span>
+    </div>
+
+    <div class="menu-title">Main</div>
+
+    <a class="nav-item" href="operator-dashboard.html">
+        <span class="nav-icon">▦</span>
+        Dashboard
+    </a>
+
+    <a class="nav-item">
+        <span class="nav-icon">💳</span>
+        Payments
+    </a>
+
+    <a class="nav-item active">
+        <span class="nav-icon">🎟️</span>
+        Vouchers
+    </a>
+
+    <div class="menu-title">Management</div>
+
+    <a class="nav-item">
+        <span class="nav-icon">📦</span>
+        Packages
+    </a>
+
+    <a class="nav-item">
+        <span class="nav-icon">📡</span>
+        MikroTik Routers
+    </a>
+
+    <a class="nav-item">
+        <span class="nav-icon">👥</span>
+        Customers
+    </a>
+
+    <a class="nav-item">
+        <span class="nav-icon">📊</span>
+        Reports
+    </a>
+
+    <div class="menu-title">System</div>
+
+    <a class="nav-item">
+        <span class="nav-icon">⚙️</span>
+        Settings
+    </a>
+
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<header class="topbar">
+
+    <div style="display:flex;align-items:center;gap:15px">
+
+        <div
+            class="mobile-menu"
+            onclick="toggleSidebar()">
+            ☰
+        </div>
+
+        <div class="page-title">
+            Voucher Management
+        </div>
+
+    </div>
+
+    <div class="operator">
+
+        <div class="avatar">
+            OP
+        </div>
+
+        <div>
+            <strong>Operator</strong>
+            <div style="font-size:12px;color:#64748b">
+                Administrator
+            </div>
+        </div>
+
+    </div>
+
+</header>
+
+<section class="content">
+
+<!-- HEADER -->
+<div class="heading">
+
+    <div>
+        <h1>Vouchers</h1>
+
+        <p>
+            Generate and manage Wi-Fi access vouchers.
+        </p>
+    </div>
+
+</div>
+
+<!-- GENERATOR -->
+<div class="generator">
+
+    <h2>Generate New Vouchers</h2>
+
+    <div class="form-grid">
+
+        <div class="field">
+
+            <label>
+                Package
+            </label>
+
+            <select id="package">
+                <option value="">
+                    Select package
+                </option>
+
+                <option value="1-hour">
+                    1 Hour
+                </option>
+
+                <option value="6-hours">
+                    6 Hours
+                </option>
+
+                <option value="12-hours">
+                    12 Hours
+                </option>
+
+                <option value="1-day">
+                    1 Day
+                </option>
+
+                <option value="7-days">
+                    7 Days
+                </option>
+
+                <option value="30-days">
+                    30 Days
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="field">
+
+            <label>
+                Speed
+            </label>
+
+            <select id="speed">
+
+                <option value="2M">
+                    2 Mbps
+                </option>
+
+                <option value="5M">
+                    5 Mbps
+                </option>
+
+                <option value="10M">
+                    10 Mbps
+                </option>
+
+                <option value="20M">
+                    20 Mbps
+                </option>
+
+                <option value="50M">
+                    50 Mbps
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="field">
+
+            <label>
+                Quantity
+            </label>
+
+            <input
+                type="number"
+                id="quantity"
+                value="1"
+                min="1"
+                max="1000">
+
+        </div>
+
+        <div class="field">
+
+            <label>
+                Voucher Length
+            </label>
+
+            <select id="length">
+
+                <option value="8">
+                    8 Characters
+                </option>
+
+                <option value="10">
+                    10 Characters
+                </option>
+
+                <option value="12">
+                    12 Characters
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <button
+        class="primary generate"
+        onclick="generateVouchers()">
+
+        Generate Vouchers
+
+    </button>
+
+</div>
+
+<!-- VOUCHERS -->
+<div class="table-panel">
+
+    <div class="table-header">
+
+        <h2>
+            Generated Vouchers
+        </h2>
+
+        <input
+            class="search"
+            id="search"
+            type="search"
+            placeholder="Search voucher..."
+            oninput="searchVouchers()">
+
+    </div>
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Voucher</th>
+                    <th>Package</th>
+                    <th>Speed</th>
+                    <th>Status</th>
+                    <th>Created</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="voucherTable">
+
+                <tr>
+                    <td colspan="6">
+
+                        <div class="empty">
+
+                            <div class="empty-icon">
+                                🎟️
+                            </div>
+
+                            <div>
+                                No vouchers generated yet.
+                            </div>
+
+                        </div>
+
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script>
+
+let vouchers = [];
+
+function toggleSidebar(){
+
+    document
+        .getElementById("sidebar")
+        .classList
+        .toggle("open");
+
+}
+
+function generateCode(length){
+
+    const characters =
+        "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+
+    let code = "";
+
+    for(let i = 0; i < length; i++){
+
+        code += characters.charAt(
+            Math.floor(
+                Math.random() * characters.length
+            )
+        );
+
+    }
+
+    return code;
+}
+
+function generateVouchers(){
+
+    const packageName =
+        document.getElementById("package").value;
+
+    const speed =
+        document.getElementById("speed").value;
+
+    const quantity =
+        Number(
+            document.getElementById("quantity").value
+        );
+
+    const length =
+        Number(
+            document.getElementById("length").value
+        );
+
+    if(!packageName){
+
+        alert("Please select a package.");
+
+        return;
+
+    }
+
+    if(quantity < 1 || quantity > 1000){
+
+        alert("Quantity must be between 1 and 1000.");
+
+        return;
+
+    }
+
+    for(let i = 0; i < quantity; i++){
+
+        vouchers.push({
+
+            id: Date.now() + "-" + i,
+
+            code: generateCode(length),
+
+            package: packageName,
+
+            speed: speed,
+
+            status: "Available",
+
+            created: new Date()
+                .toLocaleString()
+
+        });
+
+    }
+
+    renderVouchers();
+
+    alert(
+        quantity +
+        " voucher(s) generated successfully."
+    );
+}
+
+function renderVouchers(list = vouchers){
+
+    const table =
+        document.getElementById("voucherTable");
+
+    if(list.length === 0){
+
+        table.innerHTML = `
+            <tr>
+                <td colspan="6">
+                    <div class="empty">
+                        <div class="empty-icon">🎟️</div>
+                        No vouchers found.
+                    </div>
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+    table.innerHTML = "";
+
+    list.forEach(voucher => {
+
+        const row =
+            document.createElement("tr");
+
+        let statusClass =
+            "available";
+
+        if(voucher.status === "Used"){
+            statusClass = "used";
+        }
+
+        if(voucher.status === "Expired"){
+            statusClass = "expired";
+        }
+
+        row.innerHTML = `
+
+            <td class="code">
+                ${voucher.code}
+            </td>
+
+            <td>
+                ${voucher.package}
+            </td>
+
+            <td>
+                ${voucher.speed} Mbps
+            </td>
+
+            <td>
+                <span class="status ${statusClass}">
+                    ${voucher.status}
+                </span>
+            </td>
+
+            <td>
+                ${voucher.created}
+            </td>
+
+            <td>
+
+                <button
+                    class="delete"
+                    onclick="deleteVoucher('${voucher.id}')">
+
+                    Delete
+
+                </button>
+
+            </td>
+
+        `;
+
+        table.appendChild(row);
+
+    });
+
+}
+
+function deleteVoucher(id){
+
+    const voucher =
+        vouchers.find(v => v.id === id);
+
+    if(!voucher){
+        return;
+    }
+
+    const confirmed =
+        confirm(
+            "Delete voucher " +
+            voucher.code +
+            "?"
+        );
+
+    if(!confirmed){
+        return;
+    }
+
+    vouchers =
+        vouchers.filter(
+            v => v.id !== id
+        );
+
+    renderVouchers();
+
+}
+
+function searchVouchers(){
+
+    const query =
+        document
+            .getElementById("search")
+            .value
+            .toLowerCase()
+            .trim();
+
+    const filtered =
+        vouchers.filter(voucher =>
+
+            voucher.code
+                .toLowerCase()
+                .includes(query)
+
+            ||
+
+            voucher.package
+                .toLowerCase()
+                .includes(query)
+
+            ||
+
+            voucher.status
+                .toLowerCase()
+                .includes(query)
+
+        );
+
+    renderVouchers(filtered);
+
+}
+
+</script>
+
+</body>
+</html>

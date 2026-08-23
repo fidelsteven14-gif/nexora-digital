@@ -27,17 +27,10 @@
 
         /* =====================================================
            NEXORA DIGITAL
-           INDEX.HTML
+           COMPLETE INDEX.HTML
            
-           COMPLETE POLISHED VERSION
-           
-           IMPORTANT:
-           - Existing sections retained
-           - Resources section appears once
-           - Learn cards are now clickable
-           - tools.html remains connected
-           - Website name remains large
-           - Mobile responsive
+           Version:
+           JavaScript-Powered Learn Section
         ===================================================== */
 
 
@@ -84,14 +77,12 @@
 
         img {
             display: block;
-
             max-width: 100%;
         }
 
 
         a {
             text-decoration: none;
-
             color: inherit;
         }
 
@@ -99,6 +90,11 @@
         button,
         a {
             -webkit-tap-highlight-color: transparent;
+        }
+
+
+        button {
+            font-family: inherit;
         }
 
 
@@ -176,13 +172,6 @@
             border-radius: 8px;
         }
 
-
-        /*
-           WEBSITE NAME
-
-           This is intentionally large and visible.
-           This is the ONLY website-name font-size rule.
-        */
 
         .brand-name {
             color: #4ddcff;
@@ -268,7 +257,8 @@
             outline:
                 2px solid #4ddcff;
 
-            outline-offset: 5px;
+            outline-offset:
+                5px;
 
             border-radius: 3px;
         }
@@ -581,7 +571,8 @@
 
             object-fit: cover;
 
-            background: #091827;
+            background:
+                #091827;
         }
 
 
@@ -667,7 +658,8 @@
         .learn-section {
             width: 100%;
 
-            background: #071525;
+            background:
+                #071525;
 
             border-top:
                 1px solid #142d44;
@@ -700,34 +692,48 @@
 
 
         /* =====================================================
-           LEARN CARD
-
-           IMPORTANT:
-           The entire card is now an actual link.
-           Clicking Technology Guides,
-           Digital Skills or Productivity
-           opens learn.html with the correct topic.
+           JAVASCRIPT LEARN CARDS
         ===================================================== */
 
         .learn-card {
+            width: 100%;
+
             display: block;
 
             padding: 35px;
 
-            background: #0b1d2e;
+            background:
+                #0b1d2e;
 
             border:
                 1px solid #1b3851;
 
-            border-radius: 20px;
+            border-radius:
+                20px;
+
+            color:
+                #ffffff;
+
+            text-align:
+                left;
+
+            cursor:
+                pointer;
+
+            font-family:
+                inherit;
+
+            appearance:
+                none;
+
+            -webkit-appearance:
+                none;
 
             transition:
                 transform 0.3s ease,
                 border-color 0.3s ease,
                 box-shadow 0.3s ease,
                 background 0.3s ease;
-
-            cursor: pointer;
         }
 
 
@@ -757,63 +763,327 @@
 
 
         .learn-number {
-            margin-bottom: 28px;
+            margin-bottom:
+                28px;
 
-            color: #4ddcff;
+            color:
+                #4ddcff;
 
-            font-size: 15px;
+            font-size:
+                15px;
 
-            font-weight: 900;
+            font-weight:
+                900;
 
-            letter-spacing: 2px;
+            letter-spacing:
+                2px;
         }
 
 
         .learn-card h3 {
-            margin-bottom: 15px;
+            margin-bottom:
+                15px;
 
-            font-size: 28px;
+            font-size:
+                28px;
 
-            line-height: 1.25;
+            line-height:
+                1.25;
         }
 
 
         .learn-card p {
-            margin-bottom: 24px;
+            margin-bottom:
+                24px;
 
-            color: #9fb4c8;
+            color:
+                #9fb4c8;
 
-            font-size: 16px;
+            font-size:
+                16px;
 
-            line-height: 1.8;
+            line-height:
+                1.8;
         }
 
 
         .learn-card-action {
-            display: inline-flex;
+            display:
+                inline-flex;
 
-            align-items: center;
+            align-items:
+                center;
 
-            gap: 7px;
+            gap:
+                7px;
 
-            color: #4ddcff;
+            color:
+                #4ddcff;
 
-            font-size: 15px;
+            font-size:
+                15px;
 
-            font-weight: 800;
+            font-weight:
+                800;
         }
 
 
-        .learn-card-action span {
+        .learn-card-action .arrow {
             transition:
                 transform 0.25s ease;
         }
 
 
         .learn-card:hover
-        .learn-card-action span {
+        .learn-card-action .arrow {
             transform:
                 translateX(5px);
+        }
+
+
+        /* =====================================================
+           JAVASCRIPT GUIDE PANEL
+        ===================================================== */
+
+        .learn-guide-panel {
+            display: none;
+
+            width: 100%;
+
+            margin-top: 35px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #10283c,
+                    #081827
+                );
+
+            border:
+                1px solid #4ddcff;
+
+            border-radius:
+                24px;
+
+            box-shadow:
+                0 25px 70px
+                rgba(0, 0, 0, 0.35);
+
+            overflow:
+                hidden;
+        }
+
+
+        .learn-guide-panel.active {
+            display:
+                block;
+
+            animation:
+                learnPanelIn 0.35s ease forwards;
+        }
+
+
+        .learn-guide-inner {
+            position:
+                relative;
+
+            padding:
+                55px 50px;
+        }
+
+
+        .learn-guide-close {
+            position:
+                absolute;
+
+            top:
+                20px;
+
+            right:
+                25px;
+
+            width:
+                44px;
+
+            height:
+                44px;
+
+            border:
+                1px solid #31516b;
+
+            border-radius:
+                50%;
+
+            background:
+                transparent;
+
+            color:
+                #ffffff;
+
+            font-size:
+                30px;
+
+            line-height:
+                1;
+
+            cursor:
+                pointer;
+
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease,
+                color 0.25s ease;
+        }
+
+
+        .learn-guide-close:hover {
+            background:
+                #4ddcff;
+
+            border-color:
+                #4ddcff;
+
+            color:
+                #06111f;
+        }
+
+
+        .learn-guide-close:focus-visible {
+            outline:
+                3px solid #ffffff;
+
+            outline-offset:
+                3px;
+        }
+
+
+        .learn-guide-number {
+            margin-bottom:
+                15px;
+
+            color:
+                #4ddcff;
+
+            font-size:
+                15px;
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                2px;
+        }
+
+
+        .learn-guide-title {
+            margin-bottom:
+                25px;
+
+            color:
+                #ffffff;
+
+            font-size:
+                42px;
+
+            line-height:
+                1.2;
+
+            font-weight:
+                900;
+        }
+
+
+        .learn-guide-content {
+            color:
+                #a9bdcf;
+
+            font-size:
+                17px;
+
+            line-height:
+                1.8;
+        }
+
+
+        .learn-guide-content h3 {
+            margin-top:
+                30px;
+
+            margin-bottom:
+                12px;
+
+            color:
+                #ffffff;
+
+            font-size:
+                25px;
+
+            line-height:
+                1.3;
+        }
+
+
+        .learn-guide-content h3:first-child {
+            margin-top:
+                0;
+        }
+
+
+        .learn-guide-content p {
+            margin-bottom:
+                18px;
+        }
+
+
+        .learn-guide-content ul {
+            margin:
+                0 0 25px 25px;
+
+            padding:
+                0;
+        }
+
+
+        .learn-guide-content li {
+            margin-bottom:
+                10px;
+        }
+
+
+        .learn-guide-content strong {
+            color:
+                #ffffff;
+        }
+
+
+        .learn-guide-close-button {
+            margin-top:
+                25px;
+
+            cursor:
+                pointer;
+        }
+
+
+        @keyframes learnPanelIn {
+
+            from {
+                opacity:
+                    0;
+
+                transform:
+                    translateY(20px);
+            }
+
+
+            to {
+                opacity:
+                    1;
+
+                transform:
+                    translateY(0);
+            }
+
         }
 
 
@@ -837,25 +1107,32 @@
 
 
         .about-container {
-            max-width: 850px;
+            max-width:
+                850px;
 
-            margin: 0 auto;
+            margin:
+                0 auto;
 
             padding:
                 100px 30px;
 
-            text-align: center;
+            text-align:
+                center;
         }
 
 
         .about-container p {
-            margin-bottom: 20px;
+            margin-bottom:
+                20px;
 
-            color: #a9bdcf;
+            color:
+                #a9bdcf;
 
-            font-size: 18px;
+            font-size:
+                18px;
 
-            line-height: 1.8;
+            line-height:
+                1.8;
         }
 
 
@@ -864,60 +1141,77 @@
         ===================================================== */
 
         .contact-section {
-            width: 100%;
+            width:
+                100%;
 
-            max-width: 1200px;
+            max-width:
+                1200px;
 
-            margin: 0 auto;
+            margin:
+                0 auto;
 
             padding:
                 100px 30px;
 
-            text-align: center;
+            text-align:
+                center;
         }
 
 
         .contact-box {
-            max-width: 850px;
+            max-width:
+                850px;
 
-            margin: 0 auto;
+            margin:
+                0 auto;
 
             padding:
                 55px 35px;
 
-            background: #0b1d2e;
+            background:
+                #0b1d2e;
 
             border:
                 1px solid #1b3851;
 
-            border-radius: 22px;
+            border-radius:
+                22px;
         }
 
 
         .contact-box h2 {
-            margin-bottom: 15px;
+            margin-bottom:
+                15px;
 
-            font-size: 40px;
+            font-size:
+                40px;
         }
 
 
         .contact-box p {
-            margin-bottom: 30px;
+            margin-bottom:
+                30px;
 
-            color: #9fb4c8;
+            color:
+                #9fb4c8;
 
-            font-size: 18px;
+            font-size:
+                18px;
 
-            line-height: 1.7;
+            line-height:
+                1.7;
         }
 
 
         .email-link {
-            color: #4ddcff;
+            color:
+                #4ddcff;
 
-            font-size: 17px;
+            font-size:
+                17px;
 
-            font-weight: 800;
+            font-weight:
+                800;
 
             border-bottom:
                 1px solid transparent;
@@ -983,22 +1277,26 @@
         @media (max-width: 1000px) {
 
             .navbar {
-                gap: 20px;
+                gap:
+                    20px;
             }
 
 
             .brand-name {
-                font-size: 34px;
+                font-size:
+                    34px;
             }
 
 
             .navigation {
-                gap: 20px;
+                gap:
+                    20px;
             }
 
 
             .navigation a {
-                font-size: 16px;
+                font-size:
+                    16px;
             }
 
         }
@@ -1072,6 +1370,12 @@
                     18px;
             }
 
+
+            .learn-guide-inner {
+                padding:
+                    45px 30px;
+            }
+
         }
 
 
@@ -1101,10 +1405,6 @@
                     50px;
             }
 
-
-            /*
-               Website name remains large and visible.
-            */
 
             .brand-name {
                 font-size:
@@ -1210,6 +1510,36 @@
             .learn-card h3 {
                 font-size:
                     26px;
+            }
+
+
+            .learn-guide-inner {
+                padding:
+                    45px 24px;
+            }
+
+
+            .learn-guide-title {
+                font-size:
+                    32px;
+
+                padding-right:
+                    35px;
+            }
+
+
+            .learn-guide-content {
+                font-size:
+                    16px;
+            }
+
+
+            .learn-guide-close {
+                top:
+                    15px;
+
+                right:
+                    15px;
             }
 
 
@@ -1324,10 +1654,6 @@
         <div class="navbar">
 
 
-            <!-- =================================================
-                 WEBSITE BRAND
-            ================================================== -->
-
             <a
                 href="index.html"
                 class="brand"
@@ -1347,46 +1673,32 @@
             </a>
 
 
-            <!-- =================================================
-                 MAIN NAVIGATION
-            ================================================== -->
-
             <nav
                 class="navigation"
                 aria-label="Main navigation"
             >
 
-                <a
-                    href="index.html"
-                >
+                <a href="index.html">
                     Home
                 </a>
 
 
-                <a
-                    href="tools.html"
-                >
+                <a href="tools.html">
                     Resources
                 </a>
 
 
-                <a
-                    href="#learn"
-                >
+                <a href="#learn">
                     Learn
                 </a>
 
 
-                <a
-                    href="#about"
-                >
+                <a href="#about">
                     About
                 </a>
 
 
-                <a
-                    href="#contact"
-                >
+                <a href="#contact">
                     Contact
                 </a>
 
@@ -1448,8 +1760,6 @@
                 <div class="hero-buttons">
 
 
-                    <!-- EXISTING TOOLS PAGE -->
-
                     <a
                         href="tools.html"
                         class="button button-primary"
@@ -1475,8 +1785,6 @@
 
         <!-- =================================================
              DIGITAL RESOURCES
-
-             THIS SECTION APPEARS ONLY ONCE.
         ================================================== -->
 
         <section
@@ -1501,13 +1809,9 @@
             <div class="resource-grid">
 
 
-                <!-- =================================================
-                     CARD 01 — DIGITAL TOOLS
-                ================================================== -->
+                <!-- DIGITAL TOOLS -->
 
-                <article
-                    class="resource-card"
-                >
+                <article class="resource-card">
 
                     <img
                         src="design-solutions.png"
@@ -1548,13 +1852,9 @@
 
 
 
-                <!-- =================================================
-                     CARD 02 — WEB RESOURCES
-                ================================================== -->
+                <!-- WEB RESOURCES -->
 
-                <article
-                    class="resource-card"
-                >
+                <article class="resource-card">
 
                     <img
                         src="web-development.png"
@@ -1595,13 +1895,9 @@
 
 
 
-                <!-- =================================================
-                     CARD 03 — SOFTWARE DEVELOPMENT
-                ================================================== -->
+                <!-- SOFTWARE DEVELOPMENT -->
 
-                <article
-                    class="resource-card"
-                >
+                <article class="resource-card">
 
                     <img
                         src="software-development.png"
@@ -1642,13 +1938,9 @@
 
 
 
-                <!-- =================================================
-                     CARD 04 — LEARNING RESOURCES
-                ================================================== -->
+                <!-- LEARNING RESOURCES -->
 
-                <article
-                    class="resource-card"
-                >
+                <article class="resource-card">
 
                     <img
                         src="learning-resources.png"
@@ -1696,11 +1988,14 @@
         <!-- =================================================
              LEARN SECTION
 
-             EACH CARD NOW OPENS A REAL PAGE.
-
+             JAVASCRIPT-POWERED
+             
+             These three cards DO NOT require:
              technology-guides.html
              digital-skills.html
              productivity.html
+
+             Everything opens inside this index.html.
         ================================================== -->
 
         <section
@@ -1733,9 +2028,10 @@
                          TECHNOLOGY GUIDES
                     ================================================== -->
 
-                    <a
-                        href="technology-guides.html"
+                    <button
+                        type="button"
                         class="learn-card"
+                        data-guide="technology"
                         aria-label="Open Technology Guides"
                     >
 
@@ -1756,18 +2052,17 @@
                         </p>
 
 
-                        <span
-                            class="learn-card-action"
-                        >
+                        <span class="learn-card-action">
+
                             Open Technology Guides
 
-                            <span>
+                            <span class="arrow">
                                 →
                             </span>
 
                         </span>
 
-                    </a>
+                    </button>
 
 
 
@@ -1775,9 +2070,10 @@
                          DIGITAL SKILLS
                     ================================================== -->
 
-                    <a
-                        href="digital-skills.html"
+                    <button
+                        type="button"
                         class="learn-card"
+                        data-guide="skills"
                         aria-label="Open Digital Skills"
                     >
 
@@ -1798,18 +2094,17 @@
                         </p>
 
 
-                        <span
-                            class="learn-card-action"
-                        >
+                        <span class="learn-card-action">
+
                             Open Digital Skills
 
-                            <span>
+                            <span class="arrow">
                                 →
                             </span>
 
                         </span>
 
-                    </a>
+                    </button>
 
 
 
@@ -1817,9 +2112,10 @@
                          PRODUCTIVITY
                     ================================================== -->
 
-                    <a
-                        href="productivity.html"
+                    <button
+                        type="button"
                         class="learn-card"
+                        data-guide="productivity"
                         aria-label="Open Productivity"
                     >
 
@@ -1840,18 +2136,77 @@
                         </p>
 
 
-                        <span
-                            class="learn-card-action"
-                        >
+                        <span class="learn-card-action">
+
                             Open Productivity
 
-                            <span>
+                            <span class="arrow">
                                 →
                             </span>
 
                         </span>
 
-                    </a>
+                    </button>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     JAVASCRIPT CONTENT PANEL
+                ================================================== -->
+
+                <div
+                    id="learnGuidePanel"
+                    class="learn-guide-panel"
+                    aria-hidden="true"
+                >
+
+                    <div class="learn-guide-inner">
+
+
+                        <button
+                            type="button"
+                            id="learnGuideClose"
+                            class="learn-guide-close"
+                            aria-label="Close learning guide"
+                        >
+                            ×
+                        </button>
+
+
+                        <div
+                            id="learnGuideNumber"
+                            class="learn-guide-number"
+                        >
+                            01 — KNOWLEDGE
+                        </div>
+
+
+                        <h2
+                            id="learnGuideTitle"
+                            class="learn-guide-title"
+                        >
+                            Technology Guides
+                        </h2>
+
+
+                        <div
+                            id="learnGuideContent"
+                            class="learn-guide-content"
+                        >
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="learnGuideCloseButton"
+                            class="button button-secondary learn-guide-close-button"
+                        >
+                            Close Guide
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -1976,62 +2331,549 @@
     <!-- =====================================================
          JAVASCRIPT
          
-         This does not replace your HTML links.
-         It provides a small safety feature for images.
+         JAVASCRIPT-POWERED LEARN SECTION
     ====================================================== -->
 
     <script>
 
-        /*
-         * If one of the optional resource images is missing,
-         * prevent the page from showing a broken-image icon.
-         */
+        /* =====================================================
+           LEARNING CONTENT DATABASE
+        ===================================================== */
 
-        document
-            .querySelectorAll("img")
-            .forEach(function (image) {
+        const learnGuides = {
 
-                image.addEventListener(
-                    "error",
-                    function () {
+            technology: {
 
-                        image.style.display = "none";
+                number:
+                    "01 — KNOWLEDGE",
 
-                    },
-                    {
-                        once: true
-                    }
+                title:
+                    "Technology Guides",
+
+                content: `
+
+                    <h3>
+                        Understanding Technology
+                    </h3>
+
+                    <p>
+                        Technology is the use of knowledge,
+                        tools, systems and processes to solve
+                        problems, perform tasks and improve
+                        the way people work and communicate.
+                    </p>
+
+
+                    <h3>
+                        What You Can Learn
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <strong>Computers:</strong>
+                            Understand basic computer components,
+                            operating systems and common computer
+                            functions.
+                        </li>
+
+                        <li>
+                            <strong>The Internet:</strong>
+                            Learn how websites, browsers, search
+                            engines and online services work.
+                        </li>
+
+                        <li>
+                            <strong>Digital Tools:</strong>
+                            Discover software and online tools
+                            that can help with everyday tasks.
+                        </li>
+
+                        <li>
+                            <strong>Web Technology:</strong>
+                            Learn the basic ideas behind websites,
+                            HTML, CSS and JavaScript.
+                        </li>
+
+                        <li>
+                            <strong>Artificial Intelligence:</strong>
+                            Understand the basic concept of AI
+                            and how it is being used in modern
+                            digital environments.
+                        </li>
+
+                    </ul>
+
+
+                    <h3>
+                        Why Technology Knowledge Matters
+                    </h3>
+
+                    <p>
+                        Understanding technology can make it
+                        easier to work, communicate, learn and
+                        solve problems in the modern digital
+                        world.
+                    </p>
+
+                `
+            },
+
+
+            skills: {
+
+                number:
+                    "02 — SKILLS",
+
+                title:
+                    "Digital Skills",
+
+                content: `
+
+                    <h3>
+                        Building Digital Skills
+                    </h3>
+
+                    <p>
+                        Digital skills are practical abilities
+                        that help people use computers, mobile
+                        devices, software and online services
+                        effectively.
+                    </p>
+
+
+                    <h3>
+                        Important Digital Skills
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <strong>Computer Skills:</strong>
+                            Learn how to manage files, folders,
+                            applications and basic computer
+                            settings.
+                        </li>
+
+                        <li>
+                            <strong>Office Applications:</strong>
+                            Develop skills for working with
+                            documents, spreadsheets and
+                            presentations.
+                        </li>
+
+                        <li>
+                            <strong>Internet Skills:</strong>
+                            Learn how to search for information,
+                            use websites and communicate online.
+                        </li>
+
+                        <li>
+                            <strong>Communication:</strong>
+                            Understand effective digital
+                            communication through email and
+                            online platforms.
+                        </li>
+
+                        <li>
+                            <strong>Digital Safety:</strong>
+                            Learn basic practices for protecting
+                            accounts, information and devices.
+                        </li>
+
+                    </ul>
+
+
+                    <h3>
+                        Developing Confidence
+                    </h3>
+
+                    <p>
+                        Digital skills improve through regular
+                        practice. Start with basic tasks,
+                        practise consistently and gradually
+                        move to more advanced activities.
+                    </p>
+
+                `
+            },
+
+
+            productivity: {
+
+                number:
+                    "03 — PRODUCTIVITY",
+
+                title:
+                    "Productivity",
+
+                content: `
+
+                    <h3>
+                        Working More Effectively
+                    </h3>
+
+                    <p>
+                        Digital productivity involves using
+                        technology, organization methods and
+                        practical working habits to complete
+                        tasks efficiently.
+                    </p>
+
+
+                    <h3>
+                        Productivity Practices
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <strong>Planning:</strong>
+                            Decide what needs to be completed
+                            and organize tasks according to
+                            priority.
+                        </li>
+
+                        <li>
+                            <strong>Time Management:</strong>
+                            Allocate appropriate time to
+                            important tasks and avoid
+                            unnecessary distractions.
+                        </li>
+
+                        <li>
+                            <strong>File Organization:</strong>
+                            Use clear folder structures and
+                            meaningful file names so information
+                            can be found easily.
+                        </li>
+
+                        <li>
+                            <strong>Digital Tools:</strong>
+                            Use appropriate applications and
+                            online tools to simplify repetitive
+                            work.
+                        </li>
+
+                        <li>
+                            <strong>Task Management:</strong>
+                            Break larger projects into smaller,
+                            manageable tasks.
+                        </li>
+
+                    </ul>
+
+
+                    <h3>
+                        Creating Better Work Habits
+                    </h3>
+
+                    <p>
+                        Productivity is not simply about doing
+                        more work. It is about organizing your
+                        work so that important tasks can be
+                        completed efficiently and consistently.
+                    </p>
+
+                `
+            }
+
+        };
+
+
+
+        /* =====================================================
+           GET ELEMENTS
+        ===================================================== */
+
+        const learnCards =
+            document.querySelectorAll(
+                ".learn-card"
+            );
+
+
+        const learnGuidePanel =
+            document.getElementById(
+                "learnGuidePanel"
+            );
+
+
+        const learnGuideNumber =
+            document.getElementById(
+                "learnGuideNumber"
+            );
+
+
+        const learnGuideTitle =
+            document.getElementById(
+                "learnGuideTitle"
+            );
+
+
+        const learnGuideContent =
+            document.getElementById(
+                "learnGuideContent"
+            );
+
+
+        const learnGuideClose =
+            document.getElementById(
+                "learnGuideClose"
+            );
+
+
+        const learnGuideCloseButton =
+            document.getElementById(
+                "learnGuideCloseButton"
+            );
+
+
+
+        /* =====================================================
+           OPEN LEARN GUIDE
+        ===================================================== */
+
+        function openLearnGuide(
+            guideName
+        ) {
+
+            const guide =
+                learnGuides[guideName];
+
+
+            if (!guide) {
+
+                console.error(
+                    "Learning guide not found:",
+                    guideName
                 );
 
-            });
+                return;
+            }
 
 
-        /*
-         * Prevent accidental double-tapping from causing
-         * unexpected visual behavior on touch devices.
-         */
+            learnGuideNumber.textContent =
+                guide.number;
 
-        document
-            .querySelectorAll("a")
-            .forEach(function (link) {
 
-                link.addEventListener(
+            learnGuideTitle.textContent =
+                guide.title;
+
+
+            learnGuideContent.innerHTML =
+                guide.content;
+
+
+            learnGuidePanel.classList.add(
+                "active"
+            );
+
+
+            learnGuidePanel.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+
+            /*
+             * Move the guide into view.
+             */
+
+            setTimeout(
+                function () {
+
+                    learnGuidePanel.scrollIntoView({
+
+                        behavior:
+                            "smooth",
+
+                        block:
+                            "start"
+
+                    });
+
+                },
+                50
+            );
+
+        }
+
+
+
+        /* =====================================================
+           CLOSE LEARN GUIDE
+        ===================================================== */
+
+        function closeLearnGuide() {
+
+            learnGuidePanel.classList.remove(
+                "active"
+            );
+
+
+            learnGuidePanel.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+
+            /*
+             * Return focus to the last card
+             * that was opened.
+             */
+
+            if (
+                window.lastOpenedLearnCard
+            ) {
+
+                window.lastOpenedLearnCard.focus();
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           CARD CLICK EVENTS
+        ===================================================== */
+
+        learnCards.forEach(
+            function (card) {
+
+                card.addEventListener(
                     "click",
                     function () {
 
-                        link.setAttribute(
-                            "aria-busy",
-                            "true"
+                        const guideName =
+                            card.getAttribute(
+                                "data-guide"
+                            );
+
+
+                        window.lastOpenedLearnCard =
+                            card;
+
+
+                        openLearnGuide(
+                            guideName
                         );
 
                     }
                 );
 
-            });
+            }
+        );
+
+
+
+        /* =====================================================
+           CLOSE BUTTON
+        ===================================================== */
+
+        learnGuideClose.addEventListener(
+            "click",
+            function () {
+
+                closeLearnGuide();
+
+            }
+        );
+
+
+        learnGuideCloseButton.addEventListener(
+            "click",
+            function () {
+
+                closeLearnGuide();
+
+            }
+        );
+
+
+
+        /* =====================================================
+           ESCAPE KEY
+        ===================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape" &&
+                    learnGuidePanel.classList.contains(
+                        "active"
+                    )
+                ) {
+
+                    closeLearnGuide();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           IMAGE ERROR PROTECTION
+        ===================================================== */
+
+        document
+            .querySelectorAll("img")
+            .forEach(
+                function (image) {
+
+                    image.addEventListener(
+                        "error",
+                        function () {
+
+                            image.style.display =
+                                "none";
+
+                        },
+                        {
+                            once: true
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* =====================================================
+           ACCESSIBILITY
+        ===================================================== */
+
+        learnCards.forEach(
+            function (card) {
+
+                card.addEventListener(
+                    "keydown",
+                    function (event) {
+
+                        if (
+                            event.key === "Enter" ||
+                            event.key === " "
+                        ) {
+
+                            event.preventDefault();
+
+                            card.click();
+
+                        }
+
+                    }
+                );
+
+            }
+        );
 
     </script>
 
 
 </body>
 
-                    </html>
+                        </html>

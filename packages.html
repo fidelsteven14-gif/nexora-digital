@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nexora Digital — Packages</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b1120;
+      color: #f8fafc;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: #111827;
+      border-bottom: 1px solid #243044;
+      padding: 18px 22px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .brand span {
+      color: #38bdf8;
+    }
+
+    .back-btn {
+      text-decoration: none;
+      color: #cbd5e1;
+      background: #1e293b;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 25px 18px 50px;
+    }
+
+    .page-title {
+      margin-bottom: 22px;
+    }
+
+    .page-title h1 {
+      font-size: 30px;
+      margin-bottom: 7px;
+    }
+
+    .page-title p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 22px;
+    }
+
+    .card {
+      background: #111827;
+      border: 1px solid #263449;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .card h2 {
+      font-size: 19px;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      color: #cbd5e1;
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      background: #0f172a;
+      color: white;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 12px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #38bdf8;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 8px;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: #0284c7;
+      color: white;
+      width: 100%;
+    }
+
+    .btn-primary:hover {
+      background: #0369a1;
+    }
+
+    .btn-secondary {
+      background: #334155;
+      color: white;
+      margin-top: 8px;
+      width: 100%;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .stat {
+      background: #0f172a;
+      border: 1px solid #263449;
+      border-radius: 10px;
+      padding: 15px;
+    }
+
+    .stat small {
+      display: block;
+      color: #94a3b8;
+      margin-bottom: 7px;
+    }
+
+    .stat strong {
+      font-size: 23px;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 13px 10px;
+      border-bottom: 1px solid #263449;
+      font-size: 13px;
+    }
+
+    th {
+      color: #94a3b8;
+      font-weight: 600;
+      background: #0f172a;
+    }
+
+    td {
+      color: #e2e8f0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .active {
+      background: #064e3b;
+      color: #6ee7b7;
+    }
+
+    .inactive {
+      background: #451a03;
+      color: #fdba74;
+    }
+
+    .actions {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+
+    .action-btn {
+      border: none;
+      padding: 7px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .edit {
+      background: #1d4ed8;
+      color: white;
+    }
+
+    .delete {
+      background: #991b1b;
+      color: white;
+    }
+
+    .toggle {
+      background: #475569;
+      color: white;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 40px 15px;
+      color: #64748b;
+    }
+
+    .message {
+      display: none;
+      margin-bottom: 15px;
+      padding: 11px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    .success {
+      background: #064e3b;
+      color: #a7f3d0;
+    }
+
+    .error {
+      background: #450a0a;
+      color: #fecaca;
+    }
+
+    @media (max-width: 850px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .back-btn {
+        text-align: center;
+      }
+
+      .page-title h1 {
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        NEXORA <span>DIGITAL</span>
+      </div>
+
+      <a href="operator-dashboard.html" class="back-btn">
+        ← Dashboard
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="page-title">
+      <h1>Internet Packages</h1>
+      <p>Create and manage the packages used by Nexora Digital customers and vouchers.</p>
+    </section>
+
+    <div id="message" class="message"></div>
+
+    <div class="layout">
+
+      <!-- CREATE / EDIT PACKAGE -->
+      <section class="card">
+
+        <

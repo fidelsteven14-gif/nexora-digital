@@ -12,7 +12,7 @@
 
     <meta
         name="description"
-        content="NEXORA DIGITAL Technology Guides — Learn about modern technology, computers, the internet, web development and digital technology."
+        content="NEXORA DIGITAL Technology Guides — Learn modern technology through structured digital courses."
     >
 
     <meta
@@ -21,7 +21,7 @@
     >
 
     <title>
-        Technology Guides | NEXORA DIGITAL
+        NEXORA DIGITAL | Technology Guides
     </title>
 
 
@@ -29,9 +29,8 @@
 
         /* =====================================================
            NEXORA DIGITAL
-           TECHNOLOGY GUIDES PAGE
+           TECHNOLOGY GUIDES
         ===================================================== */
-
 
         * {
             margin: 0;
@@ -46,7 +45,6 @@
 
 
         body {
-
             font-family:
                 Arial,
                 Helvetica,
@@ -59,13 +57,25 @@
             line-height: 1.7;
 
             overflow-x: hidden;
+
+            -webkit-font-smoothing: antialiased;
+        }
+
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
         }
 
 
         a {
             color: inherit;
-
             text-decoration: none;
+        }
+
+
+        button {
+            font-family: inherit;
         }
 
 
@@ -74,12 +84,13 @@
         ===================================================== */
 
         header {
-
             position: sticky;
 
             top: 0;
 
-            z-index: 1000;
+            z-index: 9999;
+
+            width: 100%;
 
             background:
                 rgba(5, 16, 29, 0.97);
@@ -93,15 +104,13 @@
 
 
         .navbar {
-
             width: 100%;
 
             max-width: 1200px;
 
-            margin: 0 auto;
+            margin: auto;
 
-            padding:
-                20px 30px;
+            padding: 20px 25px;
 
             display: flex;
 
@@ -109,25 +118,25 @@
 
             justify-content: space-between;
 
-            gap: 20px;
+            gap: 25px;
         }
 
 
         .brand {
-
             display: flex;
 
             align-items: center;
 
             gap: 12px;
+
+            white-space: nowrap;
         }
 
 
         .brand img {
+            width: 55px;
 
-            width: 50px;
-
-            height: 50px;
+            height: 55px;
 
             object-fit: contain;
 
@@ -136,50 +145,41 @@
 
 
         .brand-name {
-
             color: #4ddcff;
 
-            font-size: 30px;
+            font-size: 32px;
 
             font-weight: 900;
 
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
 
-        .back-link {
+        .navigation {
+            display: flex;
 
-            padding:
-                11px 18px;
+            align-items: center;
 
-            border:
-                1px solid #31516b;
+            gap: 25px;
 
-            border-radius: 8px;
+            flex-wrap: wrap;
+        }
 
-            color: #ffffff;
 
-            font-size: 15px;
+        .navigation a {
+            color: #dce8f3;
+
+            font-size: 16px;
 
             font-weight: 700;
 
             transition:
-                background 0.25s ease,
-                border-color 0.25s ease,
                 color 0.25s ease;
         }
 
 
-        .back-link:hover {
-
-            background:
-                rgba(77, 220, 255, 0.08);
-
-            border-color:
-                #4ddcff;
-
-            color:
-                #4ddcff;
+        .navigation a:hover {
+            color: #4ddcff;
         }
 
 
@@ -187,7 +187,8 @@
            HERO
         ===================================================== */
 
-        .page-hero {
+        .guide-hero {
+            width: 100%;
 
             padding:
                 100px 25px 80px;
@@ -212,19 +213,369 @@
         }
 
 
-        .page-label {
+        .guide-hero-inner {
+            max-width: 900px;
 
+            margin: auto;
+        }
+
+
+        .hero-label {
             display: inline-block;
 
             margin-bottom: 25px;
 
             padding:
-                9px 20px;
+                9px 22px;
 
             border:
                 1px solid #245773;
 
             border-radius: 50px;
+
+            color: #4ddcff;
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+
+        .guide-hero h1 {
+            margin-bottom: 25px;
+
+            font-size:
+                clamp(42px, 8vw, 76px);
+
+            line-height: 1;
+
+            font-weight: 900;
+        }
+
+
+        .guide-hero h1 span {
+            color: #4ddcff;
+        }
+
+
+        .guide-hero p {
+            max-width: 760px;
+
+            margin: auto;
+
+            color: #a9bdcf;
+
+            font-size: 19px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           MAIN
+        ===================================================== */
+
+        main {
+            width: 100%;
+        }
+
+
+        .course-section {
+            width: 100%;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding:
+                90px 25px;
+        }
+
+
+        .section-heading {
+            max-width: 800px;
+
+            margin:
+                0 auto 55px;
+
+            text-align: center;
+        }
+
+
+        .section-heading h2 {
+            margin-bottom: 15px;
+
+            font-size: 43px;
+
+            line-height: 1.2;
+        }
+
+
+        .section-heading p {
+            color: #9db2c6;
+
+            font-size: 18px;
+        }
+
+
+        /* =====================================================
+           COURSE CATALOGUE
+        ===================================================== */
+
+        .course-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 25px;
+        }
+
+
+        .course-card {
+            width: 100%;
+
+            padding: 32px;
+
+            text-align: left;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0c2134,
+                    #091a2a
+                );
+
+            border:
+                1px solid #1b3851;
+
+            border-radius: 22px;
+
+            color: #ffffff;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+
+        .course-card:hover {
+            transform:
+                translateY(-6px);
+
+            border-color:
+                #4ddcff;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0, 0, 0, 0.25);
+
+            background:
+                #0d2438;
+        }
+
+
+        .course-card:focus-visible {
+            outline:
+                3px solid #4ddcff;
+
+            outline-offset:
+                4px;
+        }
+
+
+        .course-number {
+            margin-bottom: 18px;
+
+            color: #4ddcff;
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+
+        .course-card h3 {
+            margin-bottom: 13px;
+
+            font-size: 25px;
+
+            line-height: 1.3;
+        }
+
+
+        .course-card p {
+            margin-bottom: 22px;
+
+            color: #9fb4c8;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+        }
+
+
+        .course-open {
+            color: #4ddcff;
+
+            font-size: 15px;
+
+            font-weight: 900;
+        }
+
+
+        /* =====================================================
+           COURSE VIEW
+        ===================================================== */
+
+        .course-view {
+            display: none;
+
+            width: 100%;
+
+            max-width: 1000px;
+
+            margin:
+                0 auto;
+
+            padding:
+                0 25px 100px;
+        }
+
+
+        .course-view.active {
+            display: block;
+        }
+
+
+        .course-view-header {
+            position: relative;
+
+            padding:
+                55px;
+
+            margin-bottom: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #10283c,
+                    #081827
+                );
+
+            border:
+                1px solid #4ddcff;
+
+            border-radius: 25px;
+        }
+
+
+        .course-view-number {
+            margin-bottom: 12px;
+
+            color: #4ddcff;
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+
+        .course-view-header h2 {
+            margin-bottom: 15px;
+
+            font-size: 42px;
+
+            line-height: 1.2;
+        }
+
+
+        .course-view-header p {
+            color: #a9bdcf;
+
+            font-size: 17px;
+        }
+
+
+        .back-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin-bottom: 25px;
+
+            padding:
+                12px 20px;
+
+            border:
+                1px solid #31516b;
+
+            border-radius: 10px;
+
+            background: transparent;
+
+            color: #ffffff;
+
+            font-size: 15px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition:
+                border-color 0.25s ease,
+                color 0.25s ease,
+                background 0.25s ease;
+        }
+
+
+        .back-button:hover {
+            border-color: #4ddcff;
+
+            color: #4ddcff;
+
+            background:
+                rgba(77, 220, 255, 0.05);
+        }
+
+
+        /* =====================================================
+           MODULES
+        ===================================================== */
+
+        .module-list {
+            display: grid;
+
+            gap: 18px;
+        }
+
+
+        .module-card {
+            padding: 28px;
+
+            background: #0b1d2e;
+
+            border:
+                1px solid #1b3851;
+
+            border-radius: 18px;
+        }
+
+
+        .module-card-number {
+            margin-bottom: 8px;
 
             color: #4ddcff;
 
@@ -236,124 +587,66 @@
         }
 
 
-        .page-hero h1 {
+        .module-card h3 {
+            margin-bottom: 10px;
 
-            margin-bottom: 20px;
-
-            font-size:
-                clamp(42px, 8vw, 76px);
-
-            line-height: 1;
-
-            font-weight: 900;
+            font-size: 23px;
         }
 
 
-        .page-hero h1 span {
+        .module-card p {
+            color: #9fb4c8;
 
-            color: #4ddcff;
+            font-size: 16px;
         }
 
 
-        .page-hero p {
+        .module-status {
+            display: inline-block;
 
-            max-width: 760px;
+            margin-top: 17px;
 
-            margin: 0 auto;
+            padding:
+                7px 12px;
+
+            border:
+                1px solid #31516b;
+
+            border-radius: 30px;
+
+            color: #9fb4c8;
+
+            font-size: 12px;
+
+            font-weight: 800;
+        }
+
+
+        /* =====================================================
+           NOTICE
+        ===================================================== */
+
+        .development-notice {
+            margin-top: 35px;
+
+            padding: 25px;
+
+            background:
+                rgba(77, 220, 255, 0.05);
+
+            border:
+                1px solid #245773;
+
+            border-radius: 16px;
 
             color: #a9bdcf;
-
-            font-size: 19px;
 
             line-height: 1.8;
         }
 
 
-        /* =====================================================
-           MAIN CONTENT
-        ===================================================== */
-
-        .guide-container {
-
-            width: 100%;
-
-            max-width: 1000px;
-
-            margin: 0 auto;
-
-            padding:
-                80px 25px;
-        }
-
-
-        .guide-card {
-
-            margin-bottom: 25px;
-
-            padding:
-                40px;
-
-            background: #0b1d2e;
-
-            border:
-                1px solid #1b3851;
-
-            border-radius: 20px;
-        }
-
-
-        .guide-card h2 {
-
-            margin-bottom: 18px;
-
-            color: #ffffff;
-
-            font-size: 30px;
-
-            line-height: 1.25;
-        }
-
-
-        .guide-card h3 {
-
-            margin-top: 28px;
-
-            margin-bottom: 10px;
-
+        .development-notice strong {
             color: #4ddcff;
-
-            font-size: 22px;
-        }
-
-
-        .guide-card p {
-
-            margin-bottom: 16px;
-
-            color: #a9bdcf;
-
-            font-size: 17px;
-        }
-
-
-        .guide-card ul {
-
-            margin:
-                15px 0 20px 25px;
-
-            color: #a9bdcf;
-        }
-
-
-        .guide-card li {
-
-            margin-bottom: 10px;
-        }
-
-
-        .guide-card strong {
-
-            color: #ffffff;
         }
 
 
@@ -362,12 +655,10 @@
         ===================================================== */
 
         footer {
-
             padding:
                 35px 20px;
 
-            background:
-                #040b14;
+            background: #040b14;
 
             border-top:
                 1px solid #13283c;
@@ -379,7 +670,6 @@
 
 
         footer strong {
-
             color: #4ddcff;
         }
 
@@ -388,68 +678,86 @@
            MOBILE
         ===================================================== */
 
-        @media (max-width: 600px) {
+        @media (max-width: 800px) {
 
             .navbar {
-
-                padding:
-                    17px 15px;
-
                 flex-direction: column;
 
-                gap: 15px;
+                justify-content: center;
             }
 
 
-            .brand-name {
+            .navigation {
+                justify-content: center;
+            }
 
+
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .course-view-header {
+                padding: 38px 25px;
+            }
+
+
+            .course-view-header h2 {
+                font-size: 34px;
+            }
+
+        }
+
+
+        @media (max-width: 520px) {
+
+            .brand-name {
                 font-size: 25px;
             }
 
 
-            .page-hero {
+            .brand img {
+                width: 45px;
 
+                height: 45px;
+            }
+
+
+            .navigation {
+                gap: 14px;
+            }
+
+
+            .navigation a {
+                font-size: 14px;
+            }
+
+
+            .guide-hero {
                 padding:
                     75px 18px 60px;
             }
 
 
-            .page-hero h1 {
-
-                font-size: 45px;
-            }
-
-
-            .page-hero p {
-
-                font-size: 16px;
-            }
-
-
-            .guide-container {
-
+            .course-section {
                 padding:
-                    55px 18px;
+                    70px 18px;
             }
 
 
-            .guide-card {
+            .section-heading h2 {
+                font-size: 34px;
+            }
 
+
+            .course-card {
+                padding: 27px;
+            }
+
+
+            .course-view {
                 padding:
-                    28px 22px;
-            }
-
-
-            .guide-card h2 {
-
-                font-size: 26px;
-            }
-
-
-            .guide-card p,
-            .guide-card li {
-
-                font-size: 16px;
+                    0 18px 75px;
             }
 
         }
@@ -464,7 +772,7 @@
 
     <!-- =====================================================
          HEADER
-    ===================================================== -->
+    ====================================================== -->
 
     <header>
 
@@ -474,12 +782,14 @@
             <a
                 href="index.html"
                 class="brand"
+                aria-label="NEXORA DIGITAL Home"
             >
 
                 <img
                     src="nexora-digital-logo.png"
                     alt="NEXORA DIGITAL Logo"
                 >
+
 
                 <span class="brand-name">
                     NEXORA DIGITAL
@@ -488,12 +798,24 @@
             </a>
 
 
-            <a
-                href="index.html#learn"
-                class="back-link"
+            <nav
+                class="navigation"
+                aria-label="Main navigation"
             >
-                ← Back to Learn
-            </a>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="tools.html">
+                    Resources
+                </a>
+
+                <a href="technology-guides.html">
+                    Technology Guides
+                </a>
+
+            </nav>
 
         </div>
 
@@ -502,46 +824,151 @@
 
 
     <!-- =====================================================
-         PAGE HERO
-    ===================================================== -->
+         HERO
+    ====================================================== -->
 
-    <section class="page-hero">
+    <section class="guide-hero">
 
-        <div class="page-label">
-            01 — KNOWLEDGE
+        <div class="guide-hero-inner">
+
+            <div class="hero-label">
+                NEXORA DIGITAL LEARNING CENTRE
+            </div>
+
+
+            <h1>
+                Technology
+                <span>Guides</span>
+            </h1>
+
+
+            <p>
+                Explore structured technology courses designed
+                to help you understand modern digital
+                technologies and develop practical skills.
+            </p>
+
         </div>
-
-
-        <h1>
-            Technology
-            <span>Guides</span>
-        </h1>
-
-
-        <p>
-            Explore practical explanations of modern
-            technology, computers, the internet,
-            web development and digital systems.
-        </p>
 
     </section>
 
 
 
     <!-- =====================================================
-         TECHNOLOGY GUIDE CONTENT
-         
-         JavaScript will load the actual content here.
-    ===================================================== -->
+         MAIN CONTENT
+    ====================================================== -->
 
-    <main
-        id="technologyGuideContent"
-        class="guide-container"
-    >
+    <main>
 
-        <p>
-            Loading Technology Guides...
-        </p>
+
+        <!-- =================================================
+             COURSE CATALOGUE
+        ================================================== -->
+
+        <section
+            class="course-section"
+            id="courseCatalogue"
+        >
+
+            <div class="section-heading">
+
+                <h2>
+                    Choose a Course
+                </h2>
+
+
+                <p>
+                    Select a course below to enter its
+                    dedicated learning environment.
+                </p>
+
+            </div>
+
+
+            <div
+                id="courseGrid"
+                class="course-grid"
+            >
+
+                <!-- JavaScript creates the courses here. -->
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             COURSE VIEW
+        ================================================== -->
+
+        <section
+            id="courseView"
+            class="course-view"
+            aria-hidden="true"
+        >
+
+            <button
+                type="button"
+                class="back-button"
+                onclick="showCourseCatalogue()"
+            >
+                ← Back to Technology Courses
+            </button>
+
+
+            <div
+                id="courseHeader"
+                class="course-view-header"
+            >
+
+                <div
+                    id="courseNumber"
+                    class="course-view-number"
+                ></div>
+
+
+                <h2
+                    id="courseTitle"
+                ></h2>
+
+
+                <p
+                    id="courseDescription"
+                ></p>
+
+            </div>
+
+
+            <div
+                id="moduleList"
+                class="module-list"
+            >
+            </div>
+
+
+            <div class="development-notice">
+
+                <strong>
+                    NEXORA DIGITAL COURSE SYSTEM
+                </strong>
+
+                <br><br>
+
+                This learning environment is designed so
+                that every course can contain complete
+                modules, lessons, detailed notes, practical
+                activities and course completion tracking.
+
+                <br><br>
+
+                The course catalogue is now connected to
+                JavaScript. We will populate each course
+                with its full teaching notes step by step.
+
+            </div>
+
+        </section>
 
     </main>
 
@@ -549,22 +976,15 @@
 
     <!-- =====================================================
          FOOTER
-    ===================================================== -->
+    ====================================================== -->
 
     <footer>
 
         <p>
-
             © 2026
-
-            <strong>
-                NEXORA DIGITAL
-            </strong>.
-
+            <strong>NEXORA DIGITAL</strong>.
             All Rights Reserved.
-
         </p>
-
 
         <p>
             Developed by Steven Fidel.
@@ -575,12 +995,1159 @@
 
 
     <!-- =====================================================
-         TECHNOLOGY GUIDES JAVASCRIPT
-    ===================================================== -->
+         JAVASCRIPT
+         
+         TECHNOLOGY COURSE SYSTEM
+    ====================================================== -->
 
-    <script src="technology-guides.js"></script>
+    <script>
+
+        /* =====================================================
+           COURSE DATABASE
+
+           These are the 20 technology courses.
+        ===================================================== */
+
+        const technologyCourses = [
+
+            {
+                id: "ai-machine-learning",
+
+                number: "01 — AI / ML",
+
+                title:
+                    "Artificial Intelligence & Machine Learning",
+
+                description:
+                    "Learn the foundations of artificial intelligence, machine learning, data, models, algorithms and practical AI applications.",
+
+                modules: [
+
+                    "Introduction to Artificial Intelligence",
+
+                    "Machine Learning Fundamentals",
+
+                    "Data and Machine Learning",
+
+                    "Supervised and Unsupervised Learning",
+
+                    "Neural Networks and Deep Learning",
+
+                    "Natural Language Processing",
+
+                    "Computer Vision",
+
+                    "AI Tools and Applications",
+
+                    "Responsible and Ethical AI",
+
+                    "Practical AI Project"
+
+                ]
+            },
+
+
+            {
+                id: "full-stack-web-development",
+
+                number: "02 — WEB DEVELOPMENT",
+
+                title:
+                    "Full-Stack Web Development",
+
+                description:
+                    "Learn how modern websites and web applications are designed, developed, tested and deployed.",
+
+                modules: [
+
+                    "Web Development Fundamentals",
+
+                    "HTML",
+
+                    "CSS",
+
+                    "JavaScript",
+
+                    "Git and Version Control",
+
+                    "Front-End Development",
+
+                    "Back-End Development",
+
+                    "Databases",
+
+                    "APIs",
+
+                    "Authentication and Security",
+
+                    "Deployment",
+
+                    "Full-Stack Project"
+
+                ]
+            },
+
+
+            {
+                id: "cybersecurity",
+
+                number: "03 — CYBERSECURITY",
+
+                title:
+                    "Cybersecurity & Ethical Hacking",
+
+                description:
+                    "Learn cybersecurity foundations, security principles, threats, defensive practices and ethical security testing.",
+
+                modules: [
+
+                    "Cybersecurity Fundamentals",
+
+                    "Computer and Network Security",
+
+                    "Threats and Vulnerabilities",
+
+                    "Identity and Access Management",
+
+                    "Cryptography Fundamentals",
+
+                    "Security Monitoring",
+
+                    "Ethical Hacking Concepts",
+
+                    "Web Application Security",
+
+                    "Incident Response",
+
+                    "Security Project"
+
+                ]
+            },
+
+
+            {
+                id: "cloud-devops",
+
+                number: "04 — CLOUD & DEVOPS",
+
+                title:
+                    "Cloud Computing & DevOps",
+
+                description:
+                    "Understand cloud computing, infrastructure, automation, continuous integration and modern deployment practices.",
+
+                modules: [
+
+                    "Cloud Computing Fundamentals",
+
+                    "Cloud Service Models",
+
+                    "Virtualization",
+
+                    "Cloud Infrastructure",
+
+                    "Containers",
+
+                    "DevOps Fundamentals",
+
+                    "Continuous Integration",
+
+                    "Continuous Deployment",
+
+                    "Infrastructure Automation",
+
+                    "Cloud Project"
+
+                ]
+            },
+
+
+            {
+                id: "data-science",
+
+                number: "05 — DATA SCIENCE",
+
+                title:
+                    "Data Science & Big Data Analytics",
+
+                description:
+                    "Learn how data is collected, prepared, analyzed and transformed into useful information and insights.",
+
+                modules: [
+
+                    "Introduction to Data Science",
+
+                    "Data Collection",
+
+                    "Data Cleaning",
+
+                    "Statistics Fundamentals",
+
+                    "Python for Data Science",
+
+                    "Data Analysis",
+
+                    "Data Visualization",
+
+                    "Big Data Fundamentals",
+
+                    "Machine Learning for Data",
+
+                    "Data Science Project"
+
+                ]
+            },
+
+
+            {
+                id: "mobile-development",
+
+                number: "06 — MOBILE DEVELOPMENT",
+
+                title:
+                    "Mobile App Development",
+
+                description:
+                    "Learn the foundations of designing, developing, testing and publishing mobile applications.",
+
+                modules: [
+
+                    "Mobile Development Fundamentals",
+
+                    "Mobile User Interfaces",
+
+                    "Application Architecture",
+
+                    "Mobile Programming",
+
+                    "Data Storage",
+
+                    "APIs and Mobile Applications",
+
+                    "Authentication",
+
+                    "Testing Mobile Applications",
+
+                    "Publishing Applications",
+
+                    "Mobile App Project"
+
+                ]
+            },
+
+
+            {
+                id: "ui-ux",
+
+                number: "07 — UI / UX",
+
+                title:
+                    "UI/UX Product Design",
+
+                description:
+                    "Learn how to research users, design interfaces, create prototypes and build better digital experiences.",
+
+                modules: [
+
+                    "Introduction to UI/UX",
+
+                    "User Research",
+
+                    "Information Architecture",
+
+                    "Wireframing",
+
+                    "Visual Design",
+
+                    "Design Systems",
+
+                    "Prototyping",
+
+                    "Usability Testing",
+
+                    "Accessibility",
+
+                    "Product Design Project"
+
+                ]
+            },
+
+
+            {
+                id: "blockchain-web3",
+
+                number: "08 — BLOCKCHAIN",
+
+                title:
+                    "Blockchain & Web3 Development",
+
+                description:
+                    "Explore blockchain fundamentals, decentralized applications, smart contracts and Web3 concepts.",
+
+                modules: [
+
+                    "Blockchain Fundamentals",
+
+                    "Distributed Ledgers",
+
+                    "Cryptographic Foundations",
+
+                    "Consensus Concepts",
+
+                    "Smart Contracts",
+
+                    "Decentralized Applications",
+
+                    "Wallets and Digital Assets",
+
+                    "Web3 Development",
+
+                    "Blockchain Security",
+
+                    "Web3 Project"
+
+                ]
+            },
+
+
+            {
+                id: "business-intelligence",
+
+                number: "09 — BI & DATA",
+
+                title:
+                    "Business Intelligence & Data Visualization",
+
+                description:
+                    "Learn how organizations transform data into reports, dashboards and useful business insights.",
+
+                modules: [
+
+                    "Business Intelligence Fundamentals",
+
+                    "Data Sources",
+
+                    "Data Preparation",
+
+                    "Business Metrics",
+
+                    "Data Visualization",
+
+                    "Dashboard Design",
+
+                    "Reporting",
+
+                    "Business Analytics",
+
+                    "Decision Making with Data",
+
+                    "BI Project"
+
+                ]
+            },
+
+
+            {
+                id: "game-development",
+
+                number: "10 — GAME DEVELOPMENT",
+
+                title:
+                    "Game Development & VR/AR",
+
+                description:
+                    "Learn the foundations of game development and immersive technologies including virtual and augmented reality.",
+
+                modules: [
+
+                    "Game Development Fundamentals",
+
+                    "Game Design",
+
+                    "Game Programming",
+
+                    "Game Physics",
+
+                    "Characters and Environments",
+
+                    "Game Audio",
+
+                    "Virtual Reality",
+
+                    "Augmented Reality",
+
+                    "Testing and Optimization",
+
+                    "Game Project"
+
+                ]
+            },
+
+
+            {
+                id: "iot-embedded",
+
+                number: "11 — IoT",
+
+                title:
+                    "Internet of Things & Embedded Systems",
+
+                description:
+                    "Learn how connected devices, sensors, embedded systems and networks work together.",
+
+                modules: [
+
+                    "IoT Fundamentals",
+
+                    "Embedded Systems",
+
+                    "Sensors and Actuators",
+
+                    "Microcontrollers",
+
+                    "Device Communication",
+
+                    "IoT Networking",
+
+                    "Cloud-connected Devices",
+
+                    "IoT Security",
+
+                    "Automation",
+
+                    "IoT Project"
+
+                ]
+            },
+
+
+            {
+                id: "software-qa",
+
+                number: "12 — SOFTWARE QA",
+
+                title:
+                    "Software Quality Assurance & Automated Testing",
+
+                description:
+                    "Learn software testing principles, quality assurance practices and automated testing concepts.",
+
+                modules: [
+
+                    "Software Quality Fundamentals",
+
+                    "Testing Principles",
+
+                    "Test Planning",
+
+                    "Manual Testing",
+
+                    "Functional Testing",
+
+                    "Non-functional Testing",
+
+                    "Test Automation",
+
+                    "Continuous Testing",
+
+                    "Bug Tracking",
+
+                    "QA Project"
+
+                ]
+            },
+
+
+            {
+                id: "rpa",
+
+                number: "13 — RPA",
+
+                title:
+                    "Robotic Process Automation",
+
+                description:
+                    "Learn how software robots can automate repetitive digital processes and business workflows.",
+
+                modules: [
+
+                    "RPA Fundamentals",
+
+                    "Business Process Analysis",
+
+                    "Automation Opportunities",
+
+                    "Workflow Automation",
+
+                    "Data Processing",
+
+                    "Web Automation",
+
+                    "Document Automation",
+
+                    "RPA Security",
+
+                    "Automation Testing",
+
+                    "RPA Project"
+
+                ]
+            },
+
+
+            {
+                id: "database-engineering",
+
+                number: "14 — DATABASES",
+
+                title:
+                    "Database Administration & Engineering",
+
+                description:
+                    "Learn database concepts, data modeling, SQL, administration, performance and database security.",
+
+                modules: [
+
+                    "Database Fundamentals",
+
+                    "Relational Databases",
+
+                    "Data Modeling",
+
+                    "SQL",
+
+                    "Database Design",
+
+                    "Database Administration",
+
+                    "Backup and Recovery",
+
+                    "Database Security",
+
+                    "Performance Optimization",
+
+                    "Database Project"
+
+                ]
+            },
+
+
+            {
+                id: "api-microservices",
+
+                number: "15 — API & ARCHITECTURE",
+
+                title:
+                    "API Design & Microservices Architecture",
+
+                description:
+                    "Learn how modern software systems communicate through APIs and how large applications can be organized as services.",
+
+                modules: [
+
+                    "API Fundamentals",
+
+                    "HTTP and Web APIs",
+
+                    "REST API Design",
+
+                    "API Authentication",
+
+                    "API Documentation",
+
+                    "Microservices Fundamentals",
+
+                    "Service Communication",
+
+                    "Distributed Systems",
+
+                    "API Security",
+
+                    "Architecture Project"
+
+                ]
+            },
+
+
+            {
+                id: "linux-open-source",
+
+                number: "16 — LINUX",
+
+                title:
+                    "Linux Systems Administration & Open Source Engineering",
+
+                description:
+                    "Learn Linux fundamentals, system administration, command-line tools and open-source development practices.",
+
+                modules: [
+
+                    "Linux Fundamentals",
+
+                    "Linux Installation",
+
+                    "Command Line",
+
+                    "Files and Permissions",
+
+                    "Users and Groups",
+
+                    "Processes and Services",
+
+                    "Networking",
+
+                    "System Security",
+
+                    "Shell Scripting",
+
+                    "Linux Administration Project"
+
+                ]
+            },
+
+
+            {
+                id: "digital-marketing",
+
+                number: "17 — DIGITAL MARKETING",
+
+                title:
+                    "Technical Digital Marketing & Growth Engineering",
+
+                description:
+                    "Learn the technical side of digital marketing, analytics, search optimization, automation and growth.",
+
+                modules: [
+
+                    "Digital Marketing Fundamentals",
+
+                    "Search Engine Optimization",
+
+                    "Technical SEO",
+
+                    "Web Analytics",
+
+                    "Content Systems",
+
+                    "Conversion Optimization",
+
+                    "Marketing Automation",
+
+                    "Growth Experiments",
+
+                    "Performance Measurement",
+
+                    "Growth Project"
+
+                ]
+            },
+
+
+            {
+                id: "it-support-networking",
+
+                number: "18 — IT SUPPORT",
+
+                title:
+                    "IT Support, Networking & Systems Troubleshooting",
+
+                description:
+                    "Learn computer support, networking fundamentals, system maintenance and troubleshooting techniques.",
+
+                modules: [
+
+                    "IT Support Fundamentals",
+
+                    "Computer Hardware",
+
+                    "Operating Systems",
+
+                    "Network Fundamentals",
+
+                    "IP Addressing",
+
+                    "Routers and Switches",
+
+                    "System Troubleshooting",
+
+                    "Security Basics",
+
+                    "Maintenance",
+
+                    "IT Support Project"
+
+                ]
+            },
+
+
+            {
+                id: "low-code-no-code",
+
+                number: "19 — LOW-CODE / NO-CODE",
+
+                title:
+                    "Low-Code / No-Code App Development",
+
+                description:
+                    "Learn how applications, workflows and digital solutions can be created using visual development platforms.",
+
+                modules: [
+
+                    "Low-Code and No-Code Fundamentals",
+
+                    "Visual Application Design",
+
+                    "Data and Databases",
+
+                    "Forms and User Interfaces",
+
+                    "Workflow Automation",
+
+                    "APIs and Integrations",
+
+                    "Authentication",
+
+                    "Testing",
+
+                    "Deployment",
+
+                    "Application Project"
+
+                ]
+            },
+
+
+            {
+                id: "quantum-computing",
+
+                number: "20 — QUANTUM COMPUTING",
+
+                title:
+                    "Quantum Computing Foundations",
+
+                description:
+                    "Explore the fundamental concepts behind quantum computing, quantum information and quantum algorithms.",
+
+                modules: [
+
+                    "Introduction to Quantum Computing",
+
+                    "Classical vs Quantum Computing",
+
+                    "Qubits",
+
+                    "Superposition",
+
+                    "Entanglement",
+
+                    "Quantum Gates",
+
+                    "Quantum Circuits",
+
+                    "Quantum Algorithms",
+
+                    "Quantum Programming Concepts",
+
+                    "Quantum Computing Project"
+
+                ]
+            }
+
+        ];
+
+
+
+        /* =====================================================
+           ELEMENT REFERENCES
+        ===================================================== */
+
+        const courseGrid =
+            document.getElementById(
+                "courseGrid"
+            );
+
+
+        const courseCatalogue =
+            document.getElementById(
+                "courseCatalogue"
+            );
+
+
+        const courseView =
+            document.getElementById(
+                "courseView"
+            );
+
+
+        const courseNumber =
+            document.getElementById(
+                "courseNumber"
+            );
+
+
+        const courseTitle =
+            document.getElementById(
+                "courseTitle"
+            );
+
+
+        const courseDescription =
+            document.getElementById(
+                "courseDescription"
+            );
+
+
+        const moduleList =
+            document.getElementById(
+                "moduleList"
+            );
+
+
+
+        /* =====================================================
+           CREATE COURSE CARDS
+        ===================================================== */
+
+        function renderCourseCatalogue() {
+
+            courseGrid.innerHTML = "";
+
+
+            technologyCourses.forEach(
+                function(course) {
+
+                    const card =
+                        document.createElement(
+                            "button"
+                        );
+
+
+                    card.type =
+                        "button";
+
+
+                    card.className =
+                        "course-card";
+
+
+                    card.setAttribute(
+                        "aria-label",
+                        "Open " +
+                        course.title +
+                        " course"
+                    );
+
+
+                    card.innerHTML = `
+
+                        <div class="course-number">
+                            ${course.number}
+                        </div>
+
+                        <h3>
+                            ${course.title}
+                        </h3>
+
+                        <p>
+                            ${course.description}
+                        </p>
+
+                        <span class="course-open">
+                            Open Course →
+                        </span>
+
+                    `;
+
+
+                    card.addEventListener(
+                        "click",
+                        function() {
+
+                            openCourse(
+                                course.id
+                            );
+
+                        }
+                    );
+
+
+                    courseGrid.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           OPEN COURSE
+        ===================================================== */
+
+        function openCourse(courseId) {
+
+            const course =
+                technologyCourses.find(
+                    function(item) {
+
+                        return item.id ===
+                            courseId;
+
+                    }
+                );
+
+
+            if (!course) {
+
+                console.error(
+                    "Course not found:",
+                    courseId
+                );
+
+                return;
+
+            }
+
+
+            courseNumber.textContent =
+                course.number;
+
+
+            courseTitle.textContent =
+                course.title;
+
+
+            courseDescription.textContent =
+                course.description;
+
+
+            moduleList.innerHTML = "";
+
+
+            course.modules.forEach(
+                function(module, index) {
+
+                    const moduleCard =
+                        document.createElement(
+                            "article"
+                        );
+
+
+                    moduleCard.className =
+                        "module-card";
+
+
+                    moduleCard.innerHTML = `
+
+                        <div class="module-card-number">
+                            MODULE ${String(index + 1).padStart(2, "0")}
+                        </div>
+
+                        <h3>
+                            ${module}
+                        </h3>
+
+                        <p>
+                            This module will contain
+                            the complete lesson notes,
+                            explanations, examples and
+                            practical learning activities.
+                        </p>
+
+                        <span class="module-status">
+                            Lesson content coming next
+                        </span>
+
+                    `;
+
+
+                    moduleList.appendChild(
+                        moduleCard
+                    );
+
+                }
+            );
+
+
+            courseCatalogue.style.display =
+                "none";
+
+
+            courseView.classList.add(
+                "active"
+            );
+
+
+            courseView.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+
+            history.pushState(
+                {
+                    course: course.id
+                },
+                "",
+                "#course=" +
+                encodeURIComponent(
+                    course.id
+                )
+            );
+
+        }
+
+
+
+        /* =====================================================
+           RETURN TO COURSE CATALOGUE
+        ===================================================== */
+
+        function showCourseCatalogue() {
+
+            courseView.classList.remove(
+                "active"
+            );
+
+
+            courseView.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+
+            courseCatalogue.style.display =
+                "block";
+
+
+            history.pushState(
+                {},
+                "",
+                window.location.pathname
+            );
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+
+        /* =====================================================
+           HANDLE BROWSER BACK BUTTON
+        ===================================================== */
+
+        window.addEventListener(
+            "popstate",
+            function() {
+
+                const hash =
+                    window.location.hash;
+
+
+                if (
+                    hash.startsWith(
+                        "#course="
+                    )
+                ) {
+
+                    const courseId =
+                        decodeURIComponent(
+                            hash.substring(
+                                8
+                            )
+                        );
+
+
+                    openCourse(
+                        courseId
+                    );
+
+                }
+
+                else {
+
+                    showCourseCatalogue();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           HANDLE DIRECT COURSE URL
+        ===================================================== */
+
+        function loadCourseFromUrl() {
+
+            const hash =
+                window.location.hash;
+
+
+            if (
+                hash.startsWith(
+                    "#course="
+                )
+            ) {
+
+                const courseId =
+                    decodeURIComponent(
+                        hash.substring(
+                            8
+                        )
+                    );
+
+
+                const exists =
+                    technologyCourses.some(
+                        function(course) {
+
+                            return course.id ===
+                                courseId;
+
+                        }
+                    );
+
+
+                if (exists) {
+
+                    openCourse(
+                        courseId
+                    );
+
+                }
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           INITIALIZE
+        ===================================================== */
+
+        renderCourseCatalogue();
+
+        loadCourseFromUrl();
+
+
+    </script>
 
 
 </body>
 
-  </html>
+    </html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nezora Wi-Fi | Fast, Simple & Reliable Internet</title>
+
+  <meta
+    name="description"
+    content="Nezora Wi-Fi — fast, simple and reliable internet access."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07111f;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navbar {
+      width: 100%;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(7, 17, 31, 0.96);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #39d98a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #d8e2ef;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #39d98a;
+    }
+
+    .hero {
+      min-height: 88vh;
+      padding: 80px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(57,217,138,0.18), transparent 35%),
+        linear-gradient(180deg, #07111f 0%, #0a1727 100%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .wifi-icon {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      background: rgba(57,217,138,0.12);
+      border: 1px solid rgba(57,217,138,0.35);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 42px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #39d98a;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 35px;
+      color: #b9c7d8;
+      font-size: 18px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 25px;
+      border-radius: 10px;
+      font-weight: 700;
+      display: inline-block;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #39d98a;
+      color: #04100a;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #51e39a;
+    }
+
+    .btn-secondary {
+      border: 1px solid #33455d;
+      color: #ffffff;
+      background: #101f32;
+    }
+
+    .btn-secondary:hover {
+      border-color: #39d98a;
+    }
+
+    section {
+      padding: 80px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #9fb0c3;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .feature-card {
+      padding: 28px;
+      border-radius: 16px;
+      background: #0d1b2c;
+      border: 1px solid #1c3047;
+    }
+
+    .feature-card .icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: #9fb0c3;
+      font-size: 15px;
+    }
+
+    .packages {
+      background: #091522;
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .package-card {
+      background: #0d1b2c;
+      border: 1px solid #1c3047;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .package-card h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .package-card .speed {
+      font-size: 30px;
+      font-weight: 800;
+      color: #39d98a;
+      margin-bottom: 8px;
+    }
+
+    .package-card p {
+      color: #9fb0c3;
+      margin-bottom: 22px;
+    }
+
+    .how-it-works {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 25px;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      background: #39d98a;
+      color: #04100a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .step p {
+      color: #9fb0c3;
+      margin-top: 8px;
+    }
+
+    .cta {
+      text-align: center;
+      background:
+        radial-gradient(circle at center, rgba(57,217,138,0.15), transparent 50%),
+        #07111f;
+    }
+
+    .cta h2 {
+      font-size: 38px;
+      margin-bottom: 14px;
+    }
+
+    .cta p {
+      color: #aebed0;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      padding: 30px 7%;
+      text-align: center;
+      background: #050c15;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #7f91a5;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .features,
+      .package-grid,
+      .how-it-works {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 80vh;
+        padding-top: 60px;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      NEZORA <span>WI-FI</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#packages">Packages</a>
+      <a href="#how">How It Works</a>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+
+        <div class="wifi-icon">
+          📶
+        </div>
+
+        <h1>
+          Fast Internet.<br>
+          <span>Simple Access.</span>
+        </h1>
+
+        <p>
+          Welcome to Nezora Wi-Fi. Enjoy reliable internet access
+          with simple packages and easy voucher-based connectivity.
+        </p>
+
+        <div class="buttons">
+          <a href="#packages" class="btn btn-primary">
+            View Packages
+          </a>
+
+          <a href="vouchers.html" class="btn btn-secondary">
+            Get Connected
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="features">
+
+      <div class="section-title">
+        <h2>Why Nezora Wi-Fi?</h2>
+        <p>Internet access designed to stay simple.</p>
+      </div>
+
+      <div class="features">
+
+        <div class="feature-card">
+          <div class="icon">⚡</div>
+          <h3>Fast Connection</h3>
+          <p>
+            Enjoy a reliable connection for browsing,
+            learning, work and entertainment.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon">🎟️</div>
+          <h3>Voucher Access</h3>
+          <p>
+            Use a Nezora Wi-Fi voucher to access the
+            internet without complicated registration.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon">🔒</div>
+          <h3>Simple & Secure</h3>
+          <p>
+            A straightforward Wi-Fi experience designed
+            for customers and operators.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="packages" id="packages">
+
+      <div class="section-title">
+        <h2>Wi-Fi Packages</h2>
+        <p>Choose the package that suits you.</p>
+      </div>
+
+      <div class="package-grid">
+
+        <div class="package-card">
+          <h3>Daily</h3>
+          <div class="speed">24 Hours</div>
+          <p>Perfect for short-term internet access.</p>
+          <a href="vouchers.html" class="btn btn-primary">
+            Get Voucher
+          </a>
+        </div>
+
+        <div class="package-card">
+          <h3>Weekly</h3>
+          <div class="speed">7 Days</div>
+          <p>Stay connected throughout the week.</p>
+          <a href="vouchers.html" class="btn btn-primary">
+            Get Voucher
+          </a>
+        </div>
+
+        <div class="package-card">
+          <h3>Monthly</h3>
+          <div class="speed">30 Days</div>
+          <p>Long-term access for regular users.</p>
+          <a href="vouchers.html" class="btn btn-primary">
+            Get Voucher
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section id="how">
+
+      <div class="section-title">
+        <h2>How It Works</h2>
+        <p>Three simple steps.</p>
+      </div>
+
+      <div class="how-it-works">
+
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Choose a Package</h3>
+          <p>
+            Select the Wi-Fi package you want.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Get Your Voucher</h3>
+          <p>
+            Receive your unique Nezora Wi-Fi voucher.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Connect</h3>
+          <p>
+            Use the voucher to access the Wi-Fi service.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="cta">
+
+      <h2>Ready to Connect?</h2>
+
+      <p>
+        Get your Nezora Wi-Fi voucher and get online.
+      </p>
+
+      <a href="vouchers.html" class="btn btn-primary">
+        Get Your Voucher
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    © 2026 Nezora Wi-Fi. All rights reserved.
+  </footer>
+
+</body>
+  </html>
